@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Telnyx Service Order Commitment Data",
+  "type": "object",
+  "required": ["start_date", "duration", "cycle", "type", "commits"],
+  "properties": {
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Contract start date (MMC Commencement Date) in ISO format"
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Total contract duration in months"
+    },
+    "cycle": {
+      "type": "string",
+      "enum": ["monthly"],
+      "description": "Billing cycle for commitments"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["ramped", "static", "unknown"],
+      "description": "Type of commitment structure"
+    },
+    "commits": {
+      "type": "array",
+      "description": "Array of commitment periods with durations and amounts",
+      "items": {
+        "type": "object",
+        "required": ["start_date", "duration", "amount"],
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "format": "date",
+            "description": "When this commitment level starts (ISO format)"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "How many months this commitment level lasts"
+          },
+          "amount": {
+            "type": "number",
+            "description": "Monthly commitment amount in USD"
+          }
+        }
+      }
+    },
+    "_metadata": {
+      "type": "object",
+      "description": "Additional parsed data for integration and debugging",
+      "properties": {
+        "document_type": {
+          "type": "string",
+          "enum": ["telnyx_service_order"]
+        },
+        "parsed_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "customer_info": {
+          "type": "object",
+          "properties": {
+            "company_name": {"type": "string"},
+            "address": {"type": "string"}
+          }
+        },
+        "applicable_services": {
+          "type": "object",
+          "description": "Which services count toward commitment (Y/N flags)",
+          "properties": {
+            "numbers": {"type": "boolean"},
+            "voice_us_can": {"type": "boolean"},
+            "voice_global": {"type": "boolean"},
+            "messaging_us_can": {"type": "boolean"},
+            "messaging_global": {"type": "boolean"},
+            "identity_services": {"type": "boolean"},
+            "call_control": {"type": "boolean"},
+            "network": {"type": "boolean"}
+          }
+        },
+        "raw_text_length": {"type": "integer"}
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+[project]
+name = "my_agentic_serviceservice_order_specialist"
+version = "0.1.0"
+description = "Agentic service"
+requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+norecursedirs = [".git", "venv", "dist", "build", "*.egg"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+# Test markers
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "e2e: marks tests as end-to-end tests",
+    "db: marks tests that require a real PostgreSQL database (via testcontainers)",
+]
+
+# xdist configuration for parallel execution
+# -n 4: 4 workers balances speed vs resource usage (use -n auto for CI)
+addopts = "-n 4 --dist worksteal"
+
+[tool.coverage.run]
+source = ["my_agentic_serviceservice_order_specialist"]
+branch = true
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+fail_under = 70
+show_missing = true
+skip_covered = false
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]

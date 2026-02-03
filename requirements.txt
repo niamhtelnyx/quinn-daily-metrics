@@ -1,0 +1,67 @@
+# A2A-compliant Service Order Specialist Agent
+
+# Core web framework (A2A endpoints)
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# HTTP client for webhook notifications and external APIs
+httpx==0.25.2
+aiohttp==3.9.1
+
+# Data validation and serialization (A2A protocol compliance)
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# Salesforce integration (service order operations)
+simple-salesforce==1.12.4
+
+# PDF processing (service order extraction)
+PyPDF2==3.0.1
+pdfplumber==0.9.0
+
+# Slack integration (for direct agent access)
+slack-bolt==1.18.1
+slack-sdk==3.26.1
+
+# Telnyx APIs and services
+telnyx==2.1.0
+
+# Configuration and environment
+python-dotenv==1.0.0
+
+# Structured logging and observability
+structlog==23.2.0
+
+# Authentication and security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Database support (task storage, audit logs)
+sqlalchemy==2.0.23
+alembic==1.13.1
+asyncpg==0.29.0  # PostgreSQL async driver
+redis==5.0.1      # Task queue and caching
+
+# A2A Protocol support
+# Note: These would be from Telnyx internal packages once available
+# python-a2a-client>=1.0.0
+# telnyx-agent-sdk>=1.0.0
+
+# OpenTelemetry (Telnyx observability)
+opentelemetry-api==1.21.0
+opentelemetry-sdk==1.21.0
+opentelemetry-auto-instrumentation==0.42b0
+
+# Service discovery and mesh integration
+consul-python==1.1.0
+requests==2.31.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-httpx==0.26.0
+
+# Development tools
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1

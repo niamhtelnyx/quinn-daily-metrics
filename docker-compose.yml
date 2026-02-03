@@ -1,0 +1,68 @@
+services:
+  my-agentic-serviceservice-order-specialist:
+    image: "registry.internal.telnyx.com/jenkins/my-agentic-serviceservice-order-specialist:red"
+    container_name: my-agentic-serviceservice-order-specialist
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - my-agentic-serviceservice-order-specialist-db
+      - my-agentic-serviceservice-order-specialist-phoenix
+    env_file:
+      - docker.env
+    environment:
+      CREATEDB: "true"
+      HOT_RELOAD: "true"
+      WATCHFILES_FORCE_POLLING: "true"
+      PRIMARY_DB__HOST: my-agentic-serviceservice-order-specialist-db
+      REPLICA_DB__HOST: my-agentic-serviceservice-order-specialist-db
+      OPENTELEMETRY__HOST: my-agentic-serviceservice-order-specialist-phoenix
+    volumes:
+      - ./my_agentic_serviceservice_order_specialist:/app/my_agentic_serviceservice_order_specialist:cached
+
+  my-agentic-serviceservice-order-specialist-db:
+    image: "registry.internal.telnyx.com/library/library/postgres:14"
+    container_name: my-agentic-serviceservice-order-specialist-db
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: my_agentic_serviceservice_order_specialist
+    ports:
+      - "5432:5432"
+
+
+  my-agentic-serviceservice-order-specialist-phoenix:
+    image: arizephoenix/phoenix:latest
+    container_name: my-agentic-serviceservice-order-specialist-phoenix
+    ports:
+      - "6006:6006"
+      - "4317:4317"
+
+
+  my-agentic-serviceservice-order-specialist-ci:
+    image: "registry.internal.telnyx.com/jenkins/my-agentic-serviceservice-order-specialist:red"
+    container_name: my-agentic-serviceservice-order-specialist
+    build: .
+
+    depends_on:
+      - my-agentic-serviceservice-order-specialist-db-ci
+
+    environment:
+      CREATEDB: "true"
+      TEST_DB_HOST: my-agentic-serviceservice-order-specialist-db-ci
+      TEST_DB_PORT: 5432
+      TEST_DB_USER: postgres
+      TEST_DB_PASSWORD: postgres
+      TEST_DB_DATABASE: my_agentic_serviceservice_order_specialist
+      CI: "true"
+
+    entrypoint: /app/files/run_tests.sh
+
+
+  my-agentic-serviceservice-order-specialist-db-ci:
+    image: "registry.internal.telnyx.com/library/library/postgres:14"
+    container_name: my-agentic-serviceservice-order-specialist-db-ci
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: my_agentic_serviceservice_order_specialist
+    expose:
+      - "5432"

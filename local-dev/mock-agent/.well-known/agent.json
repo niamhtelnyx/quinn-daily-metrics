@@ -1,0 +1,23 @@
+{
+  "name": "mock-billing-agent",
+  "description": "Mock billing specialist for testing A2A communication",
+  "url": "http://mock-agent/a2a",
+  "provider": {
+    "organization": "Telnyx",
+    "url": "https://telnyx.com"
+  },
+  "skills": [
+    {
+      "id": "billing-calculations",
+      "name": "Billing Calculations", 
+      "description": "Calculate billing amounts and validate commitments",
+      "inputModes": ["text"],
+      "outputModes": ["text", "structured"]
+    }
+  ],
+  "authentication": {
+    "schemes": ["bearer"]
+  },
+  "supportedModes": ["sync"],
+  "version": "1.0.0"
+}

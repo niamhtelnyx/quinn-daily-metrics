@@ -1,0 +1,49 @@
+# GIT
+.git
+.gitignore
+.github/
+
+# Documentation
+README.rst
+README.md
+AGENTS.md
+docs/
+*.md
+
+# Docker
+.dockerignore
+Dockerfile
+Jenkinsfile
+Makefile
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# Claude
+.claude/
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+*.swp
+.ropeproject/
+.venv/
+
+# Testing
+.cache/
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Linting
+.ruff_cache/
+.mypy_cache/
+.typing_modules/
+
+# Misc
+vols/
+*.env

@@ -1,0 +1,50 @@
+# Base Service
+fastapi
+httpx
+pydantic_settings
+uvicorn[standard]
+
+# Telnyx
+telnyx-python-metrics[all]
+
+
+# Utilities
+jmespath
+tenacity
+
+
+# Agentic
+a2a-sdk[http-server,postgresql,telemetry]>=0.2.4
+langgraph
+langchain_litellm
+langgraph-checkpoint-postgres
+mcp
+
+# Observability
+bugsnag
+structlog
+opentelemetry-instrumentation-fastapi
+opentelemetry-instrumentation-sqlalchemy
+# opentelemetry-instrumentation-httpx
+opentelemetry-instrumentation-logging
+openinference-instrumentation-langchain
+openinference-instrumentation-litellm
+
+# Database
+sqlalchemy
+psycopg[c,pool]
+alembic
+greenlet
+
+# dev dependencies
+asgi_lifespan
+coverage
+pre-commit
+pyrefly
+pytest
+pytest-cov
+pytest-asyncio
+pytest-xdist
+respx
+ruff
+testcontainers[postgres]

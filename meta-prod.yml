@@ -1,0 +1,59 @@
+names:
+  service: my-agentic-serviceservice-order-specialist
+  github: my-agentic-serviceservice-order-specialist
+
+project:
+  squad: ai.platform.squad
+  primary_maintainer: Your NameNiamh Collins
+  secondary_maintainer: some_github_username
+  public_api: false
+  private_api: true
+
+build:
+  use_vault_ha: true
+
+deploy:
+  strategy: simple
+  cpu: 100
+  memory: 256
+  instances: 2
+  k8s_clusters: ["backend-ch1-prod", "backend-dc2-prod"]
+  service:
+    - name: my-agentic-serviceservice-order-specialist
+      port: 8000
+      tags: ["metrics"]
+
+  env:
+    static:
+      BUGSNAG__RELEASE_STAGE: production
+      APP_HTTP__PORT: 8000
+      APP_HTTP__HOST: 0.0.0.0
+      APP_HTTP__LOG_LEVEL: INFO
+      APP_HTTP__URL: http://my-agentic-serviceservice-order-specialist.query.prod.telnyx.io
+      OPENTELEMETRY__ENABLED: "true"
+      OPENTELEMETRY__HOST: "jaeger-collector.query.consul"
+      OPENTELEMETRY__PORT: 4317
+      OPENTELEMETRY__EXCLUDED_URLS: "metrics,health,info"
+
+    secret:
+      - MY_SECRET_IN_VAULT
+
+alerts:
+  MinimumNumberOfInstances:
+    description: "Minimum number of instances - my-agentic-serviceservice-order-specialist"
+    destination: "opsgenie"
+    channel: ""
+    prometheus_expression: 'absent(count(sum by (consul_datacenter) (consul_health_service_status{service_name="my-agentic-serviceservice-order-specialist",status="passing"}) >= 2) >= 2)'
+    prometheus_for: "2m"
+    resolution_document: "https://app.getguru.com/card/Tpk64n6c/Inventory-MinimumNumberOfInstances"
+  HTTPErrorRate5xxMoreThan2%:
+    description: "HTTP error spikes (HTTP 5XX's per second increases 2% in 1 minute)"
+    destination: "opsgenie"
+    channel: ""
+    prometheus_expression: >-
+      sum(rate(http_request_duration_seconds_count{job="my-agentic-serviceservice-order-specialist", http_status='5XX'}[1m]))
+      /
+      sum(rate(http_request_duration_seconds_count{job="my-agentic-serviceservice-order-specialist"}[1m]))
+      > 0.02
+    prometheus_for: "15s"
+    resolution_document: "https://app.getguru.com/card/TXejoapc/Addressing-Service-HTTP-500-Errors"

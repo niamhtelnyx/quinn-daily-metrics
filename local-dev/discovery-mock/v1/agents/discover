@@ -1,0 +1,18 @@
+{
+  "agents": [
+    {
+      "name": "mock-billing-agent",
+      "description": "Mock billing specialist for testing",
+      "url": "http://mock-agent/a2a",
+      "skills": [
+        {
+          "id": "billing-calculations",
+          "name": "Billing Calculations",
+          "description": "Calculate billing amounts and commitments"
+        }
+      ],
+      "status": "active"
+    }
+  ],
+  "total": 1
+}

@@ -1,0 +1,15 @@
+# PDF Processing Dependencies (install as needed)
+# The script will try multiple methods and use whichever is available
+
+# Option 1: pdfplumber (recommended - good balance of features and reliability)
+pdfplumber>=0.6.0
+
+# Option 2: PyMuPDF (fast, good for complex layouts)
+# PyMuPDF>=1.20.0
+
+# Option 3: pdfminer (fallback option)
+# pdfminer.six>=20220319
+
+# Note: pdftotext (poppler-utils) is tried first but requires system installation:
+# macOS: brew install poppler
+# Ubuntu: sudo apt-get install poppler-utils

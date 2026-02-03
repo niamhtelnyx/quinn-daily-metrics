@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v0.1.28
+_src_path: https://github.com/team-telnyx/python-agentic-service-template.git
+http_port: 8000
+maintainer_email: yourname@telnyx.comniamh.collins@telnyx.com
+maintainer_name: Your NameNiamh Collins
+service_name: my-agentic-serviceservice-order-specialist
+service_version: 0.1.0
+squad_name: ai.platform.squad

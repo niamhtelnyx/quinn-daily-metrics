@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # Mock a2a-discovery service for local development
+  a2a-discovery:
+    image: nginx:alpine
+    ports:
+      - "8500:80"
+    volumes:
+      - ./local-dev/discovery-mock:/usr/share/nginx/html
+    environment:
+      - MODE=local
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Vault dev server for secrets management
+  vault:
+    image: hashicorp/vault:latest
+    ports:
+      - "8200:8200"
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=dev-token
+      - VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+    healthcheck:
+      test: ["CMD", "vault", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Redis for work claim registry
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Our Service Order Specialist
+  service-order-specialist:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=true
+      - AGENT_NAME=service-order-specialist
+      - A2A_DISCOVERY_URL=http://a2a-discovery
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=dev-token
+      - REDIS_URL=redis://redis:6379
+      - TELNYX_AGENT_TOKEN=dev-token
+    depends_on:
+      - a2a-discovery
+      - vault  
+      - redis
+    volumes:
+      - .:/app
+      - ./skills:/app/skills
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Mock Agent for testing A2A communication
+  mock-agent:
+    image: nginx:alpine
+    ports:
+      - "8001:80"
+    volumes:
+      - ./local-dev/mock-agent:/usr/share/nginx/html
+    environment:
+      - AGENT_NAME=mock-billing-agent
+
+volumes:
+  redis-data:
