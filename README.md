@@ -1,6 +1,14 @@
-# Service Order Specialist Agent (A2A-Compliant)
+# 🚀 Service Order Specialist Agent (A2A-Compliant)
 
-A specialized AI agent built on the **Telnyx Agent Architecture** for handling Service Order operations, Salesforce integration, and commitment management. Fully compliant with the **A2A (Agent-to-Agent) Protocol** for seamless integration with the Telnyx agent mesh.
+A specialized AI agent built on the **Telnyx Agent Architecture** for handling Service Order operations, Salesforce integration, and commitment management. **Fully compliant with the A2A (Agent-to-Agent) Protocol** for seamless integration with the Telnyx agent mesh.
+
+## ✅ **Current Status: Phase 1 Complete!**
+
+**A2A Protocol Compliance**: Full implementation with Agent Card, task lifecycle, authentication ✅  
+**Salesforce Integration**: Real sf CLI integration with service order lookup and org ID validation ✅  
+**Production Ready**: Docker, K8s configs, local development stack, comprehensive testing ✅  
+
+**🎯 Ready for deployment when Telnyx infrastructure (a2a-discovery, agent registry) comes online!**
 
 ## 🎯 Purpose
 
@@ -76,44 +84,51 @@ make docker-build
 make docker-run
 ```
 
-### Testing A2A Skills
+## 🧪 **Quick Demo**
+
+### Test the A2A Agent (Local Development)
 
 ```bash
-# Check Agent Card (A2A discovery endpoint)
+# 1. Start the agent
+cd service-order-specialist
+source .venv/bin/activate
+DEBUG=true TELNYX_AGENT_TOKEN=dev-token python a2a_service.py
+
+# 2. Check Agent Card (A2A discovery)
 curl http://localhost:8000/.well-known/agent.json
 
-# Test service order lookup (A2A SendMessage)
+# 3. Test real Salesforce lookup
 curl -X POST http://localhost:8000/a2a/tasks \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer your_telnyx_agent_token" \
+  -H "Authorization: Bearer dev-token" \
   -d '{
     "skill": "salesforce-service-order-lookup",
     "payload": {
-      "customer_name": "ACME Corp",
-      "include_terminated": false,
-      "validate_org_id": true
+      "customer_name": "Call Loop",
+      "org_id": "c4499f9b-6ffd-4b60-9224-5b70ae0b1b04"
     },
-    "requesterAgent": "test-agent",
     "mode": "sync"
   }'
 
-# Test with streaming mode
-curl -X POST http://localhost:8000/a2a/tasks \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer your_telnyx_agent_token" \
-  -d '{
-    "skill": "process-service-order-change", 
-    "payload": {
-      "customer_name": "ACME Corp",
-      "action": "update_dates",
-      "new_start_date": "2026-02-01"
-    },
-    "mode": "streaming"
-  }'
+# 4. Expected Response: Real Salesforce data with org ID validation! ✅
+```
 
-# Check task status
-curl http://localhost:8000/a2a/tasks/{task_id} \
-  -H "Authorization: Bearer your_telnyx_agent_token"
+### What You'll See
+```json
+{
+  "taskId": "uuid-here",
+  "state": "completed",
+  "result": {
+    "lookup_successful": true,
+    "customer": "Call Loop",
+    "service_orders": [/* Real Salesforce SO data */],
+    "org_id_validation": {
+      "validation_passed": true,
+      "provided_org_id": "c4499f9b-6ffd-4b60-9224-5b70ae0b1b04",
+      "actual_org_id": "c4499f9b-6ffd-4b60-9224-5b70ae0b1b04"
+    }
+  }
+}
 ```
 
 ## 📋 Usage Examples
@@ -274,8 +289,19 @@ This agent is part of the Telnyx agent ecosystem. For changes:
 - **A2A Protocol**: Telnyx agent architecture docs
 - **Deployment Guide**: Telnyx agent deployment patterns
 
+## 📅 **Deployment Timeline**
+
+| Phase | Timeline | Status | Description |
+|-------|----------|---------|-------------|
+| **Phase 1: Foundation** | Weeks 1-2 | 🔄 **Waiting for Infrastructure** | Deploy when a2a-discovery, agent registry ready |
+| **Phase 2: Integration** | Weeks 3-4 | ⏳ Ready | Add governance, team quotas, knowledge access |  
+| **Phase 3: Production** | Weeks 5-8 | ⏳ Ready | Self-service provisioning, advanced monitoring |
+| **Phase 4: Innovation** | Ongoing | ⏳ Ready | Multi-agent workflows, customer-facing bots |
+
+**Current Status**: ✅ **Ready for Phase 1 deployment** - waiting for Telnyx infrastructure
+
 ---
 
 **Maintainer**: niamh@telnyx.com  
 **Team**: platform  
-**Status**: Active development
+**Status**: Ready for Phase 1 deployment 🚀
