@@ -178,3 +178,10 @@ pyrightconfig.json
 .vscode/
 *.env
 !example.env
+
+# Local environment files (contain secrets)
+local.env
+docker.env
+
+# Lock files
+uv.lock
