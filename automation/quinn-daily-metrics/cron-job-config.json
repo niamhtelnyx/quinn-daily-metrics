@@ -1,0 +1,19 @@
+{
+  "id": "2edf7d7b-8f68-4443-90ff-57dd65a81fe0",
+  "name": "Quinn Daily Metrics Report",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 9 * * *"
+  },
+  "description": "Daily Quinn bot performance metrics posted to #quinn-daily-metrics at 9:00 AM CST",
+  "sessionTarget": "isolated",
+  "wakeMode": "next-heartbeat",
+  "payload": {
+    "kind": "agentTurn", 
+    "message": "🤖 **QUINN DAILY METRICS REPORT**\n\nGenerate comprehensive Quinn performance report and post to #quinn-daily-metrics.\n\nExecute these 5 metrics using SOQL queries from quinn-daily-report-queries.md:\n\n**1. Sales Handoffs (TODAY):**\nSELECT COUNT() FROM Sales_Handoff__c WHERE Owner_Name__c = 'Quinn Taylor' AND Owner_Email__c = 'quinn@telnyx.com' AND CreatedDate = TODAY\n\n**2. Unique Accounts (TODAY - 3-step):**\n- Get Quinn tasks: SELECT WhoId FROM Task WHERE OwnerId = '005Qk000001pqtdIAA' AND CreatedDate = TODAY AND WhoId != null\n- Extract Contact accounts + Lead companies, deduplicate\n\n**3. Qualification Rate (TODAY):**\nSELECT SDRbot_Perceived_Quality__c, COUNT(Id) FROM Contact WHERE D_T_Quinn_Active_Latest__c = TODAY GROUP BY SDRbot_Perceived_Quality__c\nCalculate: (SQL count / total) * 100\n\n**4. SQL Rate (LAST 7 DAYS):**\n- Quinn opp accounts: SELECT AccountId FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND CreatedDate >= LAST_N_DAYS:7\n- SQL contacts matched: SELECT COUNT(Id) FROM Contact WHERE SDRbot_Perceived_Quality__c = 'SQL' AND D_T_Quinn_Active_Latest__c >= LAST_N_DAYS:7 AND AccountId IN (accounts)\n- Total SQL contacts: SELECT COUNT(Id) FROM Contact WHERE SDRbot_Perceived_Quality__c = 'SQL' AND D_T_Quinn_Active_Latest__c >= LAST_N_DAYS:7\nCalculate: (matched / total) * 100\n\n**5. SQO Rate (LAST 7 DAYS):**\nSELECT StageName, COUNT(Id) FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND SDR_First_Zoom_Meeting__c >= LAST_N_DAYS:7 GROUP BY StageName\nCalculate: (Stage 1+ count / total) * 100\n\n**Format and post to Slack with PROPER FORMATTING:**\nUse curl to post to channel C0AEDQ1K508 with single asterisks for bold (*text*) and underscores for italic (_text_):\n\ncurl -s -X POST \"https://slack.com/api/chat.postMessage\" -H \"Authorization: Bearer $SLACK_BOT_TOKEN\" -H \"Content-Type: application/json\" -d '{\"channel\": \"C0AEDQ1K508\", \"text\": \"📊 *Quinn Daily Metrics - [Date]*\\n\\n• *Sales Handoffs:* [count] (24h)\\n• *Unique Accounts Touched:* [count] (24h)\\n• *Qualification Rate:* [%] SQL ([sql]/[total]) (24h)\\n• *SQL Rate:* [%] ([matched]/[total]) (7d)\\n• *SQO Rate:* [%] ([stage1+]/[total]) (7d)\\n\\n💡 *Key Insights:* [Brief analysis of trends/notable changes]\\n\\n_Automated daily report • Data timeframes: 24h for activity, 7d for conversions_\"}'\n\nStore daily results in memory/quinn-metrics-[date].json for trending analysis."
+  },
+  "slackChannel": {
+    "name": "#quinn-daily-metrics",
+    "id": "C0AEDQ1K508"
+  }
+}
