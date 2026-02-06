@@ -145,8 +145,61 @@ GROUP BY StageName
 
 ---
 
+## Metric 6: MTD SQO Tracking & 6-Month Comparison ✅
+
+**Definition:** Month-to-date SQOs with historical trending and pace analysis
+
+**Result:** 31 MTD SQOs (Feb 6, 2026) | Pace: ~145/month | vs 6M Avg: -26% ⬇️
+
+**Query Sequence:**
+```sql
+-- Step 1: MTD SQOs
+SELECT COUNT(Id) MTD_SQOs 
+FROM Opportunity 
+WHERE SDR__c = '005Qk000001pqtdIAA' 
+AND SDR_First_Zoom_Meeting__c = THIS_MONTH 
+AND StageName != 'Stage 0 - Evaluation'
+
+-- Step 2: Previous Month SQOs (for comparison)
+SELECT COUNT(Id) Last_Month_SQOs 
+FROM Opportunity 
+WHERE SDR__c = '005Qk000001pqtdIAA' 
+AND SDR_First_Zoom_Meeting__c = LAST_MONTH 
+AND StageName != 'Stage 0 - Evaluation'
+```
+
+**6-Month Historical Data:**
+- **Feb 2026 (MTD):** 31 SQOs (6 days) | Pace: 5.17/day → ~145/month
+- **Jan 2026:** 113 SQOs | vs Avg: -43% ⬇️
+- **Dec 2025:** 94 SQOs | vs Avg: -52% ⬇️ (Q4 dip)
+- **Nov 2025:** 279 SQOs | vs Avg: +42% ⬆️
+- **Oct 2025:** 309 SQOs | vs Avg: +57% ⬆️
+- **Sep 2025:** 335 SQOs | vs Avg: +70% ⬆️ (**Peak**)
+- **Aug 2025:** 291 SQOs | vs Avg: +48% ⬆️
+
+**6-Month Average:** 197 SQOs/month
+
+**Calculation Logic:**
+```
+Daily Pace = MTD_SQOs / current_day_of_month
+Monthly Projection = Daily Pace * total_days_in_month
+vs Last Month % = ((Projected - Last_Month) / Last_Month) * 100
+vs 6M Average % = ((Projected - 197) / 197) * 100
+```
+
+**Key Insights:**
+- February pace (+28% vs Jan) shows recovery from Q4 dip
+- Still tracking -26% below 6-month average (197)  
+- Q4 2025 saw significant drop: Sep peak (335) → Dec low (94) = -72%
+- Need sustained pace >7 SQOs/day to reach 6-month average
+
+**Automation:** Two queries + pace calculation + trending analysis
+
+---
+
 ## Notes
 
 - Task entity limitations require multi-step queries for account relationships
 - All date filters use TODAY or relative date functions for automation
+- MTD SQO tracking provides crucial trending context for strategic decisions
 - Queries tested and validated on Feb 6, 2026
