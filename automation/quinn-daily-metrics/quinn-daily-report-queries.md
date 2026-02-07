@@ -113,26 +113,35 @@ AND D_T_Quinn_Active_Latest__c >= LAST_N_DAYS:7
 
 ## Metric 5: SQO Rate ✅
 
-**Definition:** % of opportunities that had AE intro calls in last 7 days that have since been SQO'd (moved to Stage 1+)
+**Definition:** % of SQL contacts Quinn spoke to (last 7d) whose accounts have Quinn opportunities that got AE intro calls (moved to Stage 1+)
 
-**Result:** 13.16% (5 out of 38 opportunities)
-
-**Query:**
+**Query Sequence:**
 ```sql
-SELECT StageName, COUNT(Id) 
+-- Step 1: Get Quinn SQLs from last 7 days
+SELECT Id, AccountId 
+FROM Contact 
+WHERE D_T_Quinn_Active_Latest__c >= LAST_N_DAYS:7 
+AND SDRbot_Perceived_Quality__c = 'SQL'
+
+-- Step 2: Get Quinn opportunities with AE intro calls from those accounts (last 7 days)
+SELECT DISTINCT AccountId, StageName
 FROM Opportunity 
 WHERE SDR__c = '005Qk000001pqtdIAA'
 AND SDR_First_Zoom_Meeting__c >= LAST_N_DAYS:7
-GROUP BY StageName
+AND StageName != 'Stage 0 - Evaluation'
 ```
+
+**Result:** 13.16% (5 out of 38 opportunities)
 
 **Stage Breakdown:**
 - Stage 1+ (SQO): 3 Discovery + 2 Proposal = 5 total
-- Stage 0 (AE Qualification): 16
+- Stage 0 (AE Qualification): 16  
 - Lost Business: 17
 - Total with intro calls: 38
 
-**Automation:** Single query + stage filtering (Stage >= 1)
+**Calculation:** (SQO Count / SQL Count) × 100
+
+**Automation:** Two-step query + stage filtering (Stage >= 1)
 
 ---
 
