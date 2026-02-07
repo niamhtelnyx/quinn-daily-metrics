@@ -111,37 +111,32 @@ AND D_T_Quinn_Active_Latest__c >= LAST_N_DAYS:7
 
 ---
 
-## Metric 5: SQO Rate ✅
+## Metric 5: SQO Rate ✅ (CORRECTED)
 
-**Definition:** % of SQL contacts Quinn spoke to (last 7d) whose accounts have Quinn opportunities that got AE intro calls (moved to Stage 1+)
+**Definition:** % of SQL contacts Quinn spoke to (last 7d) whose accounts have Quinn opportunities that reached Stage 1 D&T
+
+**CORRECTED:** Uses Opportunity.Velocity_D_T_Stage1__c timestamp (actual Stage 1 progression)
 
 **Query Sequence:**
 ```sql
 -- Step 1: Get Quinn SQLs from last 7 days
-SELECT Id, AccountId 
+SELECT COUNT(Id) SQL_Count
 FROM Contact 
 WHERE D_T_Quinn_Active_Latest__c >= LAST_N_DAYS:7 
 AND SDRbot_Perceived_Quality__c = 'SQL'
 
--- Step 2: Get Quinn opportunities with AE intro calls from those accounts (last 7 days)
-SELECT DISTINCT AccountId, StageName
+-- Step 2: Get Quinn opportunities that reached Stage 1 D&T (last 7 days)
+SELECT COUNT(Id) SQO_Count
 FROM Opportunity 
 WHERE SDR__c = '005Qk000001pqtdIAA'
-AND SDR_First_Zoom_Meeting__c >= LAST_N_DAYS:7
-AND StageName != 'Stage 0 - Evaluation'
+AND Velocity_D_T_Stage1__c >= LAST_N_DAYS:7
 ```
 
-**Result:** 13.16% (5 out of 38 opportunities)
-
-**Stage Breakdown:**
-- Stage 1+ (SQO): 3 Discovery + 2 Proposal = 5 total
-- Stage 0 (AE Qualification): 16  
-- Lost Business: 17
-- Total with intro calls: 38
+**CORRECTED Result:** 27.27% (12 SQOs out of 44 SQLs)
 
 **Calculation:** (SQO Count / SQL Count) × 100
 
-**Automation:** Two-step query + stage filtering (Stage >= 1)
+**Automation:** Two simple aggregate queries
 
 ---
 
@@ -154,11 +149,11 @@ AND StageName != 'Stage 0 - Evaluation'
 
 ---
 
-## Metric 6: MTD SQO Tracking & 6-Month Comparison ✅
+## Metric 6: MTD SQO Tracking & 6-Month Comparison ✅ (CORRECTED)
 
 **Definition:** Month-to-date SQOs with historical trending and pace analysis
 
-**Result:** 31 MTD SQOs (Feb 6, 2026) | Pace: ~145/month | vs 6M Avg: -26% ⬇️
+**CORRECTED:** Uses Opportunity.Velocity_D_T_Stage1__c timestamp (actual Stage 1 progression)
 
 **Query Sequence:**
 ```sql
@@ -166,16 +161,16 @@ AND StageName != 'Stage 0 - Evaluation'
 SELECT COUNT(Id) MTD_SQOs 
 FROM Opportunity 
 WHERE SDR__c = '005Qk000001pqtdIAA' 
-AND SDR_First_Zoom_Meeting__c = THIS_MONTH 
-AND StageName != 'Stage 0 - Evaluation'
+AND Velocity_D_T_Stage1__c = THIS_MONTH
 
 -- Step 2: Previous Month SQOs (for comparison)
 SELECT COUNT(Id) Last_Month_SQOs 
 FROM Opportunity 
 WHERE SDR__c = '005Qk000001pqtdIAA' 
-AND SDR_First_Zoom_Meeting__c = LAST_MONTH 
-AND StageName != 'Stage 0 - Evaluation'
+AND Velocity_D_T_Stage1__c = LAST_MONTH
 ```
+
+**Note:** Requires recalculation with corrected Velocity_D_T_Stage1__c field
 
 **6-Month Historical Data:**
 - **Feb 2026 (MTD):** 31 SQOs (6 days) | Pace: 5.17/day → ~145/month
