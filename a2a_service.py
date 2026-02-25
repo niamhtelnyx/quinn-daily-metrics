@@ -834,7 +834,8 @@ async def handle_pdf_extraction(payload: Dict[str, Any]) -> Dict[str, Any]:
         if not os.path.exists(script_path):
             return {
                 "extraction_successful": False,
-                "error": f"Parser script not found: {script_path}",
+                "error": f"PDF_PARSER_NOT_AVAILABLE: Parser script not found at {script_path}",
+                "message": "PDF parsing is not available in this environment",
                 "pdf_source": pdf_path,
                 "timestamp": datetime.now(timezone.utc).isoformat()
             }
@@ -944,71 +945,106 @@ async def handle_salesforce_lookup(payload: Dict[str, Any]) -> Dict[str, Any]:
 async def handle_create_service_order(payload: Dict[str, Any]) -> Dict[str, Any]:
     """Handle service order creation using the create-service-order skill"""
     
-    # Import the create-service-order skill
-    import sys
-    skill_path = os.path.join(os.path.dirname(__file__), "skills")
-    if skill_path not in sys.path:
-        sys.path.append(skill_path)
-    
-    from create_service_order import handle_create_service_order_request
-    
-    # Use the skill's A2A interface
-    result = handle_create_service_order_request(payload)
-    
-    return result
+    try:
+        # Import the create-service-order skill
+        import sys
+        skill_path = os.path.join(os.path.dirname(__file__), "skills")
+        if skill_path not in sys.path:
+            sys.path.append(skill_path)
+        
+        from create_service_order import handle_create_service_order_request
+        
+        # Use the skill's A2A interface
+        result = handle_create_service_order_request(payload)
+        return result
+        
+    except ImportError as e:
+        return {
+            "success": False,
+            "error": f"SKILL_NOT_AVAILABLE: create_service_order - {str(e)}",
+            "message": "The create-service-order skill is not available in this environment",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
 
 async def handle_resolve_mission_control_account(payload: Dict[str, Any]) -> Dict[str, Any]:
     """Handle Mission Control Account resolution using the resolve-mission-control-account skill"""
     
-    # Import the resolve-mission-control-account skill
-    import sys
-    skill_path = os.path.join(os.path.dirname(__file__), "skills")
-    if skill_path not in sys.path:
-        sys.path.append(skill_path)
-    
-    from resolve_mission_control_account import handle_resolve_mission_control_account_request
-    
-    # Use the skill's A2A interface
-    result = handle_resolve_mission_control_account_request(payload)
-    
-    return result
+    try:
+        # Import the resolve-mission-control-account skill
+        import sys
+        skill_path = os.path.join(os.path.dirname(__file__), "skills")
+        if skill_path not in sys.path:
+            sys.path.append(skill_path)
+        
+        from resolve_mission_control_account import handle_resolve_mission_control_account_request
+        
+        # Use the skill's A2A interface
+        result = handle_resolve_mission_control_account_request(payload)
+        return result
+        
+    except ImportError as e:
+        return {
+            "success": False,
+            "error": f"SKILL_NOT_AVAILABLE: resolve_mission_control_account - {str(e)}",
+            "message": "The resolve-mission-control-account skill is not available in this environment",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
 
 async def handle_download_service_order_document(payload: Dict[str, Any]) -> Dict[str, Any]:
     """Handle service order document download using the download-service-order-document skill"""
     
-    # Import the download-service-order-document skill using importlib (due to hyphens in filename)
-    import importlib.util
-    skill_file_path = os.path.join(os.path.dirname(__file__), "skills", "download-service-order-document.py")
-    
-    spec = importlib.util.spec_from_file_location("download_service_order_document", skill_file_path)
-    download_module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(download_module)
-    
-    # Use the skill's A2A interface
-    result = download_module.handle_download_service_order_document_request(payload)
-    
-    return result
+    try:
+        # Import the download-service-order-document skill using importlib (due to hyphens in filename)
+        import importlib.util
+        skill_file_path = os.path.join(os.path.dirname(__file__), "skills", "download-service-order-document.py")
+        
+        if not os.path.exists(skill_file_path):
+            raise ImportError(f"Skill file not found: {skill_file_path}")
+        
+        spec = importlib.util.spec_from_file_location("download_service_order_document", skill_file_path)
+        download_module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(download_module)
+        
+        # Use the skill's A2A interface
+        result = download_module.handle_download_service_order_document_request(payload)
+        return result
+        
+    except (ImportError, FileNotFoundError, AttributeError) as e:
+        return {
+            "success": False,
+            "error": f"SKILL_NOT_AVAILABLE: download_service_order_document - {str(e)}",
+            "message": "The download-service-order-document skill is not available in this environment",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
 
 async def handle_commitment_database_query(payload: Dict[str, Any]) -> Dict[str, Any]:
     """Handle commitment database queries using the commitment-database-query skill"""
     
-    # Import the commitment database query skill with forced reload
-    import sys
-    import importlib
-    skill_path = os.path.join(os.path.dirname(__file__), "skills")
-    if skill_path not in sys.path:
-        sys.path.append(skill_path)
-    
-    # Force reload to get latest changes
-    if 'commitment_database_query' in sys.modules:
-        importlib.reload(sys.modules['commitment_database_query'])
-    
-    from commitment_database_query import handle_commitment_database_query_request
-    
-    # Use the skill's A2A interface
-    result = handle_commitment_database_query_request(payload)
-    
-    return result
+    try:
+        # Import the commitment database query skill with forced reload
+        import sys
+        import importlib
+        skill_path = os.path.join(os.path.dirname(__file__), "skills")
+        if skill_path not in sys.path:
+            sys.path.append(skill_path)
+        
+        # Force reload to get latest changes
+        if 'commitment_database_query' in sys.modules:
+            importlib.reload(sys.modules['commitment_database_query'])
+        
+        from commitment_database_query import handle_commitment_database_query_request
+        
+        # Use the skill's A2A interface
+        result = handle_commitment_database_query_request(payload)
+        return result
+        
+    except ImportError as e:
+        return {
+            "success": False,
+            "error": f"SKILL_NOT_AVAILABLE: commitment_database_query - {str(e)}",
+            "message": "The commitment-database-query skill is not available in this environment",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
 
 # Health and discovery endpoints
 
