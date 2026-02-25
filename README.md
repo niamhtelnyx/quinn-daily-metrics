@@ -12,37 +12,58 @@ A specialized AI agent built on the **Telnyx Agent Architecture** for handling S
 
 ## 🎯 Purpose
 
-This agent was created to:
-- **Isolate service order work** in dedicated sessions with clean context
-- **Provide direct access** to ops teams via Slack app (no routing through general assistants)
-- **Enable A2A discovery** so other agents can leverage service order expertise
-- **Apply specialized safety checks** for financial/billing operations
-- **Streamline service order workflows** with dedicated tools and validation
+This agent ensures **signed contracts are accurately reflected in both the Commitment Database and Salesforce** according to user specifications, with mandatory confirmation checkpoints throughout the process.
 
-## 🚀 Capabilities
+**Core Mission:**
+- **Contract-to-System Accuracy** - Ensure signed service orders match exactly in both systems
+- **Validation Checkpoints** - Require explicit user confirmation before any financial operations  
+- **Overlap Detection** - Identify and resolve conflicts with existing commitments
+- **End-to-End Verification** - Validate webhook delivery and database consistency
+- **Audit Trail Logging** - Track every step for compliance and debugging
 
-### Core Skills (A2A Discoverable)
+## 🚀 Complete Service Order Logging Workflow
 
-1. **Process Service Order Changes**
-   - Customer commitment modifications
-   - Contract date shifts  
-   - Billing adjustments
-   - Full validation and safety checks
+### Full Contract Processing Pipeline (5 Phases + Checkpoints)
 
-2. **Validate Commitment Terms**
-   - Compliance checking
-   - Overlap detection
-   - Contract term analysis
+**PHASE 1: Discovery & Validation**
+- **Customer Lookup** - Find existing service orders and customer data
+- **Mission Control Account Resolution** - Map to organization IDs  
+- **🛡️ CHECKPOINT**: Customer/Org ID validation before proceeding
 
-3. **Extract Service Order from PDF**
-   - Parse service order documents
-   - Extract structured contract data
-   - Return JSON for further processing
+**PHASE 2: Contract Analysis**  
+- **PDF Extraction** - Parse signed contract into structured data
+- **Commitment Type Detection** - Static vs Ramped commitment analysis
+- **Overlap Detection** - Check conflicts with existing commitments
+- **🛡️ CHECKPOINT**: Overlap resolution strategy confirmation
 
-4. **Salesforce Service Order Lookup**
-   - Query existing service orders
-   - Status analysis and reporting
-   - Organization ID validation
+**PHASE 3: Service Order Creation**
+- **Field Mapping** - Map contract terms to Salesforce fields
+- **Validation Rules** - Apply business logic and picklist validation
+- **🛡️ CHECKPOINT**: Service Order creation confirmation  
+- **Record Creation** - Create Service_Order__c and Service_Order_Details__c records
+
+**PHASE 4: Approval & Activation**
+- **Stage Setting** - Mark contract as "Signed"
+- **🛡️ CRITICAL CHECKPOINT**: Rev Ops approval confirmation (NEVER auto-approve)
+- **Webhook Trigger** - Set Rev_Ops_Approved__c = true to fire MMC_webhook flow
+- **Response Verification** - Check Chatter FeedItems for webhook success
+
+**PHASE 5: End-to-End Validation**
+- **Commitment Database Query** - Verify commitment created successfully  
+- **Cross-System Validation** - Ensure Salesforce and CM data consistency
+- **🛡️ CHECKPOINT**: Final audit trail approval
+- **Summary Report** - Complete processing summary with IDs and status
+
+### Core Skills (A2A Discoverable) - 8 Skills
+
+1. **salesforce-service-order-lookup** - Customer discovery and existing SO analysis
+2. **extract-service-order-pdf** - Contract parsing into structured data  
+3. **validate-commitment-terms** - Overlap detection and compliance checking
+4. **resolve-mission-control-account** - Organization ID mapping and validation
+5. **create-service-order** - Salesforce record creation with field mapping
+6. **process-service-order-change** - Approval workflow and webhook triggering
+7. **commitment-database-query** - End-to-end validation with auto org ID resolution
+8. **download-service-order-document** - Source document retrieval and verification
 
 ### Specialized Knowledge
 
@@ -131,59 +152,145 @@ curl -X POST http://localhost:8000/a2a/tasks \
 }
 ```
 
+### ✨ **NEW: Auto Organization ID Resolution**
+
+Query commitments using **either** Salesforce Mission Control Account IDs **or** UUID organization IDs:
+
+```bash
+# Use Salesforce Mission Control Account ID (auto-resolves to UUID)
+curl -X POST http://localhost:8000/a2a/tasks \
+  -H "Authorization: Bearer dev-token" \
+  -d '{
+    "skill": "commitment-database-query",
+    "payload": {
+      "organization_id": "a0TQk00000TcP5CMAV",
+      "include_cancelled": true,
+      "format": "summary"
+    },
+    "mode": "sync"
+  }'
+
+# Use UUID organization ID directly  
+curl -X POST http://localhost:8000/a2a/tasks \
+  -H "Authorization: Bearer dev-token" \
+  -d '{
+    "skill": "commitment-database-query", 
+    "payload": {
+      "organization_id": "b156dd5f-9fd9-4829-a4e6-e8294cbc2ca8",
+      "include_cancelled": true,
+      "format": "summary"
+    },
+    "mode": "sync"
+  }'
+```
+
+**Response includes auto-resolution details:**
+```json
+{
+  "result": {
+    "success": true,
+    "organization_id": "b156dd5f-9fd9-4829-a4e6-e8294cbc2ca8",
+    "total_commitments": 3,
+    "active_count": 1,
+    "cancelled_count": 2,
+    "org_id_resolution": {
+      "auto_resolved": true,
+      "original_salesforce_id": "a0TQk00000TcP5CMAV", 
+      "resolved_uuid_org_id": "b156dd5f-9fd9-4829-a4e6-e8294cbc2ca8",
+      "mission_control_account": {
+        "Id": "a0TQk00000TcP5CMAV",
+        "Name": "MC-538508",
+        "Organization_ID__c": "b156dd5f-9fd9-4829-a4e6-e8294cbc2ca8"
+      }
+    }
+  }
+}
+```
+
 ## 📋 Usage Examples
 
-### Direct Slack Usage (Ops Teams)
+### Complete Service Order Processing
 
 ```
-# Look up a customer's service orders
-@service-order-specialist lookup Qomon service orders
+# Full contract processing (E2E workflow)
+@service-order-specialist process contract for:
+Customer: epicleap.ai
+Start Date: 2026-02-15  
+Sales Rep: alaza
+Commitment: $2500/month Static
 
-# Process a commitment change  
-@service-order-specialist update Acme Corp start date to 2026-02-01
+# Expected response includes ALL checkpoints:
+✅ Customer lookup and validation
+🛡️ CHECKPOINT: Confirm customer/org ID match
+✅ Overlap analysis (found 2 existing commitments)  
+🛡️ CHECKPOINT: How to handle overlapping commitments?
+✅ Contract extraction and field mapping
+🛡️ CHECKPOINT: Confirm Service Order creation?
+✅ Service Order created (ID: a1AQk000008XYZ)
+🛡️ CRITICAL CHECKPOINT: Approve for Rev Ops? (REQUIRES EXPLICIT YES)
+✅ Webhook fired (201 Created)
+✅ Commitment database validation
+🛡️ CHECKPOINT: Final audit trail acceptable?
+✅ COMPLETE - Summary report attached
+```
 
-# Validate proposed terms
-@service-order-specialist validate org c4499f9b-6ffd-4b60-9224-5b70ae0b1b04 commitment changes
+### Individual Operations (For Debugging)
 
-# Extract data from uploaded PDF
+```
+# Look up customer's existing commitments
+@service-order-specialist lookup epicleap.ai service orders
+
+# Extract contract data only  
 @service-order-specialist extract this service order PDF
+
+# Validate overlap scenarios
+@service-order-specialist check overlaps for epicleap.ai new $2500 commitment
+
+# Query commitment database directly
+@service-order-specialist query commitments for a0TQk00000TcP5CMAV
 ```
 
 ### A2A Integration (Other Agents)
 
 ```python
-import httpx
-from telnyx_agent_sdk import A2AClient
-
-# Discover the service order specialist via a2a-discovery
-discovery_response = httpx.get(
-    "https://a2a-discovery.internal.telnyx.com/v1/agents/discover",
-    params={"skill": "process-service-order-change"}
-)
-agents = discovery_response.json()["agents"]
-specialist = agents[0]  # Get the first available specialist
-
-# Use A2A client to send message 
-a2a_client = A2AClient(auth_token="your_telnyx_agent_token")
+# Complete contract processing via A2A
 response = await a2a_client.send_message(
-    agent_url=specialist["url"],
-    skill="process-service-order-change",
+    agent_url="http://service-order-specialist:8000",
+    skill="process-complete-service-order",
     payload={
-        "customer_name": "ACME Corp", 
-        "org_id": "c4499f9b-6ffd-4b60-9224-5b70ae0b1b04",
-        "action": "update_dates",
-        "new_start_date": "2026-02-01",
-        "validation_required": True,
-        "reason": "Customer requested date change"
+        "customer_name": "epicleap.ai",
+        "contract_data": {
+            "start_date": "2026-02-15",
+            "commitment_amount": 2500,
+            "sales_rep": "alaza", 
+            "commitment_type": "Static"
+        },
+        "validation_checkpoints": True,  # Require confirmation at each phase
+        "explicit_approval_required": True  # Never auto-approve
     },
-    requester_agent="my-agent-id"
+    mode="interactive"  # Enables checkpoint confirmations
 )
 
-# Handle A2A response
-if response.state == "completed":
-    print(f"Success: {response.result}")
-elif response.state == "failed":
-    print(f"Error: {response.error}")
+# Expected response includes checkpoint prompts:
+{
+  "state": "awaiting_confirmation",
+  "checkpoint": "customer_validation", 
+  "message": "Found epicleap.ai with 2 existing commitments. Proceed?",
+  "data": {
+    "existing_commitments": [...],
+    "overlap_analysis": {...}
+  }
+}
+
+# Individual skills for specific operations
+skills = [
+    "salesforce-service-order-lookup",
+    "extract-service-order-pdf", 
+    "validate-commitment-terms",
+    "create-service-order",
+    "process-service-order-change",
+    "commitment-database-query"
+]
 ```
 
 ### From Ninibot (Main Agent)
@@ -204,13 +311,21 @@ specialist_response = a2a_send(
 
 ## 🔒 Security & Safety
 
-### Built-in Safeguards
+### Built-in Safeguards & Mandatory Checkpoints
 
-- **Customer/Org ID validation** - Always verify customer matches org ID
-- **Overlap detection** - Check for conflicting commitments  
-- **Rev Ops approval workflow** - Never bypass approval requirements
-- **Webhook validation** - Verify all Commitment Manager responses
-- **Permission scoping** - Least privilege access to resources
+**🛡️ VALIDATION CHECKPOINTS** (Cannot be bypassed):
+- **Customer/Org ID Validation** - Always verify customer matches org ID before any operations
+- **Overlap Confirmation** - Require explicit approval for conflicting commitment scenarios
+- **Service Order Creation** - Present complete field mapping for confirmation before creating records
+- **🚨 CRITICAL: Rev Ops Approval** - **NEVER EVER** set Rev_Ops_Approved__c=true without explicit human "YES"
+- **End-to-End Verification** - Validate webhook success and database consistency before completing
+
+**FINANCIAL OPERATION CONTROLS**:
+- **No Auto-Approval** - All financial operations require explicit human confirmation
+- **Webhook Verification** - Check Chatter FeedItems for 201/204 responses after every approval/termination  
+- **Cross-System Validation** - Verify Salesforce and Commitment Manager data match exactly
+- **Audit Trail Logging** - Every step logged with timestamps, user confirmations, and system responses
+- **Rollback Capability** - Can terminate commitments if validation fails post-approval
 
 ### Required Permissions
 
@@ -299,6 +414,24 @@ This agent is part of the Telnyx agent ecosystem. For changes:
 | **Phase 4: Innovation** | Ongoing | ⏳ Ready | Multi-agent workflows, customer-facing bots |
 
 **Current Status**: ✅ **Ready for Phase 1 deployment** - waiting for Telnyx infrastructure
+
+## 📈 **Recent Updates**
+
+### v1.0.1 - Auto Organization ID Resolution (2026-02-25) ✨
+- **NEW**: `commitment-database-query` skill with auto org ID resolution
+- **Auto-detects** Salesforce Mission Control Account IDs (`a0TQk00000...`)
+- **Auto-resolves** to UUID organization IDs for commitment queries
+- **Backwards compatible** with existing UUID organization ID usage
+- **Enhanced transparency** with resolution details in responses
+- **Zero manual lookups** needed for Salesforce → Commitment Manager integration
+
+### v1.0.0 - Foundation Release (2026-02-24)
+- Full A2A Protocol compliance
+- 8 core skills for service order management
+- Safety blocks for financial operations
+- Salesforce integration with real sf CLI
+- Local development stack ready
+- Production deployment configs
 
 ---
 
