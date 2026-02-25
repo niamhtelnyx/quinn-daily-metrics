@@ -502,12 +502,19 @@ async def handle_service_order_change(payload: Dict[str, Any]) -> Dict[str, Any]
         service_orders = lookup_result.get('service_orders', [])
         
         # Find the specific signed service order 
-        # If service_order_name is provided, use that; otherwise find any signed SO
+        # Prefer service_order_id, fallback to service_order_name, then any signed SO
+        service_order_id = payload.get("service_order_id")
         service_order_name = payload.get("service_order_name")
         signed_so = None
         
-        if service_order_name:
-            # Look for specific service order by name
+        if service_order_id:
+            # Prefer ID-based targeting (unique and reliable)
+            for so in service_orders:
+                if so.get('Stage__c') == 'Signed' and so.get('Id') == service_order_id:
+                    signed_so = so
+                    break
+        elif service_order_name:
+            # Fallback to name-based targeting
             for so in service_orders:
                 if so.get('Stage__c') == 'Signed' and so.get('Name') == service_order_name:
                     signed_so = so
@@ -683,25 +690,32 @@ async def handle_service_order_change(payload: Dict[str, Any]) -> Dict[str, Any]
         service_orders = lookup_result.get('service_orders', [])
         
         # Find the specific service order to terminate
+        service_order_id = payload.get("service_order_id")
         service_order_name = payload.get("service_order_name")
         target_so = None
         
-        if service_order_name:
-            # Look for specific service order by name
+        if service_order_id:
+            # Prefer ID-based targeting (unique and reliable)
+            for so in service_orders:
+                if so.get('Id') == service_order_id:
+                    target_so = so
+                    break
+        elif service_order_name:
+            # Fallback to name-based targeting
             for so in service_orders:
                 if so.get('Name') == service_order_name:
                     target_so = so
                     break
         else:
-            # If no name specified, this is ambiguous with multiple SOs
+            # If neither ID nor name specified, this is ambiguous with multiple SOs
             if len(service_orders) > 1:
                 return {
                     "success": False,
                     "error": "AMBIGUOUS_TERMINATION",
                     "action": action,
                     "customer": customer_name,
-                    "message": f"Found {len(service_orders)} service orders for {customer_name}. Please specify 'service_order_name' to terminate the correct one.",
-                    "service_orders": [so.get('Name') for so in service_orders],
+                    "message": f"Found {len(service_orders)} service orders for {customer_name}. Please specify 'service_order_id' (preferred) or 'service_order_name' to terminate the correct one.",
+                    "service_orders": [{"id": so.get('Id'), "name": so.get('Name')} for so in service_orders],
                     "timestamp": datetime.now(timezone.utc).isoformat()
                 }
             target_so = service_orders[0] if service_orders else None
