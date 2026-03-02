@@ -4,8 +4,8 @@ Enhanced Call Processor with Salesforce Event Integration
 Complete E2E pipeline: Fellow → Salesforce Event Lookup → OpenAI Analysis → Salesforce Event Update → Slack Intelligence
 """
 
-from salesforce_event_integration import SalesforceEventIntegration
-from salesforce_event_updater import SalesforceEventUpdater
+from fixed_salesforce_oauth2_integration import FixedSalesforceEventIntegration
+from oauth2_salesforce_event_updater import OAuth2SalesforceEventUpdater
 from refined_message_format import generate_refined_call_alert
 import sqlite3
 import json
@@ -15,8 +15,8 @@ class EnhancedCallProcessor:
     """Enhanced call processor with Salesforce event integration and Event updating"""
     
     def __init__(self):
-        self.sf_integration = SalesforceEventIntegration()
-        self.sf_updater = SalesforceEventUpdater()
+        self.sf_integration = FixedSalesforceEventIntegration()
+        self.sf_updater = OAuth2SalesforceEventUpdater()
     
     def process_call_with_salesforce_lookup(self, call_id: int) -> dict:
         """Process a single call with full Salesforce event lookup"""
@@ -60,11 +60,8 @@ class EnhancedCallProcessor:
         if sf_event and sf_event.get('event_id'):
             print("📝 Updating Salesforce Event with Call Intelligence...")
             try:
-                call_intelligence_summary = self.sf_updater.generate_call_intelligence_summary(
-                    analysis_data, call_data
-                )
-                sf_update_result = self.sf_updater.update_event_description(
-                    sf_event['event_id'], call_intelligence_summary
+                sf_update_result = self.sf_updater.update_event_with_intelligence(
+                    sf_event['event_id'], analysis_data, call_data
                 )
                 
                 if sf_update_result['success']:
