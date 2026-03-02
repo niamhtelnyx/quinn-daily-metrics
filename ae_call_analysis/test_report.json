@@ -1,0 +1,215 @@
+{
+  "test_date": "2026-02-27T09:18:25.897757",
+  "total_tests": 10,
+  "successful": 10,
+  "failed": 0,
+  "total_runtime_seconds": 128.43064403533936,
+  "avg_processing_time": 13.263125371932983,
+  "total_tokens": 82211,
+  "estimated_cost_usd": 0.2851475,
+  "results": [
+    {
+      "fellow_id": "QdZdMHWoec",
+      "prospect_name": "Ben Lewell",
+      "success": true,
+      "processing_time": 12.219043970108032,
+      "input_tokens": 8376,
+      "output_tokens": 1057,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "moving_forward",
+      "quinn_quality": 7,
+      "products_mentioned": [],
+      "error_message": "",
+      "call_id": 1,
+      "analysis_id": 3
+    },
+    {
+      "fellow_id": "Ji6avxvN1b",
+      "prospect_name": "Hammoudeh Alamri",
+      "success": true,
+      "processing_time": 7.762943983078003,
+      "input_tokens": 4920,
+      "output_tokens": 964,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "technical_validation",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "virtual numbers",
+        "eSIM",
+        "Verify API",
+        "SIP trunking"
+      ],
+      "error_message": "",
+      "call_id": 4,
+      "analysis_id": 36
+    },
+    {
+      "fellow_id": "ZjoXxiyrXc",
+      "prospect_name": "Devon Johnson",
+      "success": true,
+      "processing_time": 13.815984010696411,
+      "input_tokens": 8823,
+      "output_tokens": 1008,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "technical_validation",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "programmable voice"
+      ],
+      "error_message": "",
+      "call_id": 5,
+      "analysis_id": 37
+    },
+    {
+      "fellow_id": "24alKeNZ5I",
+      "prospect_name": "Rowena Kee",
+      "success": true,
+      "processing_time": 24.413411140441895,
+      "input_tokens": 8455,
+      "output_tokens": 1057,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "technical_validation",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "ESIM",
+        "Voice AI",
+        "Promotional SMS"
+      ],
+      "error_message": "",
+      "call_id": 6,
+      "analysis_id": 41
+    },
+    {
+      "fellow_id": "6tYPbQKHGx",
+      "prospect_name": "Neha Patel",
+      "success": true,
+      "processing_time": 8.694347858428955,
+      "input_tokens": 8194,
+      "output_tokens": 1204,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "moving_forward",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "voice",
+        "messaging",
+        "numbers",
+        "ESIM"
+      ],
+      "error_message": "",
+      "call_id": 7,
+      "analysis_id": 42
+    },
+    {
+      "fellow_id": "3QNlH8vFgs",
+      "prospect_name": "Zack M",
+      "success": true,
+      "processing_time": 7.286933898925781,
+      "input_tokens": 7106,
+      "output_tokens": 1074,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "moving_forward",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "voice",
+        "numbers"
+      ],
+      "error_message": "",
+      "call_id": 8,
+      "analysis_id": 44
+    },
+    {
+      "fellow_id": "Zj0lRiyrXc",
+      "prospect_name": "Olivier MOUILLESEAUX",
+      "success": true,
+      "processing_time": 22.81442379951477,
+      "input_tokens": 10236,
+      "output_tokens": 1038,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "moving_forward",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "numbers",
+        "connections"
+      ],
+      "error_message": "",
+      "call_id": 9,
+      "analysis_id": 46
+    },
+    {
+      "fellow_id": "ZPBHwiyrXc",
+      "prospect_name": "Andrew Raycroft",
+      "success": true,
+      "processing_time": 7.9495580196380615,
+      "input_tokens": 7093,
+      "output_tokens": 1120,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "moving_forward",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "voice",
+        "messaging",
+        "wireless",
+        "numbers",
+        "connections"
+      ],
+      "error_message": "",
+      "call_id": 2,
+      "analysis_id": 48
+    },
+    {
+      "fellow_id": "ufbAM64kIQ",
+      "prospect_name": "Oscar Flores",
+      "success": true,
+      "processing_time": 18.883917093276978,
+      "input_tokens": 4994,
+      "output_tokens": 1064,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "moving_forward",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "voice",
+        "messaging"
+      ],
+      "error_message": "",
+      "call_id": 3,
+      "analysis_id": 51
+    },
+    {
+      "fellow_id": "JZim1xvN1b",
+      "prospect_name": "Corentin LAROSE",
+      "success": true,
+      "processing_time": 8.790689945220947,
+      "input_tokens": 3398,
+      "output_tokens": 1030,
+      "analysis_confidence": 8,
+      "ae_excitement": 8,
+      "prospect_interest": 7,
+      "next_steps_category": "prospect_to_consider",
+      "quinn_quality": 7,
+      "products_mentioned": [
+        "numbers"
+      ],
+      "error_message": "",
+      "call_id": 10,
+      "analysis_id": 52
+    }
+  ]
+}

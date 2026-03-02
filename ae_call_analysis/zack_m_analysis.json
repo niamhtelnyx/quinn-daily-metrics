@@ -1,0 +1,52 @@
+{
+  "call_id": 8,
+  "result_id": 20,
+  "model": "gpt-4o-2024-08-06",
+  "input_tokens": 7045,
+  "output_tokens": 1067,
+  "processing_time": 11.700222969055176,
+  "simple_summary": {
+    "core_talking_points": [
+      "Unreliable current provider",
+      "Missed calls affecting brand image",
+      "Need for reliable call handling"
+    ],
+    "telnyx_products": [
+      "numbers",
+      "connections"
+    ],
+    "use_cases": [
+      "Handling patient inquiries",
+      "Improving call reliability"
+    ],
+    "conversation_focus": "discovery",
+    "ae_sentiment": {
+      "excitement_level": 8,
+      "confidence_level": 7
+    },
+    "prospect_sentiment": {
+      "interest_level": 7,
+      "engagement_level": 8,
+      "buying_signals": [
+        "Open to new solutions",
+        "Concerned about current issues"
+      ]
+    },
+    "next_steps": {
+      "category": "moving_forward",
+      "specific_actions": [
+        "Provide pricing details",
+        "Schedule follow-up with CEO"
+      ]
+    },
+    "quinn_insights": {
+      "qualification_quality": 7,
+      "missed_opportunities": [],
+      "strengths": [
+        "Clear need for reliable solution",
+        "Interest in Telnyx integration"
+      ]
+    },
+    "analysis_confidence": 8
+  }
+}

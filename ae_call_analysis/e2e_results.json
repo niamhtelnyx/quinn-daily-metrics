@@ -1,0 +1,21 @@
+{
+  "fellow_fetch": {
+    "status": "success",
+    "call_id": "QdZdMHWoec",
+    "title": "Telnyx Intro Call (Ben Lewell)",
+    "date": "2026-02-26T22:00:30.304Z"
+  },
+  "database_store": {
+    "status": "failed",
+    "error": "UNIQUE constraint failed: calls.fellow_id"
+  },
+  "salesforce_mapping": {
+    "status": "pending"
+  },
+  "llm_analysis": {
+    "status": "pending"
+  },
+  "final_result": {
+    "status": "pending"
+  }
+}

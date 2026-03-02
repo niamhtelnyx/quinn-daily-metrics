@@ -1,0 +1,11 @@
+{
+  "setup_completed_at": "2026-02-26T13:17:48.866201",
+  "results": {
+    "database": true,
+    "fellow_api": true,
+    "salesforce": true,
+    "llm_service": true,
+    "slack": true
+  },
+  "overall_status": "ready"
+}

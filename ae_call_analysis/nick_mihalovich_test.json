@@ -1,0 +1,45 @@
+{
+  "event_id": "00UQk00000OMYzhMAH",
+  "call_data": {
+    "prospect_name": "Nick Mihalovich",
+    "ae_name": "Rob Messier",
+    "company": "Rhema Web (IT Consulting)"
+  },
+  "analysis_data": {
+    "prospect_interest_level": 8,
+    "quinn_qualification_quality": 7,
+    "core_talking_points": [
+      "Current VoIP system experiencing reliability issues with client calls",
+      "Need scalable communication solution for growing IT consulting business",
+      "Looking for API integration with their client management system",
+      "Concerned about call quality affecting client relationships"
+    ],
+    "prospect_buying_signals": [
+      "Asked about implementation timeline and technical requirements",
+      "Inquired about pricing structure for expected call volume",
+      "Requested API documentation and integration guides",
+      "Mentioned budget approved for communication infrastructure upgrade"
+    ],
+    "prospect_concerns": [
+      "Integration complexity with existing client management tools",
+      "Potential service disruption during migration period",
+      "Cost comparison with current provider and ROI timeline"
+    ],
+    "next_steps_actions": [
+      "Send technical API documentation and integration examples",
+      "Schedule follow-up call with Rhema Web technical team",
+      "Prepare custom pricing proposal based on projected call volume",
+      "Provide detailed migration plan with minimal downtime strategy"
+    ]
+  },
+  "call_intelligence_summary": "Summary: High-quality discovery call with strong prospect engagement\n\nPain Points Identified:\n\u2022 Current VoIP system experiencing reliability issues with client calls\n\u2022 Need scalable communication solution for growing IT consulting business\n\u2022 Looking for API integration with their client management system\n\nBuying Signals:\n\u2022 Asked about implementation timeline and technical requirements\n\u2022 Inquired about pricing structure for expected call volume\n\u2022 Requested API documentation and integration guides\n\nConcerns Raised:\n\u2022 Integration complexity with existing client management tools\n\u2022 Potential service disruption during migration period\n\u2022 Cost comparison with current provider and ROI timeline\n\nNext Steps:\n\u2022 Send technical API documentation and integration examples\n\u2022 Schedule follow-up call with Rhema Web technical team\n\u2022 Prepare custom pricing proposal based on projected call volume\n\nCall Quality Score: 7/10 | Interest Level: 8/10",
+  "update_result": {
+    "success": true,
+    "message": "Event description updated successfully",
+    "event_id": "00UQk00000OMYzhMAH",
+    "original_length": 595,
+    "updated_length": 1592,
+    "timestamp": "2026-02-27T14:48:53.037678"
+  },
+  "test_timestamp": "2026-02-27T14:48:53.037806"
+}

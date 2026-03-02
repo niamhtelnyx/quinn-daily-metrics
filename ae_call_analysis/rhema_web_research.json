@@ -1,0 +1,32 @@
+{
+  "company_name": "Rhema Web",
+  "website": "rhemaweb.biz",
+  "industry": "Internet Software & Services",
+  "research_date": "2026-02-27",
+  "founding_year": "2021",
+  "business_model_analysis": {
+    "primary_focus": "Local IT consulting and support for small businesses",
+    "target_market": "Small businesses and residential customers",
+    "key_differentiator": "Small business serving small businesses with 24/7 on-call support",
+    "business_evolution": "Started as side business in 2021, went full-time April 2023",
+    "scale": "200+ successful projects, 30+ happy clients, 2 skilled experts"
+  },
+  "services_offered": [
+    "IT Consulting",
+    "Website Design", 
+    "Residential IT Support",
+    "24/7 On-Call IT Support"
+  ],
+  "call_intelligence_description": "Rhema Web provides comprehensive IT consulting, website design, and 24/7 technical support specifically tailored to small businesses and residential customers who need reliable, responsive technology solutions from a local partner.",
+  "slack_formatted_description": "🏢 **Rhema Web** provides comprehensive IT consulting, website design, and 24/7 technical support specifically tailored to small businesses and residential customers who need reliable, responsive technology solutions from a local partner.",
+  "context_for_ae_calls": {
+    "pain_points_they_solve": [
+      "Technology downtime for small businesses",
+      "Lack of in-house IT expertise", 
+      "Need for responsive, local IT support",
+      "Website design and digital presence"
+    ],
+    "decision_makers": "Small business owners, residential customers",
+    "competitive_advantages": "Local presence, small business focus, 24/7 availability"
+  }
+}

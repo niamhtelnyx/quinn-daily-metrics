@@ -1,0 +1,75 @@
+{
+  "success": true,
+  "call_data": {
+    "id": 1,
+    "fellow_id": "QdZdMHWoec",
+    "title": "Telnyx Intro Call (Ben Lewell)",
+    "call_date": "2026-02-26 22:00:30.304000+00:00",
+    "ae_name": null,
+    "prospect_name": "Ben Lewell",
+    "prospect_company": "Unknown Company"
+  },
+  "analysis_data": {
+    "prospect_interest_level": 10,
+    "ae_excitement_level": 9,
+    "quinn_qualification_quality": 9,
+    "core_talking_points": [
+      "Pricing discussion",
+      "Technical integration requirements",
+      "Volume and scalability needs",
+      "Current provider evaluation"
+    ],
+    "telnyx_products": [
+      "voice",
+      "messaging",
+      "voice_ai"
+    ],
+    "use_cases": [
+      "Business communications"
+    ],
+    "conversation_focus_primary": "product_overview",
+    "prospect_buying_signals": [
+      "Asked detailed questions"
+    ],
+    "prospect_concerns": [],
+    "next_steps_category": "moving_forward",
+    "next_steps_actions": [
+      "Schedule technical demo"
+    ],
+    "quinn_strengths": [
+      "Good discovery questions"
+    ],
+    "quinn_missed_opportunities": [],
+    "analysis_confidence": 6
+  },
+  "sf_event": {
+    "contact_id": "003Qk00000iytF3IAI",
+    "contact_name": "Ben Lewell",
+    "event_id": "mock_event_id",
+    "account_name": "Retrieved from Contact",
+    "telnyx_attendees": [
+      "Unknown AE"
+    ],
+    "start_datetime": "2026-02-26 22:00:30.304000+00:00",
+    "contact_email": "unknown@example.com"
+  },
+  "company_intelligence": {
+    "account_id": "001Qk00000giKmHIAU",
+    "company_name": "PB Tech New Zealand",
+    "website": "pbtech.co.nz",
+    "industry": "Household Durables",
+    "description": "PB Tech, NZ's largest computing retailer since 1993, offers a wide range of technology products and 'one stop computer solutions' with 18 superstores nationwide.",
+    "employees": 600,
+    "revenue": null,
+    "account_type": null,
+    "business_insight": "PB Tech New Zealand operates in household durables (enterprise) (pbtech.co.nz).",
+    "research_data": null,
+    "created_at": "2026-02-27 20:29:11",
+    "updated_at": "2026-02-27T14:29:11.437861"
+  },
+  "messages": {
+    "main_post": "\ud83d\udd25 **CALL INTELLIGENCE ALERT**\n\n**Ben Lewell** | **None** | 2026-02-26\n**\ud83c\udfe2 Company:** PB Tech New Zealand operates in household durables (enterprise) (pbtech.co.nz).\n\n**\ud83d\udcca Scores:** Interest 10/10 | AE 9/10 | Quinn 9/10\n**\ud83d\udd34 Key Pain:** Pricing discussion\n**\ud83d\udca1 Product Focus:** voice\n**\ud83d\ude80 Next Step:** Moving Forward\n**\ud83d\udd17 Salesforce:** \u2705 Validated\n\n_See thread for full analysis and stakeholder actions_ \ud83d\udc47",
+    "thread_reply": "**\ud83d\udccb DETAILED CALL ANALYSIS: Ben Lewell**\n\n**\ud83d\udca1 COMPLETE INSIGHTS**\n\n**\ud83c\udfe2 COMPANY INTELLIGENCE: PB Tech New Zealand**\n**Business:** PB Tech New Zealand operates in household durables (enterprise) (pbtech.co.nz).\n**Industry:** Household Durables\n**Size:** 600 employees\n**Website:** pbtech.co.nz\n\n**\ud83d\udd34 All Pain Points:**\n1. Pricing discussion\n2. Technical integration requirements\n3. Volume and scalability needs\n4. Current provider evaluation\n\n**\ud83c\udfaf Use Cases Discussed:**\n\u2022 Business communications\n\n**\ud83d\udca1 Telnyx Products:**\n\u2022 voice\n\u2022 messaging\n\u2022 voice_ai\n\n**\ud83d\udde3\ufe0f Conversation Style:** Product Overview\n\n**\ud83d\udcc8 Buying Signals:**\n\u2022 Asked detailed questions\n\n**\ud83d\ude80 NEXT STEPS**\n**Category:** Moving Forward\n**Actions:**\n\u2022 Schedule technical demo\n\n**\ud83d\udccb QUINN REVIEW**\n**Quality:** 9/10\n**Strengths:** Good discovery questions\n\n**\ud83c\udfaf STAKEHOLDER ACTIONS**\n\n**\ud83d\udcc8 Sales Manager:** \ud83c\udf1f Excellent AE performance - use as coaching example\n**\ud83c\udfa8 Marketing:** \ud83d\udcca Pain trend: pricing discussion...\n**\ud83d\udee0 Product:** \ud83d\udd27 Interest in: voice...\n**\ud83d\udc51 Executive:** \ud83c\udfaf HOT OPPORTUNITY - Fast-track recommended\n\n**\ud83d\udd17 SALESFORCE VALIDATION**\n\u2022 **Event ID:** mock_event_id\n\u2022 **Contact:** Ben Lewell (unknown@example.com)\n\u2022 **Account:** Retrieved from Contact\n\u2022 **All Telnyx AEs:** Unknown AE\n\u2022 **Event Date:** 2026-02-26 22:00:30.304000+00:00\n\n_\u2705 Fully validated via Salesforce event data_\n\n**\ud83d\udd04 PROCESSING PIPELINE**\n\u2705 Fellow \u2192 \u2705 SF Event \u2192 \u2705 OpenAI \u2192 \u2705 Intelligence\n_Generated: 14:30 CST_"
+  },
+  "enhanced_at": "2026-02-27T14:30:38.231489"
+}

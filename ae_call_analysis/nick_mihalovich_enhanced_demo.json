@@ -1,0 +1,67 @@
+{
+  "contact_id": "003Qk00000jw4fsIAA",
+  "company_data": {
+    "account_id": "001Qk00000hdXraIAE",
+    "company_name": "Rhema Web",
+    "website": "rhemaweb.biz",
+    "industry": "Internet Software & Services",
+    "description": "RhemaWeb is the elite expert in IT consulting solutions, offering services such as consulting, website design, SEO, and on-call support. With a focus on unlocking digital potential, RhemaWeb provides prompt and reliable solutions to businesses and indi...",
+    "employees": null,
+    "revenue": null,
+    "account_type": null
+  },
+  "business_insight": "Rhema Web is a digital services company offering consulting, web development, SEO, and support services (rhemaweb.biz).",
+  "call_data": {
+    "id": 999,
+    "prospect_name": "Nick Mihalovich",
+    "ae_name": "Test AE",
+    "call_date": "2026-02-27"
+  },
+  "analysis_data": {
+    "prospect_interest_level": 8,
+    "ae_excitement_level": 7,
+    "quinn_qualification_quality": 8,
+    "core_talking_points": [
+      "API integration requirements",
+      "Scalability for web services",
+      "Cost-effective telecommunications"
+    ],
+    "telnyx_products": [
+      "Voice APIs",
+      "SMS APIs",
+      "Number Management"
+    ],
+    "use_cases": [
+      "Web development API integrations",
+      "Client communication systems"
+    ],
+    "conversation_focus_primary": "technical_requirements",
+    "prospect_buying_signals": [
+      "Asked about API documentation",
+      "Interested in testing environment"
+    ],
+    "prospect_concerns": [
+      "Integration complexity",
+      "Pricing for small business"
+    ],
+    "next_steps_category": "technical_validation",
+    "next_steps_actions": [
+      "Provide API documentation",
+      "Setup test environment",
+      "Schedule technical follow-up"
+    ],
+    "quinn_strengths": [
+      "Good technical discovery",
+      "Understood client needs"
+    ],
+    "quinn_missed_opportunities": [
+      "Could have explored more use cases"
+    ],
+    "analysis_confidence": 8
+  },
+  "enhanced_messages": {
+    "main_post": "\ud83d\udd25 **CALL INTELLIGENCE ALERT**\n\n**Nick Mihalovich** | **Test AE** | 2026-02-27\n**\ud83c\udfe2 Company:** Rhema Web is a digital services company offering consulting, web development, SEO, and support services (rhemaweb.biz).\n\n**\ud83d\udcca Scores:** Interest 8/10 | AE 7/10 | Quinn 8/10\n**\ud83d\udd34 Key Pain:** API integration requirements\n**\ud83d\udca1 Product Focus:** Voice APIs\n**\ud83d\ude80 Next Step:** Technical Validation\n**\ud83d\udd17 Salesforce:** \u2705 Validated\n\n_See thread for full analysis and stakeholder actions_ \ud83d\udc47",
+    "thread_reply": "**\ud83d\udccb DETAILED CALL ANALYSIS: Nick Mihalovich**\n\n**\ud83d\udca1 COMPLETE INSIGHTS**\n\n**\ud83c\udfe2 COMPANY INTELLIGENCE: Rhema Web**\n**Business:** Rhema Web is a digital services company offering consulting, web development, SEO, and support services (rhemaweb.biz).\n**Industry:** Internet Software & Services\n**Website:** rhemaweb.biz\n\n**\ud83d\udd34 All Pain Points:**\n1. API integration requirements\n2. Scalability for web services\n3. Cost-effective telecommunications\n\n**\ud83c\udfaf Use Cases Discussed:**\n\u2022 Web development API integrations\n\u2022 Client communication systems\n\n**\ud83d\udca1 Telnyx Products:**\n\u2022 Voice APIs\n\u2022 SMS APIs\n\u2022 Number Management\n\n**\ud83d\udde3\ufe0f Conversation Style:** Technical Requirements\n\n**\ud83d\udcc8 Buying Signals:**\n\u2022 Asked about API documentation\n\u2022 Interested in testing environment\n\n**\u26a0\ufe0f Prospect Concerns:**\n\u2022 Integration complexity\n\u2022 Pricing for small business\n\n**\ud83d\ude80 NEXT STEPS**\n**Category:** Technical Validation\n**Actions:**\n\u2022 Provide API documentation\n\u2022 Setup test environment\n\u2022 Schedule technical follow-up\n\n**\ud83d\udccb QUINN REVIEW**\n**Quality:** 8/10\n**Strengths:** Good technical discovery, Understood client needs\n**Missed Opportunities:** Could have explored more use cases\n\n**\ud83c\udfaf STAKEHOLDER ACTIONS**\n\n**\ud83d\udcc8 Sales Manager:** \u2705 Good AE engagement - standard qualification\n**\ud83c\udfa8 Marketing:** \ud83d\udcca Pain trend: api integration requirements...\n**\ud83d\udee0 Product:** \ud83d\udd27 Interest in: Voice APIs...\n**\ud83d\udc51 Executive:** \ud83d\udcc8 Qualified prospect - standard progression\n\n**\ud83d\udd17 SALESFORCE VALIDATION**\n\u2022 **Event ID:** 00UQk00000OMYzhMAH\n\u2022 **Contact:** Nick Mihalovich (nick@rhemaweb.com)\n\u2022 **Account:** Rhema Web\n\u2022 **All Telnyx AEs:** Test AE\n\u2022 **Event Date:** 2026-02-27\n\n_\u2705 Fully validated via Salesforce event data_\n\n**\ud83d\udd04 PROCESSING PIPELINE**\n\u2705 Fellow \u2192 \u2705 SF Event \u2192 \u2705 OpenAI \u2192 \u2705 Intelligence\n_Generated: 14:30 CST_"
+  },
+  "demo_timestamp": "2026-02-27T14:30:38.228387"
+}

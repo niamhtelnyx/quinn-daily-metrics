@@ -1,0 +1,47 @@
+{
+  "event_id": "00UQk00000OMYzhMAH",
+  "analysis_data": {
+    "prospect_interest_level": 9,
+    "quinn_qualification_quality": 8,
+    "core_talking_points": [
+      "Current communication system causing client satisfaction issues",
+      "Rapid business growth requiring scalable voice infrastructure",
+      "Need for API-driven integration with existing business tools",
+      "Budget approved for communication platform upgrade"
+    ],
+    "prospect_buying_signals": [
+      "Asked detailed questions about implementation process",
+      "Requested pricing information for projected volume",
+      "Inquired about integration timeline and requirements",
+      "Asked for customer references in similar industries",
+      "Mentioned urgency due to current system limitations"
+    ],
+    "prospect_concerns": [
+      "Concerned about service interruption during transition",
+      "Need to ensure seamless integration with CRM system",
+      "Cost justification for management approval"
+    ],
+    "next_steps_actions": [
+      "Send detailed API integration documentation",
+      "Schedule technical deep-dive with IT team",
+      "Prepare ROI analysis and pricing proposal",
+      "Provide implementation timeline and migration plan",
+      "Connect with customer reference in IT consulting"
+    ]
+  },
+  "call_data": {
+    "prospect_name": "Nick Mihalovich",
+    "ae_name": "Rob Messier",
+    "company": "Rhema Web (IT Consulting)"
+  },
+  "call_intelligence": "Summary: High-quality discovery call with strong prospect engagement\n\nPain Points Identified:\n\u2022 Current communication system causing client satisfaction issues\n\u2022 Rapid business growth requiring scalable voice infrastructure\n\u2022 Need for API-driven integration with existing business tools\n\nBuying Signals:\n\u2022 Asked detailed questions about implementation process\n\u2022 Requested pricing information for projected volume\n\u2022 Inquired about integration timeline and requirements\n\nConcerns Raised:\n\u2022 Concerned about service interruption during transition\n\u2022 Need to ensure seamless integration with CRM system\n\u2022 Cost justification for management approval\n\nNext Steps:\n\u2022 Send detailed API integration documentation\n\u2022 Schedule technical deep-dive with IT team\n\u2022 Prepare ROI analysis and pricing proposal\n\nCall Quality Score: 8/10 | Interest Level: 9/10",
+  "update_result": {
+    "success": true,
+    "message": "Event description updated successfully",
+    "event_id": "00UQk00000OMYzhMAH",
+    "original_length": 618,
+    "updated_length": 1516,
+    "timestamp": "2026-02-27T14:51:37.891578"
+  },
+  "demo_timestamp": "2026-02-27T14:51:37.891678"
+}

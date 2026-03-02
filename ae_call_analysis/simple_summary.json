@@ -1,0 +1,45 @@
+{
+  "core_talking_points": [
+    "Need for dedicated telephony provider",
+    "High SMS and telephony costs",
+    "Regulatory compliance in New Zealand"
+  ],
+  "telnyx_products": [
+    "voice",
+    "messaging",
+    "numbers"
+  ],
+  "use_cases": [
+    "Voice AI agents for call centers",
+    "Outbound campaigns for elections"
+  ],
+  "conversation_focus": "discovery",
+  "ae_sentiment": {
+    "excitement_level": 8,
+    "confidence_level": 7
+  },
+  "prospect_sentiment": {
+    "interest_level": 7,
+    "engagement_level": 8,
+    "buying_signals": [
+      "Interest in competitive pricing",
+      "Desire for long-term partnership"
+    ]
+  },
+  "next_steps": {
+    "category": "moving_forward",
+    "specific_actions": [
+      "Schedule technical walkthrough",
+      "Prepare draft agreement"
+    ]
+  },
+  "quinn_insights": {
+    "qualification_quality": 7,
+    "missed_opportunities": [],
+    "strengths": [
+      "Clear need for telephony solution",
+      "Interest in competitive pricing"
+    ]
+  },
+  "analysis_confidence": 8
+}

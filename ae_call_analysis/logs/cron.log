@@ -1,0 +1,48 @@
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🚀 Fellow Call Intelligence Cron Job - V1
+⏰ 30-minute polling with enhanced pipeline integration
+
+✅ Database setup complete
+
+🕐 Starting Fellow Cron Job - 2026-03-02 09:30:00.980033
+============================================================
+⏰ Last run: 2026-03-01 09:30:00.980592
+📊 Looking for new calls since then...
+📡 Fetching Fellow recordings...
+❌ Error fetching page 1: Fellow API authentication failed. Check FELLOW_API_KEY environment variable.
+❌ Cron cycle failed: Fellow API authentication failed. Check FELLOW_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 348, in <module>
+    main()
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 345, in main
+    processor.run_cron_cycle()
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 278, in run_cron_cycle
+    recordings = self.fetch_fellow_recordings(since_timestamp=last_run)
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 120, in fetch_fellow_recordings
+    raise Exception(f"Fellow API authentication failed. Check FELLOW_API_KEY environment variable.")
+Exception: Fellow API authentication failed. Check FELLOW_API_KEY environment variable.
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🚀 Fellow Call Intelligence Cron Job - V1
+⏰ 30-minute polling with enhanced pipeline integration
+
+✅ Database setup complete
+
+🕐 Starting Fellow Cron Job - 2026-03-02 10:00:00.908230
+============================================================
+⏰ Last run: 2026-03-01 10:00:00.909320
+📊 Looking for new calls since then...
+📡 Fetching Fellow recordings...
+❌ Error fetching page 1: Fellow API authentication failed. Check FELLOW_API_KEY environment variable.
+❌ Cron cycle failed: Fellow API authentication failed. Check FELLOW_API_KEY environment variable.
+Traceback (most recent call last):
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 348, in <module>
+    main()
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 345, in main
+    processor.run_cron_cycle()
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 278, in run_cron_cycle
+    recordings = self.fetch_fellow_recordings(since_timestamp=last_run)
+  File "/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py", line 120, in fetch_fellow_recordings
+    raise Exception(f"Fellow API authentication failed. Check FELLOW_API_KEY environment variable.")
+Exception: Fellow API authentication failed. Check FELLOW_API_KEY environment variable.

@@ -1,0 +1,160 @@
+{
+  "detailed_analysis": {
+    "core_talking_points": {
+      "primary_pain_points": [
+        "Need for a dedicated telephony provider for AI services",
+        "High SMS and telephony costs",
+        "Regulatory compliance in New Zealand"
+      ],
+      "ae_key_talking_points": [
+        "Competitive pricing",
+        "Support for New Zealand market",
+        "Long-term partnership potential"
+      ],
+      "pain_point_alignment": 8,
+      "unaddressed_pain_points": [],
+      "most_compelling_point": "Telnyx's ability to provide a robust telephony solution tailored for the New Zealand market."
+    },
+    "telnyx_products": {
+      "products_discussed": [
+        "voice",
+        "messaging",
+        "numbers"
+      ],
+      "features_highlighted": [
+        "Programmable SMS",
+        "Short code registration",
+        "WebSocket streaming for voice AI"
+      ],
+      "technical_depth": 7,
+      "competitor_mentions": [
+        "Twilio",
+        "Voyager"
+      ],
+      "product_fit_assessment": 8
+    },
+    "use_cases": {
+      "primary_use_cases": [
+        "Voice AI agents for call centers",
+        "Outbound campaigns for New Zealand elections"
+      ],
+      "business_impact_areas": [
+        "Cost reduction",
+        "Improved telephony infrastructure",
+        "Regulatory compliance"
+      ],
+      "quantified_benefits": [
+        "Potential reduction in $100,000 monthly spend",
+        "Scalable telephony solution"
+      ],
+      "implementation_complexity": 5,
+      "use_case_specificity": 7
+    },
+    "conversation_focus": {
+      "primary_focus": "discovery",
+      "secondary_focus": "technical_deep_dive",
+      "focus_effectiveness": 8,
+      "topic_transitions": 7,
+      "conversation_control": 8
+    },
+    "sentiment_analysis": {
+      "ae_sentiment": 8,
+      "prospect_sentiment": 7,
+      "ae_sentiment_indicators": [
+        "Appreciation for sharing context",
+        "Willingness to provide technical support"
+      ],
+      "prospect_sentiment_indicators": [
+        "Interest in competitive pricing",
+        "Desire for a long-term partnership"
+      ],
+      "overall_call_energy": 7
+    },
+    "next_steps": {
+      "next_steps_category": "technical_validation",
+      "specific_actions": [
+        "Schedule technical walkthrough",
+        "Prepare a draft enterprise agreement",
+        "Set up PoC environment"
+      ],
+      "timeline_mentioned": true,
+      "timeline_details": "End of March for initial setup, with full operational status by April.",
+      "commitment_level": 7,
+      "ae_follow_up_quality": 8
+    },
+    "analysis_confidence": {
+      "transcript_quality": 8,
+      "analysis_confidence": 8,
+      "missing_context": [],
+      "ambiguous_areas": [],
+      "data_reliability": 8
+    },
+    "quinn_scoring": {
+      "need_clarity": 8,
+      "decision_authority": 6,
+      "budget_availability": 5,
+      "timeline_urgency": 7,
+      "champion_strength": 6,
+      "competition_position": 7,
+      "overall_qualification": 7,
+      "qualification_notes": "Prospect is clear on needs but budget and decision authority are moderate."
+    }
+  },
+  "simple_summary": {
+    "core_talking_points": [
+      "Need for dedicated telephony provider",
+      "High SMS and telephony costs",
+      "Regulatory compliance in New Zealand"
+    ],
+    "telnyx_products": [
+      "voice",
+      "messaging",
+      "numbers"
+    ],
+    "use_cases": [
+      "Voice AI agents for call centers",
+      "Outbound campaigns for elections"
+    ],
+    "conversation_focus": "discovery",
+    "ae_sentiment": {
+      "excitement_level": 8,
+      "confidence_level": 7
+    },
+    "prospect_sentiment": {
+      "interest_level": 7,
+      "engagement_level": 8,
+      "buying_signals": [
+        "Interest in competitive pricing",
+        "Desire for long-term partnership"
+      ]
+    },
+    "next_steps": {
+      "category": "moving_forward",
+      "specific_actions": [
+        "Schedule technical walkthrough",
+        "Prepare draft agreement"
+      ]
+    },
+    "quinn_insights": {
+      "qualification_quality": 7,
+      "missed_opportunities": [],
+      "strengths": [
+        "Clear need for telephony solution",
+        "Interest in competitive pricing"
+      ]
+    },
+    "analysis_confidence": 8
+  },
+  "analysis_metadata": {
+    "analysis_timestamp": "2026-02-27T08:55:51.352436",
+    "analysis_version": "2.1-dual-output",
+    "analysis_confidence": 8,
+    "llm_model_used": "gpt-4o-2024-08-06",
+    "processing_time_seconds": 12.219043970108032,
+    "token_usage": {
+      "input_tokens": 8376,
+      "output_tokens": 1057
+    },
+    "provider": "openai"
+  }
+}

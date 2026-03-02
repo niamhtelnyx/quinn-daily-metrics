@@ -1,0 +1,52 @@
+## 📞 **CALL INTELLIGENCE ALERT** 
+
+**🆕 QUALIFICATION CALL ANALYZED**
+**Prospect:** Hammoudeh Alamri | **AE:** [AE from Fellow] | **Date:** 2026-02-27
+
+---
+
+### **📊 PERFORMANCE SCORES**
+🔥 **Interest:** 0/10 | 🎯 **AE Excitement:** 0/10 | 📋 **Quinn Quality:** 0/10 | ✅ **Confidence:** 0/10
+
+---
+
+### **💡 REAL CALL INSIGHTS**
+
+**🔴 Pain Points Identified:**
+• No specific pain points identified
+
+**🎯 Use Cases Discussed:**
+• General telephony discussion
+
+**💡 Telnyx Products in Play:**
+• General Telnyx services
+
+**🗣️ Conversation Style:** Discovery (AE uncovering needs)
+
+---
+
+### **🚀 NEXT STEPS ANALYSIS**
+**Category:** Follow Up
+
+---
+
+### **📋 QUINN QUALIFICATION REVIEW**
+**Overall Quality:** 0/10
+
+---
+
+### **🎯 STAKEHOLDER ACTIONS**
+
+**📈 Sales Manager:** ⚠️ COACHING NEEDED - Low AE engagement detected
+**🎨 Marketing:** 📊 Pain point trend: general needs
+**🛠 Product:** 🔧 Product interest: core telephony  
+**👑 Executive:** 📊 Standard qualification - monitor progression
+
+---
+
+### **🔗 QUICK ACCESS**
+📞 Fellow Recording | 📋 Salesforce Contact | 📊 Full Analysis Report
+
+_Call ID: 4 | Quinn: 0/10 | Focus: Discovery | Status unclear_
+
+_🔄 E2E Processing: Fellow → SF Match: No match (0/10) → OpenAI Analysis → Alert Generated 12:48 CST_
