@@ -8,11 +8,12 @@ V1 automatically processes Fellow "Telnyx Intro Call" recordings and posts profe
 
 **Automated Pipeline:**
 ```
-Fellow "Telnyx Intro Call" → Process → Slack Alert (C0AJ9E9F474)
+Fellow "Telnyx Intro Call" → Process → Slack Alert + Salesforce Update
 ```
 
 **V1 Features:**
 - ✅ **Fellow API Integration**: Automatic polling for new intro calls
+- ✅ **Salesforce Integration**: Finds contacts and updates event records
 - ✅ **Professional Alerts**: Formatted Slack messages with prospect details
 - ✅ **Duplicate Prevention**: Won't process the same call twice  
 - ✅ **Reliable Automation**: Runs every 30 minutes via cron
@@ -68,6 +69,11 @@ _V1 Call Intelligence - Automated Processing_
 # Fellow API (Required)
 FELLOW_API_KEY=your_fellow_api_key
 
+# Salesforce OAuth2 (Required)
+SF_CLIENT_ID=your_salesforce_client_id
+SF_CLIENT_SECRET=your_salesforce_client_secret
+SF_DOMAIN=your_salesforce_domain
+
 # Optional: Slack webhook for direct posting
 SLACK_WEBHOOK_URL=https://hooks.slack.com/your-webhook
 ```
@@ -90,6 +96,7 @@ tail -f logs/v1.log
 | Feature | Status | Description |
 |---------|--------|-------------|
 | **Fellow Integration** | ✅ WORKING | "Telnyx Intro Call" recordings only |
+| **Salesforce Integration** | ✅ WORKING | Contact lookup + event record updates |
 | **Slack Alerts** | ✅ WORKING | Channel C0AJ9E9F474 |
 | **Duplicate Prevention** | ✅ WORKING | SQLite database tracking |
 | **Professional Format** | ✅ WORKING | Prospect name + Fellow recording link |

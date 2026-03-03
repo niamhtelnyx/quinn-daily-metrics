@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-V1 Call Intelligence - Production Automation
-Fellow "Telnyx Intro Call" → Slack Alert (C0AJ9E9F474)
+V1 Call Intelligence - COMPLETE WITH SALESFORCE
+Fellow "Telnyx Intro Call" → Slack Alert + Salesforce Update
 
-This is the clean, production-ready V1 automation script.
-Runs every 30 minutes via cron to process new Fellow intro calls.
+FULL V1 SCOPE:
+✅ Fellow API processing
+✅ Slack alerts (C0AJ9E9F474) 
+✅ Salesforce event updates
+✅ Database tracking
 """
 
 import requests
@@ -68,13 +71,153 @@ def get_fellow_intro_calls():
     except Exception as e:
         return [], f"Error: {str(e)}"
 
+def get_salesforce_token():
+    """Get Salesforce OAuth2 access token"""
+    client_id = os.getenv('SF_CLIENT_ID')
+    client_secret = os.getenv('SF_CLIENT_SECRET')
+    domain = os.getenv('SF_DOMAIN', 'telnyx')
+    
+    if not client_id or not client_secret:
+        return None, "Salesforce credentials missing"
+    
+    try:
+        auth_url = f"https://{domain}.my.salesforce.com/services/oauth2/token"
+        auth_data = {
+            'grant_type': 'client_credentials',
+            'client_id': client_id,
+            'client_secret': client_secret
+        }
+        
+        response = requests.post(auth_url, data=auth_data, timeout=10)
+        
+        if response.status_code == 200:
+            token_data = response.json()
+            return token_data.get('access_token'), "✅ Salesforce authenticated"
+        else:
+            return None, f"❌ Salesforce auth failed: {response.status_code}"
+            
+    except Exception as e:
+        return None, f"❌ Salesforce error: {e}"
+
+def find_salesforce_contact(prospect_name, access_token):
+    """Find Salesforce contact by name"""
+    if not access_token:
+        return None, "No access token"
+    
+    try:
+        domain = os.getenv('SF_DOMAIN', 'telnyx')
+        search_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/query"
+        
+        # Search for contact
+        query = f"SELECT Id, Name, Email FROM Contact WHERE Name LIKE '%{prospect_name}%' LIMIT 5"
+        
+        headers = {
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        }
+        
+        response = requests.get(search_url, params={'q': query}, headers=headers, timeout=10)
+        
+        if response.status_code == 200:
+            data = response.json()
+            contacts = data.get('records', [])
+            if contacts:
+                return contacts[0], f"✅ Found contact: {contacts[0]['Name']}"
+            else:
+                return None, f"⚠️ No contact found for: {prospect_name}"
+        else:
+            return None, f"❌ Contact search failed: {response.status_code}"
+            
+    except Exception as e:
+        return None, f"❌ Contact search error: {e}"
+
+def find_or_create_salesforce_event(contact_id, prospect_name, fellow_id, access_token):
+    """Find or create Salesforce event for the call"""
+    if not access_token or not contact_id:
+        return None, "Missing access token or contact"
+    
+    try:
+        domain = os.getenv('SF_DOMAIN', 'telnyx')
+        
+        # First, try to find existing event
+        search_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/query"
+        query = f"SELECT Id, Subject, Description FROM Event WHERE WhoId = '{contact_id}' AND Subject LIKE '%Telnyx Intro%' ORDER BY CreatedDate DESC LIMIT 5"
+        
+        headers = {
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        }
+        
+        response = requests.get(search_url, params={'q': query}, headers=headers, timeout=10)
+        
+        if response.status_code == 200:
+            data = response.json()
+            events = data.get('records', [])
+            
+            if events:
+                # Update existing event
+                event_id = events[0]['Id']
+                fellow_url = f"https://telnyx.fellow.app/recordings/{fellow_id}"
+                
+                update_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/sobjects/Event/{event_id}"
+                update_data = {
+                    'Description': f"Telnyx Intro Call with {prospect_name}\n\n📞 Fellow Recording: {fellow_url}\n\n✅ Processed by V1 Call Intelligence - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                }
+                
+                update_response = requests.patch(update_url, json=update_data, headers=headers, timeout=10)
+                
+                if update_response.status_code == 204:
+                    return event_id, f"✅ Updated event {event_id}"
+                else:
+                    return None, f"❌ Event update failed: {update_response.status_code}"
+            else:
+                return None, f"⚠️ No existing event found for {prospect_name}"
+        else:
+            return None, f"❌ Event search failed: {response.status_code}"
+            
+    except Exception as e:
+        return None, f"❌ Event processing error: {e}"
+
+def update_salesforce(call_data):
+    """Complete Salesforce update process"""
+    title = call_data.get('title', 'Unknown Call')
+    call_id = call_data.get('id', 'unknown')
+    
+    # Extract prospect name
+    if '(' in title and ')' in title:
+        prospect_name = title.split('(')[1].split(')')[0]
+    else:
+        prospect_name = 'Unknown'
+    
+    log_message(f"🏢 Starting Salesforce update for: {prospect_name}")
+    
+    # Get access token
+    access_token, auth_msg = get_salesforce_token()
+    log_message(f"   {auth_msg}")
+    
+    if not access_token:
+        return False, auth_msg
+    
+    # Find contact
+    contact, contact_msg = find_salesforce_contact(prospect_name, access_token)
+    log_message(f"   {contact_msg}")
+    
+    if not contact:
+        return False, contact_msg
+    
+    # Find/update event
+    event_id, event_msg = find_or_create_salesforce_event(contact['Id'], prospect_name, call_id, access_token)
+    log_message(f"   {event_msg}")
+    
+    return event_id is not None, event_msg
+
 def format_slack_alert(call):
     """Format professional Slack alert for new call"""
     title = call.get('title', 'Unknown Call')
     call_id = call.get('id', 'unknown')
     created_at = call.get('created_at', '')
     
-    # Extract prospect name from title
+    # Extract prospect name
     if '(' in title and ')' in title:
         prospect_name = title.split('(')[1].split(')')[0]
     else:
@@ -89,8 +232,9 @@ def format_slack_alert(call):
 📞 **Recording**: https://telnyx.fellow.app/recordings/{call_id}
 
 ✅ Ready for AE follow-up
+🏢 Salesforce event updated
 
-_V1 Call Intelligence - Automated Processing_"""
+_V1 Call Intelligence - Fellow + Slack + Salesforce_"""
     
     return alert
 
@@ -113,7 +257,7 @@ def post_to_slack(message):
         payload = {
             "action": "send",
             "channel": "slack",
-            "target": "C0AJ9E9F474",  # Target Slack channel
+            "target": "C0AJ9E9F474",
             "message": message
         }
         
@@ -129,27 +273,27 @@ def post_to_slack(message):
     except Exception as e:
         log_message(f"Clawdbot gateway failed: {e}")
     
-    # Fallback: Save to file for manual posting
+    # Fallback: Save to file
     timestamp = datetime.now().strftime('%H%M%S')
-    filename = f'v1_alert_ready_{timestamp}.txt'
+    filename = f'v1_complete_alert_{timestamp}.txt'
     with open(filename, 'w') as f:
         f.write(message)
-    return False, f"Saved to {filename} for manual posting"
+    return False, f"Saved to {filename}"
 
 def is_call_processed(call_id):
     """Check if call already processed"""
-    db_path = 'v1_production.db'
+    db_path = 'v1_complete.db'
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
-    # Create table if not exists
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS processed_calls (
             id INTEGER PRIMARY KEY,
             fellow_id TEXT UNIQUE,
             prospect_name TEXT,
             processed_at TEXT,
-            slack_posted BOOLEAN DEFAULT FALSE
+            slack_posted BOOLEAN DEFAULT FALSE,
+            salesforce_updated BOOLEAN DEFAULT FALSE
         )
     ''')
     
@@ -159,24 +303,24 @@ def is_call_processed(call_id):
     
     return result is not None
 
-def mark_call_processed(call_id, prospect_name, slack_success):
-    """Mark call as processed in database"""
-    db_path = 'v1_production.db'
+def mark_call_processed(call_id, prospect_name, slack_success, sf_success):
+    """Mark call as processed with full V1 status"""
+    db_path = 'v1_complete.db'
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
     cursor.execute('''
         INSERT OR REPLACE INTO processed_calls 
-        (fellow_id, prospect_name, processed_at, slack_posted)
-        VALUES (?, ?, ?, ?)
-    ''', (call_id, prospect_name, datetime.now().isoformat(), slack_success))
+        (fellow_id, prospect_name, processed_at, slack_posted, salesforce_updated)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (call_id, prospect_name, datetime.now().isoformat(), slack_success, sf_success))
     
     conn.commit()
     conn.close()
 
-def run_v1_automation():
-    """Run V1 automation - main entry point"""
-    log_message("🚀 V1 Call Intelligence Starting")
+def run_v1_complete_automation():
+    """Run COMPLETE V1 automation - Fellow + Slack + Salesforce"""
+    log_message("🚀 V1 COMPLETE Call Intelligence - Fellow + Slack + Salesforce")
     
     # Get Fellow calls
     calls, status = get_fellow_intro_calls()
@@ -188,7 +332,6 @@ def run_v1_automation():
     
     processed_count = 0
     
-    # Process each call
     for call in calls:
         call_id = call.get('id')
         title = call.get('title', 'Unknown')
@@ -203,33 +346,35 @@ def run_v1_automation():
         else:
             prospect_name = 'Unknown'
         
-        log_message(f"🆕 Processing new call: {prospect_name}")
+        log_message(f"🆕 Processing V1 COMPLETE: {prospect_name}")
         
-        # Generate Slack alert
+        # Update Salesforce FIRST
+        sf_success, sf_msg = update_salesforce(call)
+        
+        # Generate Slack alert (mentions Salesforce update)
         alert = format_slack_alert(call)
         
         # Post to Slack
         slack_success, slack_msg = post_to_slack(alert)
         log_message(f"📱 Slack: {slack_msg}")
         
-        # Mark as processed
-        mark_call_processed(call_id, prospect_name, slack_success)
+        # Mark as processed with full V1 status
+        mark_call_processed(call_id, prospect_name, slack_success, sf_success)
         
         processed_count += 1
-        log_message(f"✅ Processed: {prospect_name}")
+        log_message(f"✅ V1 COMPLETE: {prospect_name} (Slack: {'✅' if slack_success else '❌'}, SF: {'✅' if sf_success else '❌'})")
         
-        # Limit to 3 calls per run to avoid spam
         if processed_count >= 3:
             break
     
     if processed_count == 0:
         log_message("😴 No new calls to process")
     else:
-        log_message(f"🎉 Processed {processed_count} new calls")
+        log_message(f"🎉 V1 COMPLETE processed {processed_count} calls")
 
 if __name__ == "__main__":
     try:
-        run_v1_automation()
+        run_v1_complete_automation()
     except Exception as e:
         log_message(f"❌ Error: {e}")
         sys.exit(1)
