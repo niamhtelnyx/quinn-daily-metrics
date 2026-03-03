@@ -51,15 +51,19 @@ Automatically extracts company information from:
 1. **Salesforce Account data** (name, website, description)
 2. **AI analysis of transcript** (generates company summary from call content)
 
-**Format**: `🏢 <Company Name | website.com> is [AI-generated description]`
+**Format**: `🏢 <https://website.com|Company Name | website.com> is [AI-generated description]`
 
-**Example**: `🏢 <Ondasa | ondasa.com> is a customer engagement platform company that needs reliable SMS and voice capabilities for its users.`
+**Example**: `🏢 <https://ondasa.com|Ondasa | ondasa.com> is a customer engagement platform company that needs reliable SMS and voice capabilities for its users.`
+
+**Hyperlink Behavior**: 
+- **Displays as**: Ondasa | ondasa.com (clickable blue text)
+- **Links to**: https://ondasa.com (opens website when clicked)
 
 **Main Post Format:**
 ```
 Meeting Notes Retrieved
 📆 Nick Mihalovich | Rob Messier & Darren Dunner | 2026-03-03
-🏢 <Ondasa | ondasa.com> is a customer engagement platform company that needs reliable SMS and voice capabilities for its users.
+🏢 <https://ondasa.com|Ondasa | ondasa.com> is a customer engagement platform company that needs reliable SMS and voice capabilities for its users.
 📊 Scores: Interest 8/10 | AE 8/10 | Quinn 8/10
 🔴 Key Pain: Current web platform needs reliable SMS integration
 💡 Product Focus: SMS API
