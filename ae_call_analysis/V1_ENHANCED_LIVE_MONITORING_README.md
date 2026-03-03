@@ -1,10 +1,10 @@
 # 🚀 V1 Enhanced Call Intelligence - Live Monitoring
 
-**Status**: ✅ **PRODUCTION OPERATIONAL** - Full AI-powered live monitoring system
+**Status**: ✅ **PRODUCTION OPERATIONAL** - Original threaded format restored
 
 ## 🎯 What This System Does
 
-Automatically monitors Fellow for new Telnyx intro calls **today only**, extracts full transcripts, runs AI analysis, updates Salesforce with insights, and posts professional alerts to Slack.
+Automatically monitors Fellow for new Telnyx intro calls **today only**, extracts full transcripts, runs detailed AI analysis, and posts to Slack using the **ORIGINAL THREADED FORMAT** (main post + detailed thread reply) with complete stakeholder insights.
 
 ## ⚡ Quick Start
 
@@ -43,16 +43,71 @@ OPENAI_API_KEY=sk-proj-your-openai-api-key
 
 ## 🤖 AI Analysis Features
 
-**9-Point Analysis Structure:**
-- 🔴 **Pain Points**: Business problems identified
-- 🎯 **Use Cases**: How they'll use Telnyx services  
-- 💡 **Products**: Telnyx products discussed
-- 📈 **Buying Signals**: Purchase readiness indicators
-- ⚙️ **Technical Needs**: Integration requirements
-- ⏰ **Timeline**: Urgency and project timeline
-- 👤 **Decision Makers**: Key stakeholders involved
-- 🔄 **Competition**: Current providers mentioned
-- 🚀 **Next Steps**: Recommended follow-up actions
+**ORIGINAL THREADED FORMAT - Main Post + Detailed Thread**
+
+**Main Post Format:**
+```
+🔥 CALL INTELLIGENCE ALERT [FIXED - Real Salesforce Integration]
+Nick Mihalovich | Rob Messier & Darren Dunner | 2026-03-03
+📊 Scores: Interest 8/10 | AE 8/10 | Quinn 8/10
+🔴 Key Pain: Current web platform needs reliable SMS integration
+💡 Product Focus: SMS API
+🚀 Next Step: Technical Validation
+🔗 Salesforce: ✅ Validated
+See thread for full analysis and stakeholder actions 👇
+```
+
+**Thread Reply Format:**
+```
+📋 DETAILED CALL ANALYSIS: Nick Mihalovich
+
+💡 COMPLETE INSIGHTS
+
+🔴 All Pain Points:
+1. Current web platform needs reliable SMS integration
+2. Customer notification system requirements
+3. Scalability for growing user base
+
+🎯 Use Cases Discussed:
+• User notification system
+• Customer communication platform
+• Web application SMS integration
+
+💡 Telnyx Products:
+• SMS API
+• Programmable messaging
+• Webhook notifications
+
+🗣️ Conversation Style: Technical Integration
+
+📈 Buying Signals:
+• Active development timeline
+• Technical team ready for implementation
+• Budget allocated for Q2
+
+🚀 NEXT STEPS Category: Technical Validation
+Actions:
+• API documentation review
+• Technical integration call
+• Pilot implementation planning
+
+📋 QUINN REVIEW
+Quality: 8/10
+
+🎯 STAKEHOLDER ACTIONS
+
+📈 Sales Manager:
+🌟 Excellent AE performance - use as coaching example
+
+🎨 Marketing:
+📊 Pain trend: current web platform needs reliable SMS integration
+
+🔧 Product:
+🔧 Interest in: SMS API
+
+👑 Executive:
+📈 Qualified prospect - standard progression
+```
 
 ## 📅 Live Monitoring Behavior
 
