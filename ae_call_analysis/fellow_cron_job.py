@@ -109,8 +109,59 @@ def get_fellow_transcript(call_data):
     
     return None, "⚠️ No usable transcript found"
 
-def analyze_call_with_ai(transcript, prospect_name):
-    """ORIGINAL THREADED FORMAT - Analyze call with detailed breakdown for main post + thread"""
+def get_company_summary_with_ai(transcript, prospect_name, company_name=""):
+    """Generate company summary from transcript and available info"""
+    openai_api_key = os.getenv('OPENAI_API_KEY')
+    
+    if not openai_api_key or not transcript:
+        return None
+        
+    try:
+        company_prompt = f"""
+Based on this sales call transcript, extract and create a 1-sentence company summary for {company_name or prospect_name + "'s company"}.
+
+TRANSCRIPT:
+{transcript[:4000]}
+
+Provide ONLY a company description in this format:
+[Company Name] is a [industry/type] company that [what they do/provide] for [target customers/market].
+
+Examples:
+- Ondasa is a technology company that provides telephony and digital marketing solutions for businesses.
+- TechCorp is a software development company that creates customer engagement platforms for enterprise clients.
+
+Be concise, professional, and extract real information from the transcript. If no clear company information is available, return "Unknown company details".
+"""
+        
+        response = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {openai_api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "gpt-4-turbo-preview",
+                "messages": [
+                    {"role": "system", "content": "You are an expert at extracting company information from sales calls. Be concise and accurate."},
+                    {"role": "user", "content": company_prompt}
+                ],
+                "max_tokens": 200,
+                "temperature": 0.3
+            },
+            timeout=15
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            summary = result['choices'][0]['message']['content'].strip()
+            return summary if summary != "Unknown company details" else None
+        return None
+        
+    except Exception as e:
+        return None
+
+def analyze_call_with_ai(transcript, prospect_name, company_name="", company_website=""):
+    """ORIGINAL THREADED FORMAT with COMPANY SUMMARY - Analyze call with detailed breakdown for main post + thread"""
     openai_api_key = os.getenv('OPENAI_API_KEY')
     
     if not openai_api_key:
@@ -129,6 +180,19 @@ def analyze_call_with_ai(transcript, prospect_name):
             "summary": "❌ No transcript available"
         }
 
+    # Get company summary
+    company_summary = get_company_summary_with_ai(transcript, prospect_name, company_name)
+    
+    # Format company line
+    company_line = ""
+    if company_summary:
+        if company_name and company_website:
+            company_line = f"🏢 <{company_name} | {company_website}> is {company_summary.lower()}"
+        elif company_name:
+            company_line = f"🏢 <{company_name}> is {company_summary.lower()}"
+        else:
+            company_line = f"🏢 {company_summary}"
+    
     # ORIGINAL DETAILED PROMPT for threaded Slack format matching user's example
     analysis_prompt = f"""
 Analyze this Telnyx intro call transcript for {prospect_name}.
@@ -139,8 +203,9 @@ TRANSCRIPT:
 Provide TWO separate formatted outputs:
 
 === MAIN POST ===
-🔥 CALL INTELLIGENCE ALERT [FIXED - Real Salesforce Integration]
-{prospect_name} | [extract AE names from transcript] | [today's date]
+Meeting Notes Retrieved
+📆 {prospect_name} | [extract AE names from transcript] | [today's date]
+{company_line}
 📊 Scores: Interest X/10 | AE X/10 | Quinn X/10  
 🔴 Key Pain: [primary pain point in one line]
 💡 Product Focus: [main Telnyx product discussed]
@@ -285,8 +350,8 @@ def find_salesforce_contact_enhanced(prospect_name, access_token):
         domain = os.getenv('SF_DOMAIN', 'telnyx')
         search_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/query"
         
-        # Enhanced query to get contact + account info
-        query = f"SELECT Id, Name, Email, AccountId, Account.Name, Account.Description FROM Contact WHERE Name LIKE '%{prospect_name}%' LIMIT 5"
+        # Enhanced query to get contact + account info including website
+        query = f"SELECT Id, Name, Email, AccountId, Account.Name, Account.Description, Account.Website FROM Contact WHERE Name LIKE '%{prospect_name}%' LIMIT 5"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
@@ -305,7 +370,8 @@ def find_salesforce_contact_enhanced(prospect_name, access_token):
                     'contact_name': contact['Name'],
                     'account_id': contact.get('AccountId'),
                     'company_name': contact.get('Account', {}).get('Name') if contact.get('Account') else None,
-                    'company_description': contact.get('Account', {}).get('Description') if contact.get('Account') else None
+                    'company_description': contact.get('Account', {}).get('Description') if contact.get('Account') else None,
+                    'company_website': contact.get('Account', {}).get('Website') if contact.get('Account') else None
                 }, f"✅ Found contact: {contact['Name']}"
             else:
                 return None, f"⚠️ No contact found for: {prospect_name}"
@@ -570,21 +636,24 @@ def run_enhanced_automation():
         
         log_message(f"🆕 Processing ENHANCED: {prospect_name}")
         
-        # Step 1: Get transcript and run AI analysis
+        # Step 1: Get transcript
         transcript, transcript_msg = get_fellow_transcript(call)
         log_message(f"   📝 Transcript: {transcript_msg}")
         
-        ai_analysis = analyze_call_with_ai(transcript, prospect_name)
-        ai_success = ai_analysis.get('status') == 'success'
-        log_message(f"   🤖 AI Analysis: {ai_analysis.get('status')}")
-        
-        # Step 2: Find Salesforce contact with enhanced data
+        # Step 2: Find Salesforce contact with enhanced data (needed for company info)
         contact_data = None
         if access_token:
             contact_data, contact_msg = find_salesforce_contact_enhanced(prospect_name, access_token)
             log_message(f"   👤 Contact: {contact_msg}")
         
-        # Step 3: Update Salesforce event
+        # Step 3: Run AI analysis with company information
+        company_name = contact_data.get('company_name', '') if contact_data else ''
+        company_website = contact_data.get('company_website', '') if contact_data else ''
+        ai_analysis = analyze_call_with_ai(transcript, prospect_name, company_name, company_website)
+        ai_success = ai_analysis.get('status') == 'success'
+        log_message(f"   🤖 AI Analysis: {ai_analysis.get('status')}")
+        
+        # Step 4: Update Salesforce event
         event_id = None
         sf_success = False
         if contact_data and access_token:
@@ -592,7 +661,7 @@ def run_enhanced_automation():
             sf_success = event_id is not None
             log_message(f"   📅 Event: {event_msg}")
         
-        # Step 4: Post ORIGINAL THREADED format to Slack  
+        # Step 5: Post ORIGINAL THREADED format to Slack with company summary  
         if ai_analysis.get('status') == 'success' and ai_analysis.get('main_post'):
             # Post main message
             main_post = ai_analysis['main_post']
