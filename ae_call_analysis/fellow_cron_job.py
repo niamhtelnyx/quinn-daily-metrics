@@ -183,14 +183,14 @@ def analyze_call_with_ai(transcript, prospect_name, company_name="", company_web
     # Get company summary
     company_summary = get_company_summary_with_ai(transcript, prospect_name, company_name)
     
-    # Format company line with proper Slack hyperlinks
+    # Format company line with proper Slack hyperlinks - EXACT user specification
     company_line = ""
     if company_summary:
         if company_name and company_website:
-            # Create proper Slack hyperlink: <https://website.com|Display Text>
-            # Clean website (remove protocol if present, we'll add https://)
+            # Clean website (remove protocol, trailing slashes)
             clean_website = company_website.replace('https://', '').replace('http://', '').strip('/')
             full_url = f"https://{clean_website}"
+            # Format: <URL|Company | website> - display shows "Company | website", links to URL
             display_text = f"{company_name} | {clean_website}"
             company_line = f"🏢 <{full_url}|{display_text}> is {company_summary.lower()}"
         elif company_name:
@@ -347,7 +347,7 @@ def get_salesforce_token():
         return None, f"❌ Salesforce error: {e}"
 
 def find_salesforce_contact_enhanced(prospect_name, access_token):
-    """Find Salesforce contact with enhanced data"""
+    """Find Salesforce contact with enhanced data including company name and website"""
     if not access_token:
         return None, "No access token"
     
@@ -356,7 +356,8 @@ def find_salesforce_contact_enhanced(prospect_name, access_token):
         search_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/query"
         
         # Enhanced query to get contact + account info including website
-        query = f"SELECT Id, Name, Email, AccountId, Account.Name, Account.Description, Account.Website FROM Contact WHERE Name LIKE '%{prospect_name}%' LIMIT 5"
+        # Make sure we get all account fields we need for company info
+        query = f"SELECT Id, Name, Email, AccountId, Account.Name, Account.Description, Account.Website, Account.Type FROM Contact WHERE Name LIKE '%{prospect_name}%' LIMIT 5"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
@@ -370,14 +371,28 @@ def find_salesforce_contact_enhanced(prospect_name, access_token):
             contacts = data.get('records', [])
             if contacts:
                 contact = contacts[0]
+                # Extract account data safely
+                account = contact.get('Account', {})
+                
+                # Clean company website if present
+                company_website = account.get('Website')
+                if company_website:
+                    # Clean up website format
+                    company_website = company_website.replace('https://', '').replace('http://', '').strip('/')
+                    if company_website.startswith('www.'):
+                        company_website = company_website[4:]
+                
+                company_name = account.get('Name')
+                
                 return {
                     'contact_id': contact['Id'],
                     'contact_name': contact['Name'],
                     'account_id': contact.get('AccountId'),
-                    'company_name': contact.get('Account', {}).get('Name') if contact.get('Account') else None,
-                    'company_description': contact.get('Account', {}).get('Description') if contact.get('Account') else None,
-                    'company_website': contact.get('Account', {}).get('Website') if contact.get('Account') else None
-                }, f"✅ Found contact: {contact['Name']}"
+                    'company_name': company_name,
+                    'company_description': account.get('Description'),
+                    'company_website': company_website,
+                    'account_type': account.get('Type')
+                }, f"✅ Found contact: {contact['Name']}" + (f" at {company_name}" if company_name else "")
             else:
                 return None, f"⚠️ No contact found for: {prospect_name}"
         else:
