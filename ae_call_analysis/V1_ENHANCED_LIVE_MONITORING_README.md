@@ -1,5 +1,8 @@
 # 🚀 V1 Enhanced Call Intelligence - Live Monitoring
 
+**Repository**: https://github.com/team-telnyx/meeting-sync  
+**Branch**: v1-release  
+**Team**: Telnyx Sales Operations  
 **Status**: ✅ **PRODUCTION OPERATIONAL** - Original threaded format restored
 
 ## 🎯 What This System Does
