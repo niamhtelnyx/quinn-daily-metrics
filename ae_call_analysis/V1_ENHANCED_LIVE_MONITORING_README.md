@@ -43,12 +43,23 @@ OPENAI_API_KEY=sk-proj-your-openai-api-key
 
 ## 🤖 AI Analysis Features
 
-**ORIGINAL THREADED FORMAT - Main Post + Detailed Thread**
+**ORIGINAL THREADED FORMAT + COMPANY SUMMARY - Main Post + Detailed Thread**
+
+### **🏢 Company Summary Feature**
+
+Automatically extracts company information from:
+1. **Salesforce Account data** (name, website, description)
+2. **AI analysis of transcript** (generates company summary from call content)
+
+**Format**: `🏢 <Company Name | website.com> is [AI-generated description]`
+
+**Example**: `🏢 <Ondasa | ondasa.com> is a customer engagement platform company that needs reliable SMS and voice capabilities for its users.`
 
 **Main Post Format:**
 ```
-🔥 CALL INTELLIGENCE ALERT [FIXED - Real Salesforce Integration]
-Nick Mihalovich | Rob Messier & Darren Dunner | 2026-03-03
+Meeting Notes Retrieved
+📆 Nick Mihalovich | Rob Messier & Darren Dunner | 2026-03-03
+🏢 <Ondasa | ondasa.com> is a customer engagement platform company that needs reliable SMS and voice capabilities for its users.
 📊 Scores: Interest 8/10 | AE 8/10 | Quinn 8/10
 🔴 Key Pain: Current web platform needs reliable SMS integration
 💡 Product Focus: SMS API
@@ -130,9 +141,10 @@ Quality: 8/10
 
 **✅ Working Fellow Transcripts**: Include parameters extract full speech segments  
 **✅ AI Analysis**: OpenAI GPT-4 analysis on real call transcripts  
+**✅ Company Summary**: AI-powered company descriptions from Salesforce + transcript  
 **✅ Live Monitoring**: Today-only processing for real-time alerts  
 **✅ Enhanced Slack**: Professional formatting with hyperlinks  
-**✅ Salesforce Integration**: Enhanced events with AI insights  
+**✅ Salesforce Integration**: Enhanced events with AI insights + website data  
 **✅ Production Ready**: Every 30 minutes automation  
 
 ---
