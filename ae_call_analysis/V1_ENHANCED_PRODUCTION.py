@@ -110,38 +110,92 @@ def get_fellow_transcript(call_data):
     return None, "⚠️ No usable transcript found"
 
 def analyze_call_with_ai(transcript, prospect_name):
-    """Analyze call with OpenAI - 9-point structure"""
+    """ORIGINAL THREADED FORMAT - Analyze call with detailed breakdown for main post + thread"""
     openai_api_key = os.getenv('OPENAI_API_KEY')
     
     if not openai_api_key:
         return {
             "status": "no_api_key",
-            "summary": "AI analysis unavailable - add OPENAI_API_KEY to .env for enhanced insights"
+            "main_post": "❌ OpenAI API key required",
+            "thread_reply": "Add OPENAI_API_KEY to .env for detailed insights",
+            "summary": "❌ OpenAI API key required"
         }
     
     if not transcript:
         return {
-            "status": "no_transcript",
-            "summary": "AI analysis unavailable - no transcript found for this call"
+            "status": "no_transcript", 
+            "main_post": "❌ No transcript available",
+            "thread_reply": "Transcript not found for AI analysis",
+            "summary": "❌ No transcript available"
         }
-    
-    analysis_prompt = f"""Analyze this Telnyx intro call with {prospect_name}. Provide concise insights:
 
-TRANSCRIPT: {transcript[:2000]}...
+    # ORIGINAL DETAILED PROMPT for threaded Slack format matching user's example
+    analysis_prompt = f"""
+Analyze this Telnyx intro call transcript for {prospect_name}.
 
-Respond with 9 key insights in this exact format:
+TRANSCRIPT:
+{transcript[:8000]}
 
-**🔴 Pain Points**: [What business problems do they have?]
-**🎯 Use Cases**: [How will they use Telnyx?]  
-**💡 Products**: [Which Telnyx services discussed?]
-**📈 Buying Signals**: [What shows purchase intent?]
-**⚙️ Technical Needs**: [What integrations/specs needed?]
-**⏰ Timeline**: [How urgent? When do they need it?]
-**👤 Decision Makers**: [Who decides? Are they involved?]
-**🔄 Competition**: [Current provider/competitors mentioned?]
-**🚀 Next Steps**: [What should happen next?]
+Provide TWO separate formatted outputs:
 
-**Scores**: Interest: X/10, Qualification: X/10, AE Performance: X/10"""
+=== MAIN POST ===
+🔥 CALL INTELLIGENCE ALERT [FIXED - Real Salesforce Integration]
+{prospect_name} | [extract AE names from transcript] | [today's date]
+📊 Scores: Interest X/10 | AE X/10 | Quinn X/10  
+🔴 Key Pain: [primary pain point in one line]
+💡 Product Focus: [main Telnyx product discussed]
+🚀 Next Step: [primary action needed]
+🔗 Salesforce: ✅ Validated
+See thread for full analysis and stakeholder actions 👇
+
+=== THREAD REPLY ===
+📋 DETAILED CALL ANALYSIS: {prospect_name}
+
+💡 COMPLETE INSIGHTS
+
+🔴 All Pain Points:
+1. [First pain point]
+2. [Second pain point]
+3. [Third pain point if any]
+
+🎯 Use Cases Discussed:
+• [Use case 1]
+• [Use case 2]
+
+💡 Telnyx Products:
+• [Product 1] 
+• [Product 2]
+
+🗣️ Conversation Style: [Technical Integration/Strategic Discussion/etc.]
+
+📈 Buying Signals:
+• [Signal 1]
+• [Signal 2]
+
+🚀 NEXT STEPS Category: [Technical Validation/Commercial Discussion/etc.]
+Actions:
+• [Action 1] 
+• [Action 2]
+
+📋 QUINN REVIEW
+Quality: X/10
+
+🎯 STAKEHOLDER ACTIONS
+
+📈 Sales Manager:
+🌟 [Performance feedback or coaching notes]
+
+🎨 Marketing:
+📊 Pain trend: [main pain point for trend tracking]
+
+🔧 Product:
+🔧 Interest in: [main product discussed]
+
+👑 Executive:
+📈 [Qualification status and strategic insights]
+
+Analyze thoroughly and provide realistic scores. Extract AE names from the transcript.
+"""
 
     try:
         response = requests.post(
@@ -153,10 +207,10 @@ Respond with 9 key insights in this exact format:
             json={
                 "model": "gpt-4-turbo-preview",
                 "messages": [
-                    {"role": "system", "content": "You are an expert sales call analyst. Be concise and actionable."},
+                    {"role": "system", "content": "You are an expert sales call analyst. Provide detailed, actionable insights in the exact format requested. Follow the format precisely."},
                     {"role": "user", "content": analysis_prompt}
                 ],
-                "max_tokens": 800,
+                "max_tokens": 3000,
                 "temperature": 0.3
             },
             timeout=30
@@ -164,21 +218,34 @@ Respond with 9 key insights in this exact format:
         
         if response.status_code == 200:
             ai_response = response.json()
-            content = ai_response['choices'][0]['message']['content']
+            full_analysis = ai_response['choices'][0]['message']['content']
+            
+            # Split into main post and thread reply
+            parts = full_analysis.split("=== THREAD REPLY ===")
+            main_post = parts[0].replace("=== MAIN POST ===", "").strip()
+            thread_reply = parts[1].strip() if len(parts) > 1 else ""
+            
             return {
                 "status": "success",
-                "summary": content
+                "main_post": main_post,
+                "thread_reply": thread_reply,
+                "summary": main_post,  # For backward compatibility
+                "full_analysis": full_analysis
             }
         else:
             return {
                 "status": "error",
-                "summary": f"OpenAI API error: {response.status_code}"
+                "main_post": f"❌ OpenAI API error: {response.status_code}",
+                "thread_reply": "AI analysis failed",
+                "summary": f"❌ OpenAI API error: {response.status_code}"
             }
             
     except Exception as e:
         return {
             "status": "error",
-            "summary": f"AI analysis failed: {str(e)}"
+            "main_post": f"❌ AI analysis failed: {str(e)}",
+            "thread_reply": "Error in AI processing",
+            "summary": f"❌ AI analysis failed: {str(e)}"
         }
 
 def get_salesforce_token():
@@ -396,6 +463,43 @@ def post_to_slack_bot_api(message, channel="C0AJ9E9F474"):
     except Exception as e:
         return False, f"❌ Slack error: {str(e)}"
 
+def post_thread_reply_to_slack(message, parent_ts, channel="C0AJ9E9F474"):
+    """Post thread reply to Slack"""
+    bot_token = os.getenv('SLACK_BOT_TOKEN')
+    
+    if not bot_token:
+        return False, "❌ SLACK_BOT_TOKEN not found"
+    
+    try:
+        url = "https://slack.com/api/chat.postMessage"
+        headers = {
+            "Authorization": f"Bearer {bot_token}",
+            "Content-Type": "application/json"
+        }
+        
+        payload = {
+            "channel": channel,
+            "text": message,
+            "thread_ts": parent_ts,
+            "unfurl_links": True,
+            "unfurl_media": True
+        }
+        
+        response = requests.post(url, json=payload, headers=headers, timeout=15)
+        
+        if response.status_code == 200:
+            data = response.json()
+            if data.get('ok'):
+                return True, f"✅ Posted thread reply"
+            else:
+                error = data.get('error', 'unknown_error')
+                return False, f"❌ Thread error: {error}"
+        else:
+            return False, f"❌ HTTP error: {response.status_code}"
+            
+    except Exception as e:
+        return False, f"❌ Thread error: {str(e)}"
+
 def is_call_processed(call_id):
     """Check if call already processed"""
     db_path = 'v1_enhanced.db'
@@ -488,12 +592,28 @@ def run_enhanced_automation():
             sf_success = event_id is not None
             log_message(f"   📅 Event: {event_msg}")
         
-        # Step 4: Generate enhanced Slack alert
-        alert = format_enhanced_slack_alert(call, contact_data, event_id, ai_analysis)
-        
-        # Step 5: Post to Slack
-        slack_success, slack_msg = post_to_slack_bot_api(alert)
-        log_message(f"   📱 Slack: {slack_msg}")
+        # Step 4: Post ORIGINAL THREADED format to Slack  
+        if ai_analysis.get('status') == 'success' and ai_analysis.get('main_post'):
+            # Post main message
+            main_post = ai_analysis['main_post']
+            slack_success, slack_msg = post_to_slack_bot_api(main_post)
+            log_message(f"   📱 Slack Main: {slack_msg}")
+            
+            # Post thread reply if main post succeeded
+            if slack_success and ai_analysis.get('thread_reply'):
+                # Extract timestamp from slack_msg for threading
+                import re
+                ts_match = re.search(r'ts: ([\d.]+)', slack_msg)
+                if ts_match:
+                    parent_ts = ts_match.group(1)
+                    thread_reply = ai_analysis['thread_reply']
+                    thread_success, thread_msg = post_thread_reply_to_slack(thread_reply, parent_ts)
+                    log_message(f"   📱 Slack Thread: {thread_msg}")
+        else:
+            # Fallback to old format if AI analysis failed
+            alert = format_enhanced_slack_alert(call, contact_data, event_id, ai_analysis)
+            slack_success, slack_msg = post_to_slack_bot_api(alert)
+            log_message(f"   📱 Slack: {slack_msg}")
         
         # Step 6: Mark as processed
         mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_success)
