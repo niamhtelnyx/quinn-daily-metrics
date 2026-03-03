@@ -183,13 +183,18 @@ def analyze_call_with_ai(transcript, prospect_name, company_name="", company_web
     # Get company summary
     company_summary = get_company_summary_with_ai(transcript, prospect_name, company_name)
     
-    # Format company line
+    # Format company line with proper Slack hyperlinks
     company_line = ""
     if company_summary:
         if company_name and company_website:
-            company_line = f"🏢 <{company_name} | {company_website}> is {company_summary.lower()}"
+            # Create proper Slack hyperlink: <https://website.com|Display Text>
+            # Clean website (remove protocol if present, we'll add https://)
+            clean_website = company_website.replace('https://', '').replace('http://', '').strip('/')
+            full_url = f"https://{clean_website}"
+            display_text = f"{company_name} | {clean_website}"
+            company_line = f"🏢 <{full_url}|{display_text}> is {company_summary.lower()}"
         elif company_name:
-            company_line = f"🏢 <{company_name}> is {company_summary.lower()}"
+            company_line = f"🏢 {company_name} is {company_summary.lower()}"
         else:
             company_line = f"🏢 {company_summary}"
     
