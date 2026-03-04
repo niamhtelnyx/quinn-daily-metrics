@@ -403,7 +403,7 @@ Be concise, professional, and extract real information from the transcript. If n
     except Exception as e:
         return None
 
-def analyze_call_with_ai(transcript, prospect_name, company_name="", company_website=""):
+def analyze_call_with_ai(transcript, prospect_name, company_name="", company_website="", salesforce_ids=None):
     """V1 ORIGINAL THREADED FORMAT with COMPANY SUMMARY - Analyze call with detailed breakdown for main post + thread"""
     openai_api_key = os.getenv('OPENAI_API_KEY')
     
@@ -426,19 +426,46 @@ def analyze_call_with_ai(transcript, prospect_name, company_name="", company_web
     # Get company summary
     company_summary = get_company_summary_with_ai(transcript, prospect_name, company_name)
     
-    # Format company line with company name hyperlinked to website
+    # Build company line (fix: avoid "company is company is..." issue)
     company_line = ""
-    if company_summary:
-        if company_name and company_website:
-            # Clean website (remove protocol, trailing slashes)
-            clean_website = company_website.replace('https://', '').replace('http://', '').strip('/')
-            full_url = f"https://{clean_website}"
-            # Format: <URL|Company> - display shows just "Company", links to URL
-            company_line = f"🏢 <{full_url}|{company_name}> is {company_summary.lower()}"
-        elif company_name:
-            company_line = f"🏢 {company_name} is {company_summary.lower()}"
+    if company_name:
+        if company_summary and company_summary.lower() != company_name.lower():
+            # Only use summary if it's different from company name
+            if company_website:
+                clean_website = company_website.replace('https://', '').replace('http://', '').strip('/')
+                full_url = f"https://{clean_website}"
+                company_line = f"🏢 <{full_url}|{company_name}> is {company_summary.lower()}"
+            else:
+                company_line = f"🏢 {company_name} is {company_summary.lower()}"
         else:
-            company_line = f"🏢 {company_summary}"
+            # Just show company name if no good summary
+            if company_website:
+                clean_website = company_website.replace('https://', '').replace('http://', '').strip('/')
+                full_url = f"https://{clean_website}"
+                company_line = f"🏢 <{full_url}|{company_name}>"
+            else:
+                company_line = f"🏢 {company_name}"
+    
+    # Build Salesforce hyperlinks
+    sf_links = ""
+    if salesforce_ids:
+        domain = os.getenv('SF_DOMAIN', 'telnyx')
+        links = []
+        
+        if salesforce_ids.get('contact_id'):
+            contact_url = f"https://{domain}.lightning.force.com/lightning/r/Contact/{salesforce_ids['contact_id']}/view"
+            links.append(f"<{contact_url}|Contact>")
+        
+        if salesforce_ids.get('account_id'):
+            account_url = f"https://{domain}.lightning.force.com/lightning/r/Account/{salesforce_ids['account_id']}/view"
+            links.append(f"<{account_url}|Account>")
+            
+        if salesforce_ids.get('event_id'):
+            event_url = f"https://{domain}.lightning.force.com/lightning/r/Event/{salesforce_ids['event_id']}/view"
+            links.append(f"<{event_url}|Event>")
+        
+        if links:
+            sf_links = f"\n🏢 Salesforce: {' | '.join(links)}"
     
     # V1 ORIGINAL DETAILED PROMPT for threaded Slack format matching user's example
     analysis_prompt = f"""
@@ -452,12 +479,11 @@ Provide TWO separate formatted outputs:
 === MAIN POST ===
 Meeting Notes Retrieved
 📆 {prospect_name} | [extract AE names from transcript] | [today's date]
-{company_line}
+{company_line}{sf_links}
 📊 Scores: Interest X/10 | AE X/10 | Quinn X/10  
 🔴 Key Pain: [primary pain point in one line]
 💡 Product Focus: [main Telnyx product discussed]
 🚀 Next Step: [primary action needed]
-🔗 Salesforce: ✅ Validated
 See thread for full analysis and stakeholder actions 👇
 
 === THREAD REPLY ===
@@ -926,6 +952,7 @@ def get_contact_from_event(contact_id, access_token):
                     'contact_id': contact['Id'],
                     'contact_name': contact['Name'],
                     'contact_email': contact.get('Email'),
+                    'account_id': contact.get('AccountId'),
                     'company_name': account.get('Name'),
                     'company_website': account.get('Website')
                 }, f"✅ Found contact: {contact['Name']}"
@@ -1005,7 +1032,14 @@ def run_enhanced_automation():
         company_name = contact_data.get("company_name", "")
         company_website = contact_data.get("company_website", "")
         
-        ai_analysis = analyze_call_with_ai(content, prospect_name, company_name, company_website)
+        # Prepare Salesforce IDs for hyperlinks
+        salesforce_ids = {
+            'contact_id': contact_data.get('contact_id'),
+            'account_id': contact_data.get('account_id'), 
+            'event_id': event_data.get('event_id')
+        }
+        
+        ai_analysis = analyze_call_with_ai(content, prospect_name, company_name, company_website, salesforce_ids)
         ai_success = ai_analysis.get("status") == "success"
         log_message(f"   🤖 AI Analysis: {'success' if ai_success else 'failed'}")
         
