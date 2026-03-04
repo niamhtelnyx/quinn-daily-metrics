@@ -914,99 +914,66 @@ def run_enhanced_automation():
         if is_call_processed(call_id):
             continue
             
-        log_message(f"🆕 Processing CORRECT: {title[:60]}...")
+        log_message(f"🆕 Processing ENHANCED: {title[:60]}...")
         
-        # Step 1: Extract event name from Google Drive title
-        event_name = extract_event_name_from_google_title(title)
-        if not event_name:
-            log_message(f"   ❌ Could not extract event name from: {title}")
-            continue
-        
-        log_message(f"   🎯 Event name: '{event_name}'")
-        
-        # Step 2: Get Google Doc content
+        # Step 1: Get Google Doc content (replacing Fellow transcript)
         content, content_msg = get_google_doc_content(call_id)
+        log_message(f"   📝 Content: {content_msg}")
+        
         if not content:
-            log_message(f"   📝 Content: {content_msg}")
             continue
         
-        # Step 3: Find Salesforce event by exact subject
-        event_data, event_msg = find_salesforce_event_by_exact_subject(event_name, access_token)
-        log_message(f"   🔍 Event: {event_msg}")
+        # Step 2: Parse Google Drive call data (replacing Fellow data parsing)
+        formatted_call = format_enhanced_google_drive_call(call, content)
+        prospect_name = formatted_call['prospect_name']
         
-        if not event_data:
-            continue
-            
-        # Step 4: Get contact from event
-        contact_data, contact_msg = get_contact_from_event(event_data["contact_id"], access_token)
-        log_message(f"   👤 Contact: {contact_msg}")
+        log_message(f"   👤 Parsed: {prospect_name}")
         
-        if not contact_data:
-            continue
+        # Step 3: Find Salesforce contact with enhanced data (V1 ORIGINAL - KEEP)
+        contact_data = None
+        if access_token:
+            contact_data, contact_msg = find_salesforce_contact_enhanced(prospect_name, access_token)
+            log_message(f"   👤 Contact: {contact_msg}")
         
-        # Step 5: Run AI analysis
-        prospect_name = contact_data["contact_name"]
-        company_name = contact_data.get("company_name", "")
-        company_website = contact_data.get("company_website", "")
-        
+        # Step 4: Run AI analysis with company information (V1 ORIGINAL - KEEP)
+        company_name = contact_data.get('company_name', '') if contact_data else ''
+        company_website = contact_data.get('company_website', '') if contact_data else ''
         ai_analysis = analyze_call_with_ai(content, prospect_name, company_name, company_website)
-        ai_success = ai_analysis.get("status") == "success"
-        log_message(f"   🤖 AI Analysis: {'success' if ai_success else 'failed'}")
+        ai_success = ai_analysis.get('status') == 'success'
+        log_message(f"   🤖 AI Analysis: {ai_analysis.get('status')}")
         
-        # Step 6: Post to Slack
-        slack_success = False
-        if ai_analysis.get("main_post"):
-            main_post = ai_analysis["main_post"]
+        # Step 5: Update Salesforce event (V1 ORIGINAL - CRITICAL)
+        event_id = None
+        sf_success = False
+        if contact_data and access_token:
+            event_id, event_msg = find_or_update_salesforce_event(contact_data, prospect_name, call_id, access_token)
+            sf_success = event_id is not None
+            log_message(f"   📅 Event: {event_msg}")
+        
+        # Step 6: Post ORIGINAL V1 THREADED format to Slack (V1 ORIGINAL - KEEP)
+        if ai_analysis.get('status') == 'success' and ai_analysis.get('main_post'):
+            # Post main message
+            main_post = ai_analysis['main_post']
             slack_success, slack_msg = post_to_slack_bot_api(main_post)
             log_message(f"   📱 Slack Main: {slack_msg}")
             
-            # Post thread reply
-            if slack_success and ai_analysis.get("thread_reply"):
-                ts_match = re.search(r"ts: ([\d.]+)", slack_msg)
+            # Post thread reply if main post succeeded
+            if slack_success and ai_analysis.get('thread_reply'):
+                # Extract timestamp from slack_msg for threading
+                ts_match = re.search(r'ts: ([\d.]+)', slack_msg)
                 if ts_match:
                     parent_ts = ts_match.group(1)
-                    thread_reply = ai_analysis["thread_reply"]
+                    thread_reply = ai_analysis['thread_reply']
                     thread_success, thread_msg = post_thread_reply_to_slack(thread_reply, parent_ts)
                     log_message(f"   📱 Slack Thread: {thread_msg}")
+        else:
+            slack_success = False
+            log_message(f"   📱 Slack: Skipped due to AI analysis failure")
         
-        # Step 7: Update Salesforce event with AI analysis
-        google_drive_url = f"https://docs.google.com/document/d/{call_id}/edit"
-        ai_text = ai_analysis.get("summary", ai_analysis.get("main_post", ""))
-        
-        sf_success = False
-        if event_data["event_id"]:
-            try:
-                domain = os.getenv("SF_DOMAIN", "telnyx")
-                update_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/sobjects/Event/{event_data['event_id']}"
-                
-                description = f"""Call Analysis - {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-
-📁 Google Drive Notes: {google_drive_url}
-
-🤖 AI ANALYSIS:
-{ai_text}
-
-✅ Processed by V1 Enhanced Intelligence"""
-                
-                update_data = {"Description": description}
-                headers = {
-                    "Authorization": f"Bearer {access_token}",
-                    "Content-Type": "application/json"
-                }
-                
-                response = requests.patch(update_url, json=update_data, headers=headers, timeout=10)
-                sf_success = response.status_code == 204
-                log_message(f"   🏢 SF Update: {'✅ Updated event' if sf_success else '❌ Failed'}")
-                
-            except Exception as e:
-                log_message(f"   🏢 SF Update: ❌ Error: {e}")
-        
-        # Step 8: Track in database
+        # Step 7: Mark as processed (V1 ORIGINAL)
         mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_success)
-        processed_count += 1
         
-        prospect_display = f"{prospect_name} ({company_name})" if company_name else prospect_name
-        log_message(f"✅ CORRECT: {prospect_display} (Slack: {'✅' if slack_success else '❌'}, SF: {'✅' if sf_success else '❌'})")
+        processed_count += 1
         log_message(f"✅ ENHANCED: {prospect_name} (Slack: {'✅' if slack_success else '❌'}, SF: {'✅' if sf_success else '❌'}, AI: {'✅' if ai_success else '❌'})")
         
         if processed_count >= 3:
