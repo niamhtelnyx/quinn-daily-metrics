@@ -15,14 +15,14 @@ def main():
         env = os.environ.copy()
         env['PATH'] = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:' + env.get('PATH', '')
         
-        # EMERGENCY: Use emergency fix for 5:30 PM run to bypass hanging issue
+        # SAFE: Use safe implementation that won't hang
         cmd = """
         cd /Users/niamhcollins/clawd/ae_call_analysis
         set -a  # Auto-export all variables
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 emergency_fix.py
+        python3 V1_SAFE_FIXED.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 
