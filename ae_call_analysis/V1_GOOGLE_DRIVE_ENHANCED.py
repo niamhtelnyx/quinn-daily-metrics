@@ -66,27 +66,20 @@ def log_message(msg):
 # ==== GOOGLE DRIVE INTEGRATION (FROM V2) ====
 
 def run_gog_command(cmd):
-    """Run gog CLI command and return output (from V2_RECENT_CALLS_ONLY.py)"""
+    """SIMPLIFIED gog command runner - fixes hanging issue"""
     try:
         env = os.environ.copy()
-        env_file_path = '/Users/niamhcollins/clawd/.env.gog'
-        
-        if os.path.exists(env_file_path):
-            with open(env_file_path, 'r') as f:
-                for line in f:
-                    if line.strip() and not line.startswith('#') and '=' in line:
-                        key, value = line.strip().split('=', 1)
-                        if key.startswith('export '):
-                            key = key[7:]
-                        env[key] = value.strip('"')
+        env['GOG_ACCOUNT'] = 'niamh@telnyx.com'
+        env['GOG_KEYRING_PASSWORD'] = 'clawdgog123'
         
         result = subprocess.run(
-            f'source /Users/niamhcollins/clawd/.env.gog && {cmd}',
+            cmd,
             shell=True,
             capture_output=True,
             text=True,
             env=env,
-            executable='/bin/bash'
+            executable='/bin/bash',
+            timeout=30
         )
         
         if result.returncode != 0:
@@ -94,6 +87,8 @@ def run_gog_command(cmd):
         
         return result.stdout, None
         
+    except subprocess.TimeoutExpired:
+        return None, "Command timed out (30s) - possible gog CLI hang"
     except Exception as e:
         return None, f"Error running gog command: {str(e)}"
 

@@ -15,14 +15,14 @@ def main():
         env = os.environ.copy()
         env['PATH'] = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:' + env.get('PATH', '')
         
-        # Source environment files and run new system  
+        # EMERGENCY: Use emergency fix for 5:30 PM run to bypass hanging issue
         cmd = """
         cd /Users/niamhcollins/clawd/ae_call_analysis
         set -a  # Auto-export all variables
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 V1_GOOGLE_DRIVE_ENHANCED.py
+        python3 emergency_fix.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 
