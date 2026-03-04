@@ -779,7 +779,8 @@ def is_call_processed(call_id):
             slack_posted BOOLEAN DEFAULT FALSE,
             salesforce_updated BOOLEAN DEFAULT FALSE,
             ai_analyzed BOOLEAN DEFAULT FALSE,
-            source TEXT DEFAULT 'google_drive'
+            source TEXT DEFAULT 'google_drive',
+            dedup_key TEXT
         )
     ''')
     
@@ -789,17 +790,63 @@ def is_call_processed(call_id):
     
     return result is not None
 
-def mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_success):
-    """Mark call as processed with enhanced tracking (V1 ORIGINAL + source tracking)"""
+def is_event_processed(dedup_key):
+    """Check if event already processed by event name + date (ENHANCED DEDUPLICATION)"""
+    db_path = 'v1_google_drive.db'
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS processed_calls (
+            id INTEGER PRIMARY KEY,
+            call_id TEXT UNIQUE,
+            prospect_name TEXT,
+            processed_at TEXT,
+            slack_posted BOOLEAN DEFAULT FALSE,
+            salesforce_updated BOOLEAN DEFAULT FALSE,
+            ai_analyzed BOOLEAN DEFAULT FALSE,
+            source TEXT DEFAULT 'google_drive',
+            dedup_key TEXT
+        )
+    ''')
+    
+    cursor.execute('SELECT * FROM processed_calls WHERE dedup_key = ?', (dedup_key,))
+    result = cursor.fetchone()
+    conn.close()
+    
+    return result is not None
+
+def create_dedup_key(event_name, title):
+    """Create deduplication key from event name and date"""
+    import re
+    from datetime import datetime
+    
+    # Extract date from title: "Copy of Event Name - 2026/03/04 16:00 EST"
+    date_pattern = r'(\d{4}/\d{2}/\d{2})'
+    date_match = re.search(date_pattern, title)
+    
+    if date_match:
+        date_str = date_match.group(1).replace('/', '-')  # 2026-03-04
+    else:
+        # Fallback to today's date
+        date_str = datetime.now().strftime('%Y-%m-%d')
+    
+    # Clean event name for consistent matching
+    clean_event = event_name.strip().lower()
+    
+    return f"{clean_event}_{date_str}"
+
+def mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_success, dedup_key=None):
+    """Mark call as processed with enhanced tracking (V1 ORIGINAL + dedup_key)"""
     db_path = 'v1_google_drive.db'
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
     cursor.execute('''
         INSERT OR REPLACE INTO processed_calls 
-        (call_id, prospect_name, processed_at, slack_posted, salesforce_updated, ai_analyzed, source)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', (call_id, prospect_name, datetime.now().isoformat(), slack_success, sf_success, ai_success, 'google_drive'))
+        (call_id, prospect_name, processed_at, slack_posted, salesforce_updated, ai_analyzed, source, dedup_key)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (call_id, prospect_name, datetime.now().isoformat(), slack_success, sf_success, ai_success, 'google_drive', dedup_key))
     
     conn.commit()
     conn.close()
@@ -911,17 +958,26 @@ def run_enhanced_automation():
         call_id = call.get('id')
         title = call.get('title', 'Unknown')
         
+        # Step 1: Extract event name from Google Drive title (for deduplication)
+        event_name = extract_event_name_from_google_title(title)
+        if not event_name:
+            log_message(f"❌ Could not extract event name from: {title}")
+            continue
+            
+        # Step 2: Create deduplication key (event_name + date)
+        dedup_key = create_dedup_key(event_name, title)
+        
+        # Step 3: Check if this EVENT has been processed (enhanced deduplication)
+        if is_event_processed(dedup_key):
+            log_message(f"⏭️ SKIPPING: '{event_name}' already processed (dedup: {dedup_key})")
+            continue
+        
+        # Step 4: Also check if this specific DOC has been processed (backup check)
         if is_call_processed(call_id):
+            log_message(f"⏭️ SKIPPING: Doc {call_id} already processed")
             continue
             
         log_message(f"🆕 Processing CORRECT: {title[:60]}...")
-        
-        # Step 1: Extract event name from Google Drive title
-        event_name = extract_event_name_from_google_title(title)
-        if not event_name:
-            log_message(f"   ❌ Could not extract event name from: {title}")
-            continue
-        
         log_message(f"   🎯 Event name: '{event_name}'")
         
         # Step 2: Get Google Doc content
@@ -1001,8 +1057,8 @@ def run_enhanced_automation():
             except Exception as e:
                 log_message(f"   🏢 SF Update: ❌ Error: {e}")
         
-        # Step 8: Track in database
-        mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_success)
+        # Step 8: Track in database (with dedup_key for enhanced deduplication)
+        mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_success, dedup_key)
         processed_count += 1
         
         prospect_display = f"{prospect_name} ({company_name})" if company_name else prospect_name
