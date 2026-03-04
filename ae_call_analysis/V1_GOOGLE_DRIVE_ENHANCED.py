@@ -822,9 +822,9 @@ def find_salesforce_event_by_exact_subject(event_name, access_token):
         domain = os.getenv('SF_DOMAIN', 'telnyx')
         search_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/query"
         
-        # EXACT subject match - fixed syntax
+        # EXACT subject match - fixed syntax (removed non-existent AssignedToId field)
         subject = "Meeting Booked: " + event_name
-        query = f"SELECT Id, Subject, WhoId, OwnerId, AssignedToId FROM Event WHERE Subject = '{subject}' ORDER BY CreatedDate DESC LIMIT 1"
+        query = f"SELECT Id, Subject, WhoId, OwnerId FROM Event WHERE Subject = '{subject}' ORDER BY CreatedDate DESC LIMIT 1"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
@@ -841,7 +841,7 @@ def find_salesforce_event_by_exact_subject(event_name, access_token):
                 return {
                     'event_id': event['Id'],
                     'contact_id': event['WhoId'], 
-                    'ae_user_id': event.get('AssignedToId') or event.get('OwnerId'),
+                    'ae_user_id': event.get('OwnerId'),
                     'subject': event['Subject']
                 }, f"✅ Found event: {event['Subject']}"
             else:
