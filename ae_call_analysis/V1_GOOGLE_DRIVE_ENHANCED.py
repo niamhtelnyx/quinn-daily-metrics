@@ -251,9 +251,9 @@ def extract_attendees_from_content(content, title=""):
     
     # Enhanced list of known Telnyx AEs
     telnyx_aes = [
-        'niamh collins', 'ryan simkins', 'tyron pretorius', 'austin lazarus',
+        'niamh collins', 'ryan simkins', 'tyron pretorius',
         'kai luo', 'rob messier', 'danilo', 'gulsah', 'luke', 'khalil', 'jagoda',
-        'conor', 'mario', 'abdullah', 'edmond', 'brian', 'chris cho'
+        'conor', 'mario', 'abdullah', 'edmond', 'brian'
     ]
     
     try:
@@ -261,7 +261,6 @@ def extract_attendees_from_content(content, title=""):
         title_patterns = [
             r'^Copy of ([^<>&|]+)\s*[<>&|]+\s*Telnyx',  # "Company <> Telnyx"
             r'^Copy of Telnyx\s*[<>&|]+\s*([^-]+)',      # "Telnyx <> Company"  
-            r'^Copy of Telnyx\s*//\s*([^-]+)',           # "Telnyx // Company" (NEW)
             r'^Copy of ([^/]+)\s*/\s*Telnyx',            # "Company / Telnyx"
             r'^Copy of (.+?)\s+and\s+\w+:',              # "Company and Person:"
             r'^Copy of (.+?)\s+-\s+.*Notes by Gemini',   # Extract before date
@@ -655,7 +654,7 @@ def find_or_update_salesforce_event(contact_data, prospect_name, call_id, access
         domain = os.getenv('SF_DOMAIN', 'telnyx')
         
         search_url = f"https://{domain}.my.salesforce.com/services/data/v57.0/query"
-        query = f"SELECT Id, Subject, Description FROM Event WHERE WhoId = '{contact_id}' AND (Subject LIKE '%Telnyx%' OR Subject LIKE '%Meeting Booked%') ORDER BY CreatedDate DESC LIMIT 5"
+        query = f"SELECT Id, Subject, Description FROM Event WHERE WhoId = '{contact_id}' AND Subject LIKE '%Telnyx Intro%' ORDER BY CreatedDate DESC LIMIT 5"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
