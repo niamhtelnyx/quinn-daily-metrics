@@ -15,14 +15,14 @@ def main():
         env = os.environ.copy()
         env['PATH'] = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:' + env.get('PATH', '')
         
-        # DATE HIERARCHY: Process recent date folders with meeting subfolders (Safe mode)
+        # DATE HIERARCHY: Process recent date folders with FULL pipeline 
         cmd = """
         cd /Users/niamhcollins/clawd/ae_call_analysis
         set -a  # Auto-export all variables
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 V1_PRODUCTION_DATE_SAFE.py
+        python3 V1_DATE_FULL.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 
