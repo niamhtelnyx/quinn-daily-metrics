@@ -208,59 +208,73 @@ def extract_event_name_from_meeting_folder(folder_name):
 # SAME: All V1 functionality below (unchanged)
 def get_salesforce_token():
     """Get Salesforce OAuth2 access token"""
-    client_id = os.getenv('SF_CLIENT_ID')
-    client_secret = os.getenv('SF_CLIENT_SECRET')
-    domain = os.getenv('SF_DOMAIN', 'telnyx')
-    
-    if not client_id or not client_secret:
-        log_message(f"❌ Salesforce credentials missing")
-        return None
+    try:
+        client_id = os.getenv('SF_CLIENT_ID')
+        client_secret = os.getenv('SF_CLIENT_SECRET')
+        domain = os.getenv('SF_DOMAIN', 'telnyx')
         
-    auth_url = f"https://{domain}.my.salesforce.com/services/oauth2/token"
-    
-    data = {
-        'grant_type': 'client_credentials',
-        'client_id': client_id,
-        'client_secret': client_secret
-    }
-    
-    response = requests.post(auth_url, data=data, timeout=10)
-    if response.status_code == 200:
-        return response.json().get('access_token')
-    else:
-        log_message(f"❌ Salesforce auth failed: {response.status_code}")
+        if not client_id or not client_secret:
+            log_message(f"❌ Salesforce credentials missing")
+            return None
+            
+        auth_url = f"https://{domain}.my.salesforce.com/services/oauth2/token"
+        
+        data = {
+            'grant_type': 'client_credentials',
+            'client_id': client_id,
+            'client_secret': client_secret
+        }
+        
+        response = requests.post(auth_url, data=data, timeout=30)
+        if response.status_code == 200:
+            return response.json().get('access_token')
+        else:
+            log_message(f"❌ Salesforce auth failed: {response.status_code}")
+            return None
+    except requests.exceptions.Timeout:
+        log_message(f"⏰ Salesforce auth timeout")
+        return None
+    except Exception as e:
+        log_message(f"❌ Salesforce auth error: {str(e)}")
         return None
 
 def find_salesforce_event_by_exact_subject(access_token, event_name):
     """Find Salesforce event by exact subject match"""
-    domain = os.getenv('SF_DOMAIN', 'telnyx')
-    instance_url = f"https://{domain}.my.salesforce.com"
-    
-    # Build exact subject search
-    exact_subject = f"Meeting Booked: {event_name}"
-    
-    # Escape single quotes for SOQL query
-    escaped_subject = exact_subject.replace("'", "\\'")
-    
-    query = f"""
-    SELECT Id, Subject, WhoId, StartDateTime, EndDateTime 
-    FROM Event 
-    WHERE Subject = '{escaped_subject}'
-    ORDER BY CreatedDate DESC 
-    LIMIT 1
-    """
-    
-    headers = {
-        'Authorization': f'Bearer {access_token}',
-        'Content-Type': 'application/json'
-    }
-    
-    response = requests.get(
-        f"{instance_url}/services/data/v57.0/query",
-        params={'q': query},
-        headers=headers,
-        timeout=10
-    )
+    try:
+        domain = os.getenv('SF_DOMAIN', 'telnyx')
+        instance_url = f"https://{domain}.my.salesforce.com"
+        
+        # Build exact subject search
+        exact_subject = f"Meeting Booked: {event_name}"
+        
+        # Escape single quotes for SOQL query
+        escaped_subject = exact_subject.replace("'", "\\'")
+        
+        query = f"""
+        SELECT Id, Subject, WhoId, StartDateTime, EndDateTime 
+        FROM Event 
+        WHERE Subject = '{escaped_subject}'
+        ORDER BY CreatedDate DESC 
+        LIMIT 1
+        """
+        
+        headers = {
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        }
+        
+        response = requests.get(
+            f"{instance_url}/services/data/v57.0/query",
+            params={'q': query},
+            headers=headers,
+            timeout=30
+        )
+    except requests.exceptions.Timeout:
+        log_message(f"⏰ Salesforce event query timeout for: {event_name}", False)
+        return None
+    except Exception as e:
+        log_message(f"❌ Salesforce event query error: {str(e)}", False)
+        return None
     
     if response.status_code == 200:
         results = response.json()
@@ -274,29 +288,36 @@ def get_contact_from_event(access_token, event_record):
     if not event_record.get('WhoId'):
         return None
     
-    domain = os.getenv('SF_DOMAIN', 'telnyx')
-    instance_url = f"https://{domain}.my.salesforce.com"
-    
-    who_id = event_record['WhoId']
-    
-    query = f"""
-    SELECT Id, Name, Email, AccountId, Account.Name
-    FROM Contact 
-    WHERE Id = '{who_id}'
-    LIMIT 1
-    """
-    
-    headers = {
-        'Authorization': f'Bearer {access_token}',
-        'Content-Type': 'application/json'
-    }
-    
-    response = requests.get(
-        f"{instance_url}/services/data/v57.0/query",
-        params={'q': query},
-        headers=headers,
-        timeout=10
-    )
+    try:
+        domain = os.getenv('SF_DOMAIN', 'telnyx')
+        instance_url = f"https://{domain}.my.salesforce.com"
+        
+        who_id = event_record['WhoId']
+        
+        query = f"""
+        SELECT Id, Name, Email, AccountId, Account.Name
+        FROM Contact 
+        WHERE Id = '{who_id}'
+        LIMIT 1
+        """
+        
+        headers = {
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        }
+        
+        response = requests.get(
+            f"{instance_url}/services/data/v57.0/query",
+            params={'q': query},
+            headers=headers,
+            timeout=30
+        )
+    except requests.exceptions.Timeout:
+        log_message(f"⏰ Salesforce contact query timeout for: {who_id}", False)
+        return None
+    except Exception as e:
+        log_message(f"❌ Salesforce contact query error: {str(e)}", False)
+        return None
     
     if response.status_code == 200:
         results = response.json()
