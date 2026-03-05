@@ -238,8 +238,18 @@ def get_salesforce_token():
         log_message(f"❌ Salesforce auth error: {str(e)}")
         return None
 
+def normalize_event_name(event_name):
+    """Normalize event name by removing special characters and converting to uppercase"""
+    import re
+    # Remove common special characters and spaces, convert to uppercase
+    normalized = event_name.upper()
+    special_chars = [' ', '-', '<', '>', '|', '/', '&', ':', '(', ')', '.', ',']
+    for char in special_chars:
+        normalized = normalized.replace(char, '')
+    return normalized
+
 def find_salesforce_event_by_exact_subject(access_token, event_name):
-    """Find Salesforce event by exact subject match + known fixes"""
+    """Find Salesforce event using normalized subject matching"""
     try:
         domain = os.getenv('SF_DOMAIN', 'telnyx')
         instance_url = f"https://{domain}.my.salesforce.com"
@@ -249,16 +259,18 @@ def find_salesforce_event_by_exact_subject(access_token, event_name):
             'Content-Type': 'application/json'
         }
         
-        # Try exact match first
-        exact_subject = f"Meeting Booked: {event_name}"
-        escaped_subject = exact_subject.replace("'", "\\'")
+        # Normalize the Google Drive event name
+        normalized_event = normalize_event_name(event_name)
+        log_message(f"🔧 Normalized search: '{event_name}' → '{normalized_event}'", False)
         
+        # Search using the normalized field
         query = f"""
-        SELECT Id, Subject, WhoId, StartDateTime, EndDateTime 
+        SELECT Id, Subject, WhoId, StartDateTime, EndDateTime, Subject_Normalized__c
         FROM Event 
-        WHERE Subject = '{escaped_subject}'
+        WHERE Subject_Normalized__c LIKE '%{normalized_event}%'
+        AND CreatedDate >= YESTERDAY
         ORDER BY CreatedDate DESC 
-        LIMIT 1
+        LIMIT 5
         """
         
         response = requests.get(
@@ -271,28 +283,20 @@ def find_salesforce_event_by_exact_subject(access_token, event_name):
         if response.status_code == 200:
             results = response.json()
             if results['records']:
-                log_message(f"✅ EXACT match found", False)
-                return results['records'][0]
+                # Return the best match (first one, most recent)
+                best_match = results['records'][0]
+                log_message(f"✅ NORMALIZED match found: {best_match['Subject']}", False)
+                return best_match
         
-        # Special case: Try Aliyana search for known mismatch
-        if "aliyana" in event_name.lower() or "morgan" in event_name.lower():
-            query_aliyana = f"""
-            SELECT Id, Subject, WhoId, StartDateTime, EndDateTime 
-            FROM Event 
-            WHERE Subject LIKE 'Meeting Booked:%Aliyana%'
-            AND CreatedDate >= YESTERDAY
-            ORDER BY CreatedDate DESC 
-            LIMIT 1
-            """
-            
-            log_message(f"🔧 Trying Aliyana fallback search...", False)
-            
-            response = requests.get(
-                f"{instance_url}/services/data/v57.0/query",
-                params={'q': query_aliyana},
-                headers=headers,
-                timeout=30
-            )
+        log_message(f"❌ No normalized matches found for: {event_name}", False)
+        return None
+        
+    except requests.exceptions.Timeout:
+        log_message(f"⏰ Salesforce event query timeout for: {event_name}", False)
+        return None
+    except Exception as e:
+        log_message(f"❌ Salesforce event query error: {str(e)}", False)
+        return None
     except requests.exceptions.Timeout:
         log_message(f"⏰ Salesforce event query timeout for: {event_name}", False)
         return None
