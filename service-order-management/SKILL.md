@@ -14,10 +14,11 @@ Complete Service Order management for Telnyx including Salesforce CRUD operation
 1. **Lookup Service Orders**: `sf data query` with customer name
 2. **Find actual PDF**: Check Salesforce attachments FIRST (ContentDocumentLink)
 3. **Validate Customer/Org ID**: Always verify identity before updates
-4. **Check MC Account fields**: Use describe() to find available revenue fields
-5. **Check for overlaps**: Terminate conflicting commitments first
-6. **Approve carefully**: `Rev_Ops_Approved__c = true` requires explicit approval
-7. **Verify webhook**: Check Chatter for 201/204 response codes
+4. **🚨 Validate Commit Cycle**: ALWAYS check `Commit_Cycle__c` (Annual vs Monthly) 
+5. **Check MC Account fields**: Use describe() to find available revenue fields
+6. **Check for overlaps**: Terminate conflicting commitments first
+7. **Approve carefully**: `Rev_Ops_Approved__c = true` requires explicit approval
+8. **Verify webhook**: Check Chatter for 201/204 response codes
 
 ## 🚨 CRITICAL LESSONS LEARNED
 
@@ -60,6 +61,49 @@ curl -H "Authorization: Bearer TOKEN" "https://instance.salesforce.com/services/
 # Always check available fields first
 mc_describe = sf.Mission_Control_Account__c.describe()
 available_fields = [field['name'] for field in mc_describe['fields']]
+```
+
+### 🚨 Commit Cycle Validation: Annual vs Monthly Critical Check
+❌ **DON'T**: Validate only the commitment amount without checking commit cycle
+✅ **DO**: ALWAYS validate Commit_Cycle__c to prevent 12x billing errors
+
+**CRITICAL DISCOVERY**: The `Commit_Cycle__c` field determines how `Min_Monthly_Commit__c` is interpreted!
+
+```python
+# ALWAYS check commit cycle before validation
+commit_cycle_query = """
+    SELECT Min_Monthly_Commit__c, Commit_Cycle__c, Commit_Cycle_Text__c
+    FROM Service_Order__c 
+    WHERE Id = 'SO_ID'
+"""
+
+# Validation logic
+if commit_cycle == 'Annual':
+    # Min_Monthly_Commit__c stores ANNUAL amount
+    annual_commitment = so['Min_Monthly_Commit__c']
+    monthly_equivalent = annual_commitment / 12
+elif commit_cycle == 'Monthly':
+    # Min_Monthly_Commit__c stores MONTHLY amount  
+    monthly_commitment = so['Min_Monthly_Commit__c']
+    annual_equivalent = monthly_commitment * 12
+```
+
+**Real Example**: Go Spark Text had:
+- **Contract**: "$10,000 (the 'Minimum Annual Commitment')"
+- **SO Commit_Cycle__c**: "Annual"  
+- **SO Min_Monthly_Commit__c**: "10000.00"
+- **Result**: ✅ CORRECT ($10,000 annual = $833.33/month)
+
+**Common Error Pattern**:
+- **Contract**: "$10,000 annual"
+- **SO misconfig**: Commit_Cycle__c = "Monthly", Min_Monthly_Commit__c = "10000.00" 
+- **Result**: ❌ CRITICAL ERROR (Would bill $120,000/year instead of $10,000/year)
+
+```bash
+# Quick commit cycle check
+SELECT Name, Min_Monthly_Commit__c, Commit_Cycle__c, Commit_Cycle_Text__c
+FROM Service_Order__c 
+WHERE Opportunity__c = 'OPPORTUNITY_ID'
 ```
 
 ## Core Workflows
@@ -382,6 +426,193 @@ For processing extracted PDF content, see **references/pdf-parsing-guide.md** fo
 - Customer information extraction
 - JSON output format for integration
 
+### 🔍 STEP 4: SERVICE ORDER vs CONTRACT VALIDATION (CRITICAL!)
+
+**🚨 MANDATORY**: Always validate Service Order configuration matches contract terms exactly.
+
+#### **Essential Validation Checks:**
+
+```python
+def validate_service_order_vs_contract(sf, so_id, contract_terms):
+    """
+    CRITICAL: Validate Service Order configuration matches contract exactly
+    Must include commit cycle validation to prevent billing errors
+    """
+    
+    # Get Service Order with ALL commitment fields
+    so_describe = sf.Service_Order__c.describe()
+    available_fields = [field['name'] for field in so_describe['fields']]
+    
+    # Build comprehensive query
+    base_fields = [
+        'Id', 'Name', 'Min_Monthly_Commit__c', 'Contract_Duration__c',
+        'Contract_Start_Date__c', 'Contract_End_Date__c', 'Type__c'
+    ]
+    
+    # Add commit cycle fields if available
+    commit_cycle_fields = ['Commit_Cycle__c', 'Commit_Cycle_Text__c']
+    for field in commit_cycle_fields:
+        if field in available_fields:
+            base_fields.append(field)
+    
+    so_query = f"SELECT {', '.join(base_fields)} FROM Service_Order__c WHERE Id = '{so_id}'"
+    so = sf.query(so_query)['records'][0]
+    
+    validation_results = []
+    
+    # 1. COMMIT CYCLE VALIDATION (CRITICAL!)
+    commit_cycle = so.get('Commit_Cycle__c', '').lower()
+    so_amount = so.get('Min_Monthly_Commit__c', 0) or 0
+    
+    if commit_cycle == 'annual':
+        # SO stores annual amount in Min_Monthly_Commit__c
+        expected_annual = contract_terms.get('annual_commitment', 0)
+        if abs(so_amount - expected_annual) >= 1:
+            validation_results.append({
+                'field': 'Annual Commitment',
+                'so_value': f'${so_amount:,.2f}',
+                'contract_value': f'${expected_annual:,.2f}',
+                'status': 'MISMATCH',
+                'severity': 'CRITICAL'
+            })
+        else:
+            validation_results.append({
+                'field': 'Annual Commitment',
+                'so_value': f'${so_amount:,.2f}',
+                'contract_value': f'${expected_annual:,.2f}',
+                'status': 'MATCH',
+                'severity': 'OK'
+            })
+    
+    elif commit_cycle == 'monthly':
+        # SO stores monthly amount in Min_Monthly_Commit__c
+        expected_monthly = contract_terms.get('monthly_commitment', 0)
+        if abs(so_amount - expected_monthly) >= 1:
+            validation_results.append({
+                'field': 'Monthly Commitment',
+                'so_value': f'${so_amount:,.2f}',
+                'contract_value': f'${expected_monthly:,.2f}',
+                'status': 'MISMATCH',
+                'severity': 'CRITICAL'
+            })
+        else:
+            validation_results.append({
+                'field': 'Monthly Commitment',
+                'so_value': f'${so_amount:,.2f}',
+                'contract_value': f'${expected_monthly:,.2f}',
+                'status': 'MATCH',
+                'severity': 'OK'
+            })
+    else:
+        validation_results.append({
+            'field': 'Commit Cycle',
+            'so_value': commit_cycle or 'Not Set',
+            'contract_value': 'Unknown',
+            'status': 'ERROR',
+            'severity': 'CRITICAL'
+        })
+    
+    # 2. Duration Validation
+    so_duration = so.get('Contract_Duration__c', 0) or 0
+    contract_duration = contract_terms.get('duration_months', 0)
+    
+    if abs(so_duration - contract_duration) >= 1:
+        validation_results.append({
+            'field': 'Contract Duration',
+            'so_value': f'{so_duration:.0f} months',
+            'contract_value': f'{contract_duration} months',
+            'status': 'MISMATCH',
+            'severity': 'HIGH'
+        })
+    else:
+        validation_results.append({
+            'field': 'Contract Duration',
+            'so_value': f'{so_duration:.0f} months',
+            'contract_value': f'{contract_duration} months',
+            'status': 'MATCH',
+            'severity': 'OK'
+        })
+    
+    # 3. Start Date Validation
+    so_start_date = so.get('Contract_Start_Date__c')
+    contract_start_date = contract_terms.get('start_date')
+    
+    if so_start_date and contract_start_date:
+        if so_start_date != contract_start_date:
+            validation_results.append({
+                'field': 'Start Date',
+                'so_value': so_start_date,
+                'contract_value': contract_start_date,
+                'status': 'MISMATCH',
+                'severity': 'HIGH'
+            })
+        else:
+            validation_results.append({
+                'field': 'Start Date',
+                'so_value': so_start_date,
+                'contract_value': contract_start_date,
+                'status': 'MATCH',
+                'severity': 'OK'
+            })
+    
+    return validation_results
+```
+
+#### **🚨 CRITICAL COMMIT CYCLE EXAMPLES:**
+
+| **Contract Term** | **SO Commit_Cycle__c** | **SO Min_Monthly_Commit__c** | **Status** |
+|-------------------|------------------------|------------------------------|------------|
+| $120,000 annually | Annual | 120000.00 | ✅ **CORRECT** |
+| $10,000 monthly | Monthly | 10000.00 | ✅ **CORRECT** |
+| $10,000 annually | Monthly | 10000.00 | ❌ **ERROR - 12x billing!** |
+| $120,000 monthly | Annual | 120000.00 | ❌ **ERROR - 1/12 billing!** |
+
+#### **📋 Validation Report Format:**
+
+```python
+def print_validation_report(validation_results):
+    """Print comprehensive validation report."""
+    
+    print("🔍 SERVICE ORDER vs CONTRACT VALIDATION")
+    print("=" * 43)
+    
+    critical_errors = []
+    warnings = []
+    
+    for result in validation_results:
+        status_icon = {
+            'MATCH': '✅',
+            'MISMATCH': '❌', 
+            'ERROR': '🚨'
+        }.get(result['status'], '⚠️')
+        
+        print(f"   {status_icon} {result['field']}:")
+        print(f"      Service Order: {result['so_value']}")
+        print(f"      Contract: {result['contract_value']}")
+        print(f"      Status: {result['status']}")
+        
+        if result['severity'] == 'CRITICAL':
+            critical_errors.append(result)
+        elif result['severity'] == 'HIGH':
+            warnings.append(result)
+    
+    print(f"\n📊 VALIDATION SUMMARY:")
+    print(f"   Critical Errors: {len(critical_errors)}")
+    print(f"   Warnings: {len(warnings)}")
+    
+    if critical_errors:
+        print(f"\n🚨 APPROVAL BLOCKED - Critical errors must be resolved:")
+        for error in critical_errors:
+            print(f"   • {error['field']}: {error['status']}")
+        return False
+    elif warnings:
+        print(f"\n⚠️  Review warnings before approval")
+        return True
+    else:
+        print(f"\n✅ ALL VALIDATIONS PASSED - Ready for approval")
+        return True
+```
+
 ## Common Pitfalls
 
 1. ❌ **Skipping customer/org ID validation** → Risk updating wrong customer
@@ -394,6 +625,7 @@ For processing extracted PDF content, see **references/pdf-parsing-guide.md** fo
 8. 🆕 **Assuming Mission Control Account field names** → Always use describe() to check available fields
 9. 🆕 **Hard-coding field queries without validation** → Fields like Mission_Control_Organization_Name__c may not exist
 10. 🚨 **ONLY checking ContentDocumentLink for PDFs** → Miss legacy Attachments on Ironclad Workflows (CRITICAL!)
+11. 🚨 **NOT validating Commit_Cycle__c in Service Order vs Contract validation** → Risk 12x billing errors (CRITICAL!)
 
 ## Domain Knowledge
 
