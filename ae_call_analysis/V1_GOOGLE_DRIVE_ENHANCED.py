@@ -568,16 +568,16 @@ Analyze thoroughly and provide realistic scores. Extract AE names from the trans
         else:
             return {
                 "status": "error",
-                "main_post": f"❌ OpenAI API error: {response.status_code}",
-                "thread_reply": "AI analysis failed",
+                "main_post": None,  # Don't post errors to Slack
+                "thread_reply": None,
                 "summary": f"❌ OpenAI API error: {response.status_code}"
             }
             
     except Exception as e:
         return {
             "status": "error",
-            "main_post": f"❌ AI analysis failed: {str(e)}",
-            "thread_reply": "Error in AI processing",
+            "main_post": None,  # Don't post errors to Slack
+            "thread_reply": None,
             "summary": f"❌ AI analysis failed: {str(e)}"
         }
 
@@ -873,18 +873,13 @@ def mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_su
     conn.close()
 
 def extract_event_name_from_google_title(title):
-    """Extract event name from: Copy of {event name} OR Copy of Copy of {event name} - {time} - Notes by Gemini"""
+    """Extract event name from: (Copy of)* {event name} - {time} - Notes by Gemini
+    Handles unlimited 'Copy of' prefixes caused by repeated copying"""
     import re
     
-    # Handle "Copy of Copy of {event name} - {time} - Notes by Gemini" (new pattern)
-    pattern_double = r'^Copy of Copy of (.+?) - \d{4}/\d{2}/\d{2} .+ - Notes by Gemini'
-    match = re.search(pattern_double, title)
-    if match:
-        return match.group(1).strip()
-    
-    # Handle original "Copy of {event name} - {time} - Notes by Gemini" pattern
-    pattern_single = r'^Copy of (.+?) - \d{4}/\d{2}/\d{2} .+ - Notes by Gemini'
-    match = re.search(pattern_single, title)
+    # Handle any number of "Copy of " prefixes
+    pattern = r'^(?:Copy of )+(.+?) - \d{4}/\d{2}/\d{2} .+ - Notes by Gemini'
+    match = re.search(pattern, title)
     if match:
         return match.group(1).strip()
     
