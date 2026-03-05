@@ -25,7 +25,7 @@ def run_call_analysis():
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 V1_USEFUL_SLACK.py
+        python3 V1_CORRECT_SLACK_FORMAT.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 
