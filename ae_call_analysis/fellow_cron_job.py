@@ -15,14 +15,14 @@ def main():
         env = os.environ.copy()
         env['PATH'] = '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:' + env.get('PATH', '')
         
-        # COMPREHENSIVE FAST: Search ALL folders using global search (no iteration)
+        # SINGLE FOLDER: Simple search of one folder (much faster & simpler)
         cmd = """
         cd /Users/niamhcollins/clawd/ae_call_analysis
         set -a  # Auto-export all variables
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 V1_COMPREHENSIVE_FAST.py
+        python3 V1_SINGLE_FOLDER.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 

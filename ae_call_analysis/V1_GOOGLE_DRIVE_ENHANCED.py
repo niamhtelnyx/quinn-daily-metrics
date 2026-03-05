@@ -30,7 +30,7 @@ from datetime import datetime, timedelta
 from dateutil import parser
 
 # Google Drive folder configuration (from V2)
-TARGET_FOLDER_ID = "1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY"
+TARGET_FOLDER_ID = "1fsZIplnjbbMr85dAA2-9ZdTZlX_KiYs3"  # Updated: Single folder for all Gemini files
 
 def load_env():
     """Enhanced environment loading for both .env and .env.gog"""
