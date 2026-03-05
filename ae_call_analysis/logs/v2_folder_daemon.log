@@ -1,0 +1,7 @@
+🚀 Starting V2 FINAL Call Intelligence - FOLDER-SPECIFIC...
+📁 Searching ONLY in: https://drive.google.com/drive/folders/1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+💬 Posting to: #sales-calls channel
+📅 Will run every 30 minutes
+🛑 Stop with: pkill -f run_v2_folder_specific.sh
+
+[Wed Mar  4 10:59:31 CST 2026] 🔍 Running V2 FINAL - FOLDER-SPECIFIC search...

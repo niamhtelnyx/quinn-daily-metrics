@@ -1,0 +1,112 @@
+{
+  "report_date": "2026-03-03",
+  "execution_time": "2026-03-03T15:00:00Z",
+  "status": "BLOCKED_DATA_ACCESS",
+  "day_count": 4,
+  "cron_job_id": "2edf7d7b-8f68-4443-90ff-57dd65a81fe0",
+  "issues": [
+    {
+      "issue": "SALESFORCE_CONNECTIVITY_FAILURE",
+      "description": "No accessible Salesforce orgs via SF CLI",
+      "details": {
+        "sf_cli_status": "Available but no authenticated orgs",
+        "auth_error": "security: SecKeychainItemCreateFromContent - Unable to obtain authorization",
+        "affected_user": "niamh@telnyx.com"
+      },
+      "impact": "Cannot execute required SOQL queries for all 6 metrics"
+    },
+    {
+      "issue": "MCP_SALESFORCE_SERVER_MISSING", 
+      "description": "No Salesforce MCP server available via mcporter",
+      "details": {
+        "available_servers": ["openfunnel"],
+        "openfunnel_limitation": "Prospecting data only, not Salesforce CRM metrics"
+      },
+      "impact": "No alternative data access method"
+    },
+    {
+      "issue": "SLACK_CHANNEL_ID_MISSING",
+      "description": "Cannot post to #quinn-daily-metrics - requires channel:<id> format",
+      "impact": "Cannot deliver automated status updates"
+    }
+  ],
+  "blocked_metrics": {
+    "sales_handoffs_today": {
+      "query": "SELECT COUNT() FROM Sales_Handoff__c WHERE Owner_Name__c = 'Quinn Taylor' AND Owner_Email__c = 'quinn@telnyx.com' AND CreatedDate = TODAY",
+      "status": "BLOCKED"
+    },
+    "unique_accounts_today": {
+      "query": "SELECT WhoId FROM Task WHERE OwnerId = '005Qk000001pqtdIAA' AND CreatedDate = TODAY AND WhoId != null",
+      "status": "BLOCKED"  
+    },
+    "qualification_rate_today": {
+      "query": "SELECT SDRbot_Perceived_Quality__c, COUNT(Id) FROM Contact WHERE D_T_Quinn_Active_Latest__c = TODAY GROUP BY SDRbot_Perceived_Quality__c",
+      "status": "BLOCKED"
+    },
+    "sql_rate_7d": {
+      "query": "SELECT AccountId FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND CreatedDate >= LAST_N_DAYS:7",
+      "status": "BLOCKED"
+    },
+    "sqo_rate_7d_corrected": {
+      "query": "SELECT COUNT(Id) FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND Velocity_D_T_Stage1__c >= LAST_N_DAYS:7",
+      "field_corrected": "Velocity_D_T_Stage1__c",
+      "status": "BLOCKED"
+    },
+    "mtd_sqo_tracking_corrected": {
+      "query": "SELECT COUNT(Id) FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND Velocity_D_T_Stage1__c = THIS_MONTH",
+      "field_corrected": "Velocity_D_T_Stage1__c", 
+      "status": "BLOCKED"
+    }
+  },
+  "framework_status": {
+    "quinn_identifiers": {
+      "id": "005Qk000001pqtdIAA",
+      "name": "Quinn Taylor",
+      "email": "quinn@telnyx.com"
+    },
+    "sdo_definition_corrected": true,
+    "velocity_field_corrected": "Velocity_D_T_Stage1__c",
+    "queries_ready": 6,
+    "slack_format_ready": true,
+    "automation_ready": true
+  },
+  "resolution_paths": [
+    {
+      "option": "RESTORE_SALESFORCE_MCP",
+      "description": "Configure Salesforce MCP server for direct SOQL access",
+      "priority": "HIGH",
+      "effort": "Infrastructure setup required"
+    },
+    {
+      "option": "FIX_SF_CLI_AUTH", 
+      "description": "Resolve SF CLI keychain auth issues for niamh@telnyx.com",
+      "priority": "HIGH",
+      "effort": "Auth reconfiguration required"
+    },
+    {
+      "option": "ALTERNATIVE_API_ACCESS",
+      "description": "Direct Salesforce REST API integration",
+      "priority": "MEDIUM", 
+      "effort": "Development required"
+    },
+    {
+      "option": "MANUAL_DATA_ENTRY",
+      "description": "Temporary manual metrics collection",
+      "priority": "LOW",
+      "effort": "Daily manual process"
+    }
+  ],
+  "business_impact": {
+    "quinn_visibility": "No daily performance tracking for 4+ days",
+    "management_reporting": "Missing key SDR KPIs",
+    "trend_analysis": "Data gap affects weekly/monthly analysis",
+    "automation_reliability": "Automated reporting system effectiveness compromised"
+  },
+  "next_execution": "2026-03-04T15:00:00Z",
+  "recommendations": [
+    "Prioritize Salesforce connectivity restoration",
+    "Consider temporary manual data collection",
+    "Document exact SF CLI auth steps for resolution",
+    "Identify Slack channel ID for #quinn-daily-metrics"
+  ]
+}

@@ -1,0 +1,12 @@
+🔔 **V1 Live Demo - Call Intelligence**
+
+**Prospect**: Chingu Yang
+**Date**: 2026-03-03
+**Fellow ID**: 3Q7aN8vFgs
+
+📞 **Fellow Link**: https://telnyx.fellow.app/recordings/3Q7aN8vFgs
+
+✅ **V1 Automation Working**: Fellow → Analysis → Slack
+🤖 **System**: End-to-end automated processing
+
+_Live demo of V1 Call Intelligence automation_

@@ -1,0 +1,107 @@
+{
+  "report_date": "2026-03-04",
+  "execution_time": "2026-03-04T15:00:00Z",
+  "status": "BLOCKED_DATA_ACCESS",
+  "day_count": 5,
+  "cron_job_id": "2edf7d7b-8f68-4443-90ff-57dd65a81fe0",
+  "issues": [
+    {
+      "issue": "SALESFORCE_CONNECTIVITY_FAILURE",
+      "description": "SF CLI authentication continues to fail",
+      "details": {
+        "sf_cli_status": "Available but no authenticated orgs",
+        "auth_error": "security: SecKeychainItemCreateFromContent - Unable to obtain authorization",
+        "affected_user": "niamh@telnyx.com",
+        "persistence": "Issue persists from 2026-03-03"
+      },
+      "impact": "Cannot execute required SOQL queries for all 6 metrics"
+    },
+    {
+      "issue": "MCP_SALESFORCE_SERVER_MISSING", 
+      "description": "No Salesforce MCP server available via mcporter",
+      "details": {
+        "available_servers": ["openfunnel"],
+        "openfunnel_limitation": "Prospecting data only, not Salesforce CRM metrics"
+      },
+      "impact": "No alternative data access method"
+    },
+    {
+      "issue": "SLACK_CHANNEL_ID_MISSING",
+      "description": "Cannot post to #quinn-daily-metrics - requires channel:<id> format",
+      "impact": "Cannot deliver automated status updates via Slack"
+    },
+    {
+      "issue": "ESCALATION_NEEDED",
+      "description": "5 consecutive days of blocked Quinn metrics reporting",
+      "impact": "Significant gap in performance tracking affecting business visibility"
+    }
+  ],
+  "blocked_metrics": {
+    "sales_handoffs_today": {
+      "query": "SELECT COUNT() FROM Sales_Handoff__c WHERE Owner_Name__c = 'Quinn Taylor' AND Owner_Email__c = 'quinn@telnyx.com' AND CreatedDate = TODAY",
+      "status": "BLOCKED"
+    },
+    "unique_accounts_today": {
+      "query": "SELECT WhoId FROM Task WHERE OwnerId = '005Qk000001pqtdIAA' AND CreatedDate = TODAY AND WhoId != null",
+      "status": "BLOCKED"  
+    },
+    "qualification_rate_today": {
+      "query": "SELECT SDRbot_Perceived_Quality__c, COUNT(Id) FROM Contact WHERE D_T_Quinn_Active_Latest__c = TODAY GROUP BY SDRbot_Perceived_Quality__c",
+      "status": "BLOCKED"
+    },
+    "sql_rate_7d": {
+      "query": "SELECT AccountId FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND CreatedDate >= LAST_N_DAYS:7",
+      "status": "BLOCKED"
+    },
+    "sqo_rate_7d_corrected": {
+      "query": "SELECT COUNT(Id) FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND Velocity_D_T_Stage1__c >= LAST_N_DAYS:7",
+      "field_corrected": "Velocity_D_T_Stage1__c",
+      "status": "BLOCKED"
+    },
+    "mtd_sqo_tracking_corrected": {
+      "query": "SELECT COUNT(Id) FROM Opportunity WHERE SDR__c = '005Qk000001pqtdIAA' AND Velocity_D_T_Stage1__c = THIS_MONTH",
+      "field_corrected": "Velocity_D_T_Stage1__c", 
+      "status": "BLOCKED"
+    }
+  },
+  "framework_status": {
+    "quinn_identifiers": {
+      "id": "005Qk000001pqtdIAA",
+      "name": "Quinn Taylor",
+      "email": "quinn@telnyx.com"
+    },
+    "sdo_definition_corrected": true,
+    "velocity_field_corrected": "Velocity_D_T_Stage1__c",
+    "queries_ready": 6,
+    "slack_format_ready": true,
+    "automation_ready": true
+  },
+  "urgent_actions_needed": [
+    {
+      "action": "ESCALATE_TO_SF_ADMIN",
+      "description": "Contact Salesforce admin to resolve keychain auth issues",
+      "priority": "CRITICAL",
+      "owner": "DevOps/Infrastructure team"
+    },
+    {
+      "action": "CONFIGURE_SALESFORCE_MCP",
+      "description": "Set up Salesforce MCP server with proper credentials",
+      "priority": "HIGH", 
+      "owner": "AI/Automation team"
+    },
+    {
+      "action": "TEMPORARY_MANUAL_COLLECTION",
+      "description": "Begin manual collection of Quinn metrics to prevent further data loss",
+      "priority": "MEDIUM",
+      "owner": "Sales Operations team"
+    }
+  ],
+  "business_impact": {
+    "quinn_visibility": "No daily performance tracking for 5+ consecutive days",
+    "management_reporting": "Critical SDR KPIs missing from leadership dashboards",
+    "trend_analysis": "Weekly/monthly analysis compromised by data gap",
+    "automation_reliability": "Automated reporting system effectiveness at risk"
+  },
+  "next_execution": "2026-03-05T15:00:00Z",
+  "escalation_required": true
+}

@@ -1,0 +1,38 @@
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 20:20:36] 🚀 V2 FINAL Call Intelligence - Enhanced Parsing + Smart Deduplication
+[2026-03-03 20:20:36] 📁 Processing Google Drive calls with enhanced parsing...
+[2026-03-03 20:20:38] 📁 Google Drive: Found 8 enhanced Google Drive calls from 2026-03-03
+[2026-03-03 20:20:38] 🆕 Processing Enhanced Google Drive: Copy of roly@meetgail.com and Ryan: 30-minute Meeting - 2026/03/03 15:59 EST - Notes by Gemini
+[2026-03-03 20:20:39]    📝 Content: ✅ Document content retrieved (7395 chars)
+[2026-03-03 20:20:39]    👤 Enhanced parsing: roly@meetgail.com | Ryan Simkins
+[2026-03-03 20:20:39]    ✅ Would process: roly@meetgail.com (dedup: roly@meetgail.com_2026-03-03)
+[2026-03-03 20:20:39] 🆕 Processing Enhanced Google Drive: Niamh/Joe - 2026/03/03 15:57 EST - Notes by Gemini
+[2026-03-03 20:20:40]    📝 Content: ✅ Document content retrieved (643 chars)
+[2026-03-03 20:20:40]    👤 Enhanced parsing: Unknown Prospect | Unknown AE
+[2026-03-03 20:20:40]    ✅ Would process: Unknown Prospect (dedup: unknownprospect_2026-03-03)
+[2026-03-03 20:20:40] 🆕 Processing Enhanced Google Drive: Growth Data Sync - 2026/03/03 14:27 CST - Notes by Gemini
+[2026-03-03 20:20:41]    📝 Content: ✅ Document content retrieved (8414 chars)
+[2026-03-03 20:20:41]    👤 Enhanced parsing: Unknown Prospect | Unknown AE
+[2026-03-03 20:20:41]    ✅ Would process: Unknown Prospect (dedup: unknownprospect_2026-03-03)
+[2026-03-03 20:20:41] 🆕 Processing Enhanced Google Drive: Quinn Sync - 2026/03/03 10:56 PST - Notes by Gemini
+[2026-03-03 20:20:42]    📝 Content: ✅ Document content retrieved (12261 chars)
+[2026-03-03 20:20:42]    👤 Enhanced parsing: Tyron Pretorius | Vera Wang
+[2026-03-03 20:20:42]    ✅ Would process: Tyron Pretorius (dedup: tyronpretorius_2026-03-03)
+[2026-03-03 20:20:42] 🆕 Processing Enhanced Google Drive: Tyron / Niamh - 2026/03/03 12:25 CST - Notes by Gemini
+[2026-03-03 20:20:43]    📝 Content: ✅ Document content retrieved (10619 chars)
+[2026-03-03 20:20:43]    👤 Enhanced parsing: Tyron Pretorius | Unknown AE
+[2026-03-03 20:20:43]    ✅ Would process: Tyron Pretorius (dedup: tyronpretorius_2026-03-03)
+[2026-03-03 20:20:43] 🆕 Processing Enhanced Google Drive: Weekly Sync - 2026/03/03 10:55 MST - Notes by Gemini
+[2026-03-03 20:20:44]    📝 Content: ✅ Document content retrieved (5727 chars)
+[2026-03-03 20:20:44]    👤 Enhanced parsing: Decliner Slides | Unknown AE
+[2026-03-03 20:20:44]    ✅ Would process: Decliner Slides (dedup: declinerslides_2026-03-03)
+[2026-03-03 20:20:44] 🆕 Processing Enhanced Google Drive: RevOps/Sales Enablement Weekly - 2026/03/03 16:59 CET - Notes by Gemini
+[2026-03-03 20:20:44]    📝 Content: ✅ Document content retrieved (7823 chars)
+[2026-03-03 20:20:44]    👤 Enhanced parsing: Kai Luo | Niamh Collins
+[2026-03-03 20:20:44]    ✅ Would process: Kai Luo (dedup: kailuo_2026-03-03)
+[2026-03-03 20:20:44] 🆕 Processing Enhanced Google Drive: Copy of Ken <> Ryan - 2026/03/02 13:15 EST - Notes by Gemini
+[2026-03-03 20:20:46]    📝 Content: ✅ Document content retrieved (4077 chars)
+[2026-03-03 20:20:46]    👤 Enhanced parsing: Unknown Prospect | Ryan Simkins
+[2026-03-03 20:20:46]    ✅ Would process: Unknown Prospect (dedup: unknownprospect_2026-03-03)
+[2026-03-03 20:20:46] 🎉 V2 FINAL would process 8 calls with enhanced parsing

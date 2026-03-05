@@ -1,0 +1,10 @@
+🚀 Starting V2 RECENT CALLS ONLY...
+⏰ Only processes calls modified in last 2 hours
+📁 Folder: https://drive.google.com/drive/folders/1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+💬 Posting to: #sales-calls channel
+📅 Will run every 30 minutes
+🛑 Stop with: pkill -f run_v2_recent_only.sh
+
+[Wed Mar  4 11:11:57 CST 2026] 🔍 Running V2 RECENT CALLS ONLY...
+[Wed Mar  4 11:14:46 CST 2026] ✅ V2 RECENT CALLS completed successfully
+[Wed Mar  4 11:14:46 CST 2026] ⏰ Waiting 30 minutes until next run...

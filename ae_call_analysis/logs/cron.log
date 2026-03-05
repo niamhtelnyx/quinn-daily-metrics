@@ -1,0 +1,1302 @@
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py': [Errno 2] No such file or directory
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 12:00:00] 🚀 V1 PRODUCTION Call Intelligence - Fellow + Slack Bot + Salesforce
+[2026-03-03 12:00:01] 📞 Fellow: Found 17 intro calls
+[2026-03-03 12:00:01] 🆕 Processing V1 PRODUCTION: Sighi Drassinower
+[2026-03-03 12:00:01] 🏢 Starting Salesforce update for: Sighi Drassinower
+[2026-03-03 12:00:02]    ✅ Salesforce authenticated
+[2026-03-03 12:00:02]    ✅ Found contact: Sighi Drassinower
+[2026-03-03 12:00:03]    ⚠️ No existing event found for Sighi Drassinower
+[2026-03-03 12:00:04] 📱 Slack Bot: ✅ Posted to Slack (ts: 1772560803.910529)
+[2026-03-03 12:00:04] ✅ V1 PRODUCTION: Sighi Drassinower (Slack: ✅, SF: ❌)
+[2026-03-03 12:00:04] 🆕 Processing V1 PRODUCTION: Jeff Dinardo
+[2026-03-03 12:00:04] 🏢 Starting Salesforce update for: Jeff Dinardo
+[2026-03-03 12:00:04]    ✅ Salesforce authenticated
+[2026-03-03 12:00:05]    ✅ Found contact: Jeff Dinardo
+[2026-03-03 12:00:05]    ⚠️ No existing event found for Jeff Dinardo
+[2026-03-03 12:00:06] 📱 Slack Bot: ✅ Posted to Slack (ts: 1772560806.409649)
+[2026-03-03 12:00:06] ✅ V1 PRODUCTION: Jeff Dinardo (Slack: ✅, SF: ❌)
+[2026-03-03 12:00:06] 🆕 Processing V1 PRODUCTION: Trevor Abonyo
+[2026-03-03 12:00:06] 🏢 Starting Salesforce update for: Trevor Abonyo
+[2026-03-03 12:00:06]    ✅ Salesforce authenticated
+[2026-03-03 12:00:07]    ✅ Found contact: Trevor Abonyo
+[2026-03-03 12:00:09]    ✅ Updated event 00UQk00000OahS1MAJ
+[2026-03-03 12:00:09] 📱 Slack Bot: ✅ Posted to Slack (ts: 1772560809.565219)
+[2026-03-03 12:00:09] ✅ V1 PRODUCTION: Trevor Abonyo (Slack: ✅, SF: ✅)
+[2026-03-03 12:00:09] 🎉 V1 PRODUCTION processed 3 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 12:30:00] 🚀 V1 PRODUCTION Call Intelligence - Fellow + Slack Bot + Salesforce
+[2026-03-03 12:30:02] 📞 Fellow: Found 17 intro calls
+[2026-03-03 12:30:02] 🆕 Processing V1 PRODUCTION: Nail Galiaskarov
+[2026-03-03 12:30:02] 🏢 Starting Salesforce update for: Nail Galiaskarov
+[2026-03-03 12:30:02]    ✅ Salesforce authenticated
+[2026-03-03 12:30:04]    ✅ Found contact: Nail Galiaskarov
+[2026-03-03 12:30:05]    ✅ Updated event 00UQk00000OZbblMAD
+[2026-03-03 12:30:05] 📱 Slack Bot: ✅ Posted to Slack (ts: 1772562605.639249)
+[2026-03-03 12:30:05] ✅ V1 PRODUCTION: Nail Galiaskarov (Slack: ✅, SF: ✅)
+[2026-03-03 12:30:05] 🆕 Processing V1 PRODUCTION: Anas Saifullah
+[2026-03-03 12:30:05] 🏢 Starting Salesforce update for: Anas Saifullah
+[2026-03-03 12:30:06]    ✅ Salesforce authenticated
+[2026-03-03 12:30:06]    ✅ Found contact: Anas Saifullah
+[2026-03-03 12:30:08]    ✅ Updated event 00UQk00000OUX0kMAH
+[2026-03-03 12:30:08] 📱 Slack Bot: ✅ Posted to Slack (ts: 1772562608.456399)
+[2026-03-03 12:30:08] ✅ V1 PRODUCTION: Anas Saifullah (Slack: ✅, SF: ✅)
+[2026-03-03 12:30:08] 🆕 Processing V1 PRODUCTION: Igor Lavantzev
+[2026-03-03 12:30:08] 🏢 Starting Salesforce update for: Igor Lavantzev
+[2026-03-03 12:30:08]    ✅ Salesforce authenticated
+[2026-03-03 12:30:09]    ✅ Found contact: Igor Lavantzev
+[2026-03-03 12:30:10]    ✅ Updated event 00UQk00000OXYd1MAH
+[2026-03-03 12:30:11] 📱 Slack Bot: ✅ Posted to Slack (ts: 1772562611.154439)
+[2026-03-03 12:30:11] ✅ V1 PRODUCTION: Igor Lavantzev (Slack: ✅, SF: ✅)
+[2026-03-03 12:30:11] 🎉 V1 PRODUCTION processed 3 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 13:00:00] 🚀 V1 ENHANCED Call Intelligence - Fellow + AI Analysis + Enhanced Slack + Salesforce
+[2026-03-03 13:00:02] 📞 Fellow: Found 17 intro calls
+[2026-03-03 13:00:03] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 13:00:03] 🆕 Processing ENHANCED: Sighi Drassinower
+[2026-03-03 13:00:03]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 13:00:03]    🤖 AI Analysis: no_api_key
+[2026-03-03 13:00:05]    👤 Contact: ✅ Found contact: Sighi Drassinower
+[2026-03-03 13:00:05]    📅 Event: ⚠️ No existing event found for Sighi Drassinower
+[2026-03-03 13:00:05]    📱 Slack: ✅ Posted to Slack (ts: 1772564405.673209)
+[2026-03-03 13:00:05] ✅ ENHANCED: Sighi Drassinower (Slack: ✅, SF: ❌, AI: ❌)
+[2026-03-03 13:00:05] 🆕 Processing ENHANCED: Jeff Dinardo
+[2026-03-03 13:00:06]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 13:00:06]    🤖 AI Analysis: no_api_key
+[2026-03-03 13:00:06]    👤 Contact: ✅ Found contact: Jeff Dinardo
+[2026-03-03 13:00:06]    📅 Event: ⚠️ No existing event found for Jeff Dinardo
+[2026-03-03 13:00:07]    📱 Slack: ✅ Posted to Slack (ts: 1772564407.212499)
+[2026-03-03 13:00:07] ✅ ENHANCED: Jeff Dinardo (Slack: ✅, SF: ❌, AI: ❌)
+[2026-03-03 13:00:07] 🆕 Processing ENHANCED: Trevor Abonyo
+[2026-03-03 13:00:07]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 13:00:07]    🤖 AI Analysis: no_api_key
+[2026-03-03 13:00:08]    👤 Contact: ✅ Found contact: Trevor Abonyo
+[2026-03-03 13:00:10]    📅 Event: ✅ Updated event 00UQk00000OahS1MAJ
+[2026-03-03 13:00:10]    📱 Slack: ✅ Posted to Slack (ts: 1772564410.917339)
+[2026-03-03 13:00:10] ✅ ENHANCED: Trevor Abonyo (Slack: ✅, SF: ✅, AI: ❌)
+[2026-03-03 13:00:10] 🎉 V1 ENHANCED processed 3 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 13:30:00] 🚀 V1 ENHANCED Call Intelligence - Fellow + AI Analysis + Enhanced Slack + Salesforce
+[2026-03-03 13:30:02] 📞 Fellow: Found 17 intro calls
+[2026-03-03 13:30:03] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 13:30:03] 🆕 Processing ENHANCED: Nail Galiaskarov
+[2026-03-03 13:30:03]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 13:30:03]    🤖 AI Analysis: no_api_key
+[2026-03-03 13:30:04]    👤 Contact: ✅ Found contact: Nail Galiaskarov
+[2026-03-03 13:30:06]    📅 Event: ✅ Updated event 00UQk00000OZbblMAD
+[2026-03-03 13:30:06]    📱 Slack: ✅ Posted to Slack (ts: 1772566206.237779)
+[2026-03-03 13:30:06] ✅ ENHANCED: Nail Galiaskarov (Slack: ✅, SF: ✅, AI: ❌)
+[2026-03-03 13:30:06] 🆕 Processing ENHANCED: Anas Saifullah
+[2026-03-03 13:30:06]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 13:30:06]    🤖 AI Analysis: no_api_key
+[2026-03-03 13:30:07]    👤 Contact: ✅ Found contact: Anas Saifullah
+[2026-03-03 13:30:08]    📅 Event: ✅ Updated event 00UQk00000OUX0kMAH
+[2026-03-03 13:30:08]    📱 Slack: ✅ Posted to Slack (ts: 1772566208.903869)
+[2026-03-03 13:30:08] ✅ ENHANCED: Anas Saifullah (Slack: ✅, SF: ✅, AI: ❌)
+[2026-03-03 13:30:08] 🆕 Processing ENHANCED: Igor Lavantzev
+[2026-03-03 13:30:09]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 13:30:09]    🤖 AI Analysis: no_api_key
+[2026-03-03 13:30:11]    👤 Contact: ✅ Found contact: Igor Lavantzev
+[2026-03-03 13:30:12]    📅 Event: ✅ Updated event 00UQk00000OXYd1MAH
+[2026-03-03 13:30:12]    📱 Slack: ✅ Posted to Slack (ts: 1772566212.658779)
+[2026-03-03 13:30:12] ✅ ENHANCED: Igor Lavantzev (Slack: ✅, SF: ✅, AI: ❌)
+[2026-03-03 13:30:12] 🎉 V1 ENHANCED processed 3 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 14:00:00] 🚀 V1 ENHANCED Call Intelligence - Fellow + AI Analysis + Enhanced Slack + Salesforce
+[2026-03-03 14:00:02] 📞 Fellow: Found 17 intro calls
+[2026-03-03 14:00:03] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 14:00:03] 🆕 Processing ENHANCED: Hammoudeh Alamri
+[2026-03-03 14:00:03]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 14:00:03]    🤖 AI Analysis: no_transcript
+[2026-03-03 14:00:05]    👤 Contact: ✅ Found contact: Hammoudeh Alamri
+[2026-03-03 14:00:05]    📅 Event: ⚠️ No existing event found for Hammoudeh Alamri
+[2026-03-03 14:00:06]    📱 Slack: ✅ Posted to Slack (ts: 1772568006.128909)
+[2026-03-03 14:00:06] ✅ ENHANCED: Hammoudeh Alamri (Slack: ✅, SF: ❌, AI: ❌)
+[2026-03-03 14:00:06] 🆕 Processing ENHANCED: Ben Lewell
+[2026-03-03 14:00:06]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 14:00:06]    🤖 AI Analysis: no_transcript
+[2026-03-03 14:00:07]    👤 Contact: ✅ Found contact: Ben Lewell
+[2026-03-03 14:00:08]    📅 Event: ✅ Updated event 00UQk00000OSGaHMAX
+[2026-03-03 14:00:09]    📱 Slack: ✅ Posted to Slack (ts: 1772568009.077689)
+[2026-03-03 14:00:09] ✅ ENHANCED: Ben Lewell (Slack: ✅, SF: ✅, AI: ❌)
+[2026-03-03 14:00:09] 🆕 Processing ENHANCED: Devon Johnson
+[2026-03-03 14:00:09]    📝 Transcript: ❌ Transcript unavailable: 404
+[2026-03-03 14:00:09]    🤖 AI Analysis: no_transcript
+[2026-03-03 14:00:10]    👤 Contact: ✅ Found contact: Devon Johnson
+[2026-03-03 14:00:11]    📅 Event: ✅ Updated event 00UQk00000OUH2QMAX
+[2026-03-03 14:00:12]    📱 Slack: ✅ Posted to Slack (ts: 1772568012.178829)
+[2026-03-03 14:00:12] ✅ ENHANCED: Devon Johnson (Slack: ✅, SF: ✅, AI: ❌)
+[2026-03-03 14:00:12] 🎉 V1 ENHANCED processed 3 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 14:30:01] 🚀 V1 ENHANCED Call Intelligence - Fellow + AI Analysis + Enhanced Slack + Salesforce
+[2026-03-03 14:30:05] 📞 Fellow: Found 17 intro calls
+[2026-03-03 14:30:05] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 14:30:05] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 15:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 15:00:05] 📞 Fellow: Found 2 intro calls from today (2026-03-03)
+[2026-03-03 15:00:06] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 15:00:06] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 15:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 15:30:04] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 15:30:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 15:30:04] 🆕 Processing ENHANCED: Cameron Shelton
+[2026-03-03 15:30:04]    📝 Transcript: ✅ Transcript retrieved (239 segments)
+[2026-03-03 15:30:18]    🤖 AI Analysis: success
+[2026-03-03 15:30:20]    👤 Contact: ✅ Found contact: Cameron Shelton
+[2026-03-03 15:30:20]    📅 Event: ⚠️ No existing event found for Cameron Shelton
+[2026-03-03 15:30:20]    📱 Slack: ✅ Posted to Slack (ts: 1772573420.649169)
+[2026-03-03 15:30:20] ✅ ENHANCED: Cameron Shelton (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-03 15:30:20] 🎉 V1 ENHANCED processed 1 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 16:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 16:00:04] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 16:00:05] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 16:00:05] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 16:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 16:30:03] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 16:30:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 16:30:04] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 17:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 17:00:16] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-03 17:00:16] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 17:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 17:30:09] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 17:30:09] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 17:30:09] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 18:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 18:00:09] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 18:00:10] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 18:00:10] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 18:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 18:30:09] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 18:30:09] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 18:30:09] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 19:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 19:00:03] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 19:00:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 19:00:04] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 19:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 19:30:03] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 19:30:03] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 19:30:03] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 20:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 20:00:03] 📞 Fellow: Fellow API error: 500
+[2026-03-03 20:00:03] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 20:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 20:30:04] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 20:30:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 20:30:04] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 21:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 21:00:03] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 21:00:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 21:00:04] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 21:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 21:30:03] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 21:30:03] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 21:30:03] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 22:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 22:00:10] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 22:00:10] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 22:00:10] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 22:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 22:30:10] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 22:30:10] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 22:30:10] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 23:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 23:00:09] 📞 Fellow: Found 3 intro calls from today (2026-03-03)
+[2026-03-03 23:00:09] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-03 23:00:09] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-03 23:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-03 23:30:01] 📞 Fellow: Fellow API error: 502
+[2026-03-03 23:30:01] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 00:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 00:00:13] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 00:00:13] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 00:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 00:30:12] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 00:30:12] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 01:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 01:00:12] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 01:00:12] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 01:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 01:30:03] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 01:30:03] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 02:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 02:00:04] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 02:00:04] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 02:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 02:30:03] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 02:30:03] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 03:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 03:00:04] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 03:00:04] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 03:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 03:30:03] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 03:30:03] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 04:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 04:00:04] 📞 Fellow: Found 0 intro calls from today (2026-03-04)
+[2026-03-04 04:00:04] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 04:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 04:30:04] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 04:30:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 04:30:04] 🆕 Processing ENHANCED: Khalil Alsalim
+[2026-03-04 04:30:04]    📝 Transcript: ✅ Transcript retrieved (337 segments)
+[2026-03-04 04:30:05]    👤 Contact: ✅ Found contact: Khalil Alsalim at Meydan Free Zone
+[2026-03-04 04:30:31]    🤖 AI Analysis: success
+[2026-03-04 04:30:32]    📅 Event: ✅ Updated event 00UQk00000Ody3LMAR
+[2026-03-04 04:30:32]    📱 Slack Main: ✅ Posted to Slack (ts: 1772620232.876359)
+[2026-03-04 04:30:33]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 04:30:33] ✅ ENHANCED: Khalil Alsalim (Slack: ✅, SF: ✅, AI: ✅)
+[2026-03-04 04:30:33] 🎉 V1 ENHANCED processed 1 calls
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 05:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 05:00:03] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 05:00:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 05:00:04] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 05:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 05:30:03] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 05:30:03] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 05:30:03] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 06:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 06:00:05] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 06:00:05] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 06:00:05] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 06:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 06:30:04] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 06:30:04] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 06:30:04] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 07:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 07:00:05] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 07:00:05] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 07:00:05] 😴 No new calls to process
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 07:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 07:30:15] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 07:30:15] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 08:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 08:00:16] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 08:00:16] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 08:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 08:30:15] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 08:30:15] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 09:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 09:00:15] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 09:00:15] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 09:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 09:30:15] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 09:30:15] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 10:00:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 10:00:15] 📞 Fellow: Fellow API error: 500
+[2026-03-04 10:00:15] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 10:30:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 10:30:16] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 10:30:16] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 11:00:01] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 11:00:16] 📞 Fellow: Error: HTTPSConnectionPool(host='telnyx.fellow.app', port=443): Read timed out. (read timeout=15)
+[2026-03-04 11:00:16] 😴 No calls found
+/Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[2026-03-04 11:30:00] 🚀 V1 ENHANCED Call Intelligence - Live Monitoring (Today's Calls Only)
+[2026-03-04 11:30:09] 📞 Fellow: Found 1 intro calls from today (2026-03-04)
+[2026-03-04 11:30:10] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 11:30:10] 😴 No new calls to process
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py': [Errno 2] No such file or directory
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py': [Errno 2] No such file or directory
+[Wed Mar  4 13:00:01 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 13:00:01] 🚀 V1 ENHANCED Call Intelligence - Google Drive Integration
+[2026-03-04 13:00:01] 🔍 Searching for calls modified in last 2 hours
+[2026-03-04 13:00:01] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 13:00:01] ⚠️ Error getting subfolders: Command failed: /bin/bash: gog: command not found
+
+[2026-03-04 13:00:01] 📁 Google Drive: Error getting subfolders: Command failed: /bin/bash: gog: command not found
+
+[2026-03-04 13:00:01] 😴 No calls found
+
+[Wed Mar  4 13:30:00 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 13:30:00] 🚀 V1 ENHANCED Call Intelligence - Google Drive Integration
+[2026-03-04 13:30:00] 🔍 Searching for calls modified in last 2 hours
+[2026-03-04 13:30:00] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 13:30:01] 📂 Searching 72 folders...
+[2026-03-04 13:30:03]       ⏰ RECENT: Modified 2026-03-04 19:12 (within 2h)
+[2026-03-04 13:30:03]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 13:30:03]       ⏰ RECENT: Modified 2026-03-04 18:12 (within 2h)
+[2026-03-04 13:30:03]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 13:30:03]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 13:30:03]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 13:30:03]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 13:30:03]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 13:30:04]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 13:30:04]       ✅ RECENT: Copy of Telnyx // Voxtelesys - 2026/03/04 10:29 PST - Notes ...
+[2026-03-04 13:30:05]       ⏰ RECENT: Modified 2026-03-04 18:56 (within 2h)
+[2026-03-04 13:30:05]       ✅ RECENT: Copy of Ringba <> Telnyx - 2026/03/04 11:58 CST - Notes by G...
+[2026-03-04 13:30:05]       ⏰ RECENT: Modified 2026-03-04 16:12 (within 2h)
+[2026-03-04 13:30:05]       ✅ RECENT: Copy of AudioCodes <> Telnyx - 2026/03/04 09:00 CST - Notes ...
+[2026-03-04 13:30:06]       ⏰ RECENT: Modified 2026-03-04 18:42 (within 2h)
+[2026-03-04 13:30:06]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 13:30:07]       ⏰ RECENT: Modified 2026-03-04 18:41 (within 2h)
+[2026-03-04 13:30:07]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 13:30:07]       ⏰ RECENT: Modified 2026-03-04 18:26 (within 2h)
+[2026-03-04 13:30:07]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 13:30:08]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 13:30:08]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 13:30:08]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 13:30:08]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 13:30:09]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 13:30:09]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 13:30:10]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 13:30:10]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 13:30:10]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 13:30:10]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 13:30:10]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 13:30:10]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 13:30:11]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 13:30:11]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 13:30:12]       ⏰ RECENT: Modified 2026-03-04 17:11 (within 2h)
+[2026-03-04 13:30:12]       ✅ RECENT: Copy of Erik | Scott Sync - 2026/03/04 10:30 CST - Notes by ...
+[2026-03-04 13:30:13]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 13:30:13]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 13:30:13]       ⏰ RECENT: Modified 2026-03-04 15:27 (within 2h)
+[2026-03-04 13:30:13]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 13:30:13]       ⏰ RECENT: Modified 2026-03-04 11:57 (within 2h)
+[2026-03-04 13:30:13]       ✅ RECENT: Copy of Vocads | Telnyx: Voice AI Workshop - 2026/03/04 11:5...
+[2026-03-04 13:30:14]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 13:30:14]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 13:30:14]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 13:30:14]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 13:30:15]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 13:30:15]       ✅ RECENT: Copy of Telnyx <> Blink AI -- 10DLC - 2026/03/04 09:54 CST -...
+[2026-03-04 13:30:16]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 13:30:16]       ✅ RECENT: Copy of Telnyx + CARECO weekly sync - 2026/03/04 08:27 MST -...
+[2026-03-04 13:30:17]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 13:30:17]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 13:30:18]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 13:30:18]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 13:30:18]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 13:30:18]       ✅ RECENT: Copy of Pieter & Aliyana <> Telnyx - 2026/03/04 15:59 CET - ...
+[2026-03-04 13:30:19]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 13:30:19]       ✅ RECENT: Copy of Alliance Global <> Telnyx Porting  - 2026/03/04 09:5...
+[2026-03-04 13:30:20]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 13:30:20]       ✅ RECENT: Copy of Suraz / Jonathan - 2026/03/04 10:00 EST - Notes by G...
+[2026-03-04 13:30:20]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 13:30:20]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 13:30:21]       ⏰ RECENT: Modified 2026-03-04 11:56 (within 2h)
+[2026-03-04 13:30:21]       ✅ RECENT: Copy of Vocads | Telnyx: Voice AI Workshop - 2026/03/04 11:5...
+[2026-03-04 13:30:22]       ⏰ RECENT: Modified 2026-03-04 11:56 (within 2h)
+[2026-03-04 13:30:22]       ✅ RECENT: Copy of Vocads | Telnyx: Voice AI Workshop - 2026/03/04 11:5...
+[2026-03-04 13:30:56] 📊 SUMMARY: Found 614 total Gemini calls, 33 are recent (last 2h)
+[2026-03-04 13:30:56] 📁 Google Drive: Found 33 recent calls (last 2h) out of 614 total
+[2026-03-04 13:30:56] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 13:30:56] 🆕 Processing ENHANCED: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 13:30:56]       🔍 Getting content for doc ID: 1VR17xbuYiUYAAb0of6OJF3PuqDcUo2GYI-Vjkn_vTag
+[2026-03-04 13:30:58]       📝 Content length: 654 characters
+[2026-03-04 13:30:58]       ✅ Content retrieved successfully
+[2026-03-04 13:30:58]    📝 Content: None
+[2026-03-04 13:30:58]    👤 Parsed: Telna Bi-Weekly
+[2026-03-04 13:30:59]    👤 Contact: ⚠️ No contact found for: Telna Bi-Weekly
+[2026-03-04 13:31:29]    🤖 AI Analysis: success
+[2026-03-04 13:31:29]    📱 Slack Main: ✅ Posted to Slack (ts: 1772652689.885569)
+[2026-03-04 13:31:30]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 13:31:30] ✅ ENHANCED: Telna Bi-Weekly (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 13:31:30] 🆕 Processing ENHANCED: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 13:31:30]       🔍 Getting content for doc ID: 1Xyiq8sAImlEvW5bE4giXUjBEjy33ilLh3h7bAmC2Yz8
+[2026-03-04 13:31:31]       📝 Content length: 654 characters
+[2026-03-04 13:31:31]       ✅ Content retrieved successfully
+[2026-03-04 13:31:31]    📝 Content: None
+[2026-03-04 13:31:31]    👤 Parsed: Telna Bi-Weekly
+[2026-03-04 13:31:32]    👤 Contact: ⚠️ No contact found for: Telna Bi-Weekly
+[2026-03-04 13:31:43]    🤖 AI Analysis: success
+[2026-03-04 13:31:43]    📱 Slack Main: ✅ Posted to Slack (ts: 1772652703.296079)
+[2026-03-04 13:31:43] ✅ ENHANCED: Telna Bi-Weekly (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 13:31:43] 🆕 Processing ENHANCED: Copy of Telnyx // Voxtelesys - 2026/03/04 10:29 PST - Notes ...
+[2026-03-04 13:31:43]       🔍 Getting content for doc ID: 1PkWoJnZe49W4SEVAIYoa6BvMs7f7gSSbdls3I5KusDg
+[2026-03-04 13:31:44]       📝 Content length: 4556 characters
+[2026-03-04 13:31:44]       ✅ Content retrieved successfully
+[2026-03-04 13:31:44]    📝 Content: None
+[2026-03-04 13:31:44]    👤 Parsed: Unknown Prospect
+[2026-03-04 13:31:45]    👤 Contact: ⚠️ No contact found for: Unknown Prospect
+[2026-03-04 13:32:06]    🤖 AI Analysis: success
+[2026-03-04 13:32:07]    📱 Slack Main: ✅ Posted to Slack (ts: 1772652727.061359)
+[2026-03-04 13:32:07]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 13:32:07] ✅ ENHANCED: Unknown Prospect (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 13:32:07] 🎉 V1 ENHANCED (Google Drive) processed 3 calls
+
+[Wed Mar  4 14:00:00 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 14:00:00] 🚀 V1 ENHANCED Call Intelligence - Google Drive Integration
+[2026-03-04 14:00:00] 🔍 Searching for calls modified in last 2 hours
+[2026-03-04 14:00:00] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 14:00:02] 📂 Searching 72 folders...
+[2026-03-04 14:00:03]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 14:00:03]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:00:03]       ⏰ RECENT: Modified 2026-03-04 18:42 (within 2h)
+[2026-03-04 14:00:03]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 14:00:04]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 14:00:04]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 14:00:04]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 14:00:04]       ✅ RECENT: Copy of Suraz / Jonathan - 2026/03/04 10:00 EST - Notes by G...
+[2026-03-04 14:00:05]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:00:05]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:00:05]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 14:00:05]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 14:00:06]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:00:06]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:00:06]       ⏰ RECENT: Modified 2026-03-04 18:41 (within 2h)
+[2026-03-04 14:00:06]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 14:00:06]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:00:06]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 14:00:06]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 14:00:06]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 14:00:06]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 14:00:06]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 14:00:07]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:00:07]       ✅ RECENT: Copy of Verasight - Telnyx - Monthly Sync - 2026/03/04 13:59...
+[2026-03-04 14:00:07]       ⏰ RECENT: Modified 2026-03-04 17:11 (within 2h)
+[2026-03-04 14:00:07]       ✅ RECENT: Copy of Erik | Scott Sync - 2026/03/04 10:30 CST - Notes by ...
+[2026-03-04 14:00:08]       ⏰ RECENT: Modified 2026-03-04 19:12 (within 2h)
+[2026-03-04 14:00:08]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 14:00:08]       ⏰ RECENT: Modified 2026-03-04 18:12 (within 2h)
+[2026-03-04 14:00:08]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 14:00:09]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 14:00:09]       ✅ RECENT: Copy of Telnyx // Voxtelesys - 2026/03/04 10:29 PST - Notes ...
+[2026-03-04 14:00:10]       ⏰ RECENT: Modified 2026-03-04 18:56 (within 2h)
+[2026-03-04 14:00:10]       ✅ RECENT: Copy of Ringba <> Telnyx - 2026/03/04 11:58 CST - Notes by G...
+[2026-03-04 14:00:10]       ⏰ RECENT: Modified 2026-03-04 16:12 (within 2h)
+[2026-03-04 14:00:10]       ✅ RECENT: Copy of AudioCodes <> Telnyx - 2026/03/04 09:00 CST - Notes ...
+[2026-03-04 14:00:10]       ⏰ RECENT: Modified 2026-03-04 18:26 (within 2h)
+[2026-03-04 14:00:10]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 14:00:11]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 14:00:11]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 14:00:11]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:00:11]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 14:00:12]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 14:00:12]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 14:00:13]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:00:13]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 14:00:13]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 14:00:13]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 14:00:13]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:00:13]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 14:00:14]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:00:14]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 14:00:15]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 14:00:15]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 14:00:15]       ⏰ RECENT: Modified 2026-03-04 15:27 (within 2h)
+[2026-03-04 14:00:15]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 14:00:16]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 14:00:16]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 14:00:17]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 14:00:17]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 14:00:17]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 14:00:17]       ✅ RECENT: Copy of Telnyx <> Blink AI -- 10DLC - 2026/03/04 09:54 CST -...
+[2026-03-04 14:00:18]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 14:00:18]       ✅ RECENT: Copy of Telnyx + CARECO weekly sync - 2026/03/04 08:27 MST -...
+[2026-03-04 14:00:19]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 14:00:19]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 14:00:20]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 14:00:20]       ✅ RECENT: Copy of Pieter & Aliyana <> Telnyx - 2026/03/04 15:59 CET - ...
+[2026-03-04 14:00:20]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 14:00:20]       ✅ RECENT: Copy of Alliance Global <> Telnyx Porting  - 2026/03/04 09:5...
+[2026-03-04 14:00:21]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 14:00:21]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 14:00:58] 📊 SUMMARY: Found 620 total Gemini calls, 36 are recent (last 2h)
+[2026-03-04 14:00:58] 📁 Google Drive: Found 36 recent calls (last 2h) out of 620 total
+[2026-03-04 14:00:58] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 14:00:58] 🆕 Processing ENHANCED: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:00:58]       🔍 Getting content for doc ID: 1JdTY_nkFlWzAjhop5QbPFOfETG1s_NLr-f7JSd4Z6gw
+[2026-03-04 14:01:00]       📝 Content length: 7230 characters
+[2026-03-04 14:01:00]       ✅ Content retrieved successfully
+[2026-03-04 14:01:00]    📝 Content: None
+[2026-03-04 14:01:00]    👤 Parsed: Unknown Prospect
+[2026-03-04 14:01:00]    👤 Contact: ⚠️ No contact found for: Unknown Prospect
+[2026-03-04 14:01:15]    🤖 AI Analysis: success
+[2026-03-04 14:01:15]    📱 Slack Main: ✅ Posted to Slack (ts: 1772654475.559579)
+[2026-03-04 14:01:15]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 14:01:15] ✅ ENHANCED: Unknown Prospect (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 14:01:15] 🆕 Processing ENHANCED: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 14:01:15]       🔍 Getting content for doc ID: 1Cniaa-HqXzOBnh4UuQEQjfpLweWD0bOrSNXoB6s2msk
+[2026-03-04 14:01:17]       📝 Content length: 5145 characters
+[2026-03-04 14:01:17]       ✅ Content retrieved successfully
+[2026-03-04 14:01:17]    📝 Content: None
+[2026-03-04 14:01:17]    👤 Parsed: Unknown Prospect
+[2026-03-04 14:01:17]    👤 Contact: ⚠️ No contact found for: Unknown Prospect
+[2026-03-04 14:01:44]    🤖 AI Analysis: success
+[2026-03-04 14:01:45]    📱 Slack Main: ✅ Posted to Slack (ts: 1772654505.005889)
+[2026-03-04 14:01:45]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 14:01:45] ✅ ENHANCED: Unknown Prospect (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 14:01:45] 🆕 Processing ENHANCED: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:01:45]       🔍 Getting content for doc ID: 1jU_XmOe9O00m4X4Uy7Ilud_Qd6afTfZueVSK4nt1RoQ
+[2026-03-04 14:01:46]       📝 Content length: 7230 characters
+[2026-03-04 14:01:46]       ✅ Content retrieved successfully
+[2026-03-04 14:01:46]    📝 Content: None
+[2026-03-04 14:01:46]    👤 Parsed: Unknown Prospect
+[2026-03-04 14:01:47]    👤 Contact: ⚠️ No contact found for: Unknown Prospect
+[2026-03-04 14:02:06]    🤖 AI Analysis: success
+[2026-03-04 14:02:07]    📱 Slack Main: ✅ Posted to Slack (ts: 1772654526.937179)
+[2026-03-04 14:02:07]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 14:02:07] ✅ ENHANCED: Unknown Prospect (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 14:02:07] 🎉 V1 ENHANCED (Google Drive) processed 3 calls
+
+[Wed Mar  4 14:30:01 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 14:30:01] 🚀 V1 ENHANCED Call Intelligence - Google Drive Integration
+[2026-03-04 14:30:01] 🔍 Searching for calls modified in last 2 hours
+[2026-03-04 14:30:01] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 14:30:02] 📂 Searching 72 folders...
+[2026-03-04 14:30:03]       ⏰ RECENT: Modified 2026-03-04 20:27 (within 2h)
+[2026-03-04 14:30:03]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 14:30:03]       ⏰ RECENT: Modified 2026-03-04 19:12 (within 2h)
+[2026-03-04 14:30:03]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 14:30:03]       ⏰ RECENT: Modified 2026-03-04 18:12 (within 2h)
+[2026-03-04 14:30:03]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 14:30:04]       ⏰ RECENT: Modified 2026-03-04 20:26 (within 2h)
+[2026-03-04 14:30:04]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 14:30:05]       ⏰ RECENT: Modified 2026-03-04 20:26 (within 2h)
+[2026-03-04 14:30:05]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 14:30:05]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 14:30:05]       ✅ RECENT: Copy of Telnyx // Voxtelesys - 2026/03/04 10:29 PST - Notes ...
+[2026-03-04 14:30:06]       ⏰ RECENT: Modified 2026-03-04 20:11 (within 2h)
+[2026-03-04 14:30:06]       ✅ RECENT: Copy of D1AL | Telnyx | AI Agent / FDE Program - 2026/03/04 ...
+[2026-03-04 14:30:07]       ⏰ RECENT: Modified 2026-03-04 20:11 (within 2h)
+[2026-03-04 14:30:07]       ✅ RECENT: Copy of Telnyx Intro Call (Rob Daline) - 2026/03/04 13:30 CS...
+[2026-03-04 14:30:07]       ⏰ RECENT: Modified 2026-03-04 18:26 (within 2h)
+[2026-03-04 14:30:07]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 14:30:08]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 14:30:08]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:30:08]       ⏰ RECENT: Modified 2026-03-04 18:42 (within 2h)
+[2026-03-04 14:30:08]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 14:30:08]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 14:30:08]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 14:30:08]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 14:30:08]       ✅ RECENT: Copy of Suraz / Jonathan - 2026/03/04 10:00 EST - Notes by G...
+[2026-03-04 14:30:09]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:30:09]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:30:09]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 14:30:09]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 14:30:10]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:30:10]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 14:30:10]       ⏰ RECENT: Modified 2026-03-04 18:41 (within 2h)
+[2026-03-04 14:30:10]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 14:30:11]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:30:11]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 14:30:11]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 14:30:11]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 14:30:11]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 14:30:11]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 14:30:11]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 14:30:11]       ✅ RECENT: Copy of Verasight - Telnyx - Monthly Sync - 2026/03/04 13:59...
+[2026-03-04 14:30:11]       ⏰ RECENT: Modified 2026-03-04 17:11 (within 2h)
+[2026-03-04 14:30:11]       ✅ RECENT: Copy of Erik | Scott Sync - 2026/03/04 10:30 CST - Notes by ...
+[2026-03-04 14:30:12]       ⏰ RECENT: Modified 2026-03-04 18:56 (within 2h)
+[2026-03-04 14:30:12]       ✅ RECENT: Copy of Ringba <> Telnyx - 2026/03/04 11:58 CST - Notes by G...
+[2026-03-04 14:30:12]       ⏰ RECENT: Modified 2026-03-04 16:12 (within 2h)
+[2026-03-04 14:30:12]       ✅ RECENT: Copy of AudioCodes <> Telnyx - 2026/03/04 09:00 CST - Notes ...
+[2026-03-04 14:30:13]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 14:30:13]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 14:30:13]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:30:13]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 14:30:14]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 14:30:14]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 14:30:15]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:30:15]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 14:30:15]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 14:30:15]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 14:30:15]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:30:15]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 14:30:16]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 14:30:16]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 14:30:17]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 14:30:17]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 14:30:17]       ⏰ RECENT: Modified 2026-03-04 15:27 (within 2h)
+[2026-03-04 14:30:17]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 14:30:18]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 14:30:18]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 14:30:18]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 14:30:18]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 14:30:19]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 14:30:19]       ✅ RECENT: Copy of Telnyx <> Blink AI -- 10DLC - 2026/03/04 09:54 CST -...
+[2026-03-04 14:30:20]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 14:30:20]       ✅ RECENT: Copy of Telnyx + CARECO weekly sync - 2026/03/04 08:27 MST -...
+[2026-03-04 14:30:21]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 14:30:21]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 14:30:22]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 14:30:22]       ✅ RECENT: Copy of Pieter & Aliyana <> Telnyx - 2026/03/04 15:59 CET - ...
+[2026-03-04 14:30:22]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 14:30:22]       ✅ RECENT: Copy of Alliance Global <> Telnyx Porting  - 2026/03/04 09:5...
+[2026-03-04 14:30:23]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 14:30:23]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 14:30:57] 📊 SUMMARY: Found 625 total Gemini calls, 41 are recent (last 2h)
+[2026-03-04 14:30:57] 📁 Google Drive: Found 41 recent calls (last 2h) out of 625 total
+[2026-03-04 14:30:58] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 14:30:58] 🆕 Processing ENHANCED: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 14:30:58]       🔍 Getting content for doc ID: 12-3lhnX150ZP9oEnpACuv7iqEuMKFXEBXZv_tlE_8Us
+[2026-03-04 14:30:59]       📝 Content length: 666 characters
+[2026-03-04 14:30:59]       ✅ Content retrieved successfully
+[2026-03-04 14:30:59]    📝 Content: None
+[2026-03-04 14:30:59]    👤 Parsed: Arkklabs
+[2026-03-04 14:31:00]    👤 Contact: ⚠️ No contact found for: Arkklabs
+[2026-03-04 14:31:15]    🤖 AI Analysis: success
+[2026-03-04 14:31:15]    📱 Slack Main: ✅ Posted to Slack (ts: 1772656275.594159)
+[2026-03-04 14:31:15]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 14:31:15] ✅ ENHANCED: Arkklabs (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 14:31:15] 🆕 Processing ENHANCED: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 14:31:15]       🔍 Getting content for doc ID: 12rngMS8S0jjn1ZY_P-01dSfi0EA8lEE3XrntFetClUM
+[2026-03-04 14:31:16]       📝 Content length: 666 characters
+[2026-03-04 14:31:16]       ✅ Content retrieved successfully
+[2026-03-04 14:31:16]    📝 Content: None
+[2026-03-04 14:31:16]    👤 Parsed: Arkklabs
+[2026-03-04 14:31:17]    👤 Contact: ⚠️ No contact found for: Arkklabs
+[2026-03-04 14:31:42]    🤖 AI Analysis: success
+[2026-03-04 14:31:43]    📱 Slack Main: ✅ Posted to Slack (ts: 1772656303.138769)
+[2026-03-04 14:31:43]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 14:31:43] ✅ ENHANCED: Arkklabs (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 14:31:43] 🆕 Processing ENHANCED: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 14:31:43]       🔍 Getting content for doc ID: 1APeOKzhTin04AV_slY13SRk8etzDs4BCZ_456nTRa0Q
+[2026-03-04 14:31:44]       📝 Content length: 666 characters
+[2026-03-04 14:31:44]       ✅ Content retrieved successfully
+[2026-03-04 14:31:44]    📝 Content: None
+[2026-03-04 14:31:44]    👤 Parsed: Arkklabs
+[2026-03-04 14:31:44]    👤 Contact: ⚠️ No contact found for: Arkklabs
+[2026-03-04 14:32:04]    🤖 AI Analysis: success
+[2026-03-04 14:32:04]    📱 Slack Main: ✅ Posted to Slack (ts: 1772656324.440909)
+[2026-03-04 14:32:04]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 14:32:04] ✅ ENHANCED: Arkklabs (Slack: ✅, SF: ❌, AI: ✅)
+[2026-03-04 14:32:04] 🎉 V1 ENHANCED (Google Drive) processed 3 calls
+
+[Wed Mar  4 15:00:00 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+❌ V1 Enhanced system failed (exit 1)
+Error:   File "/Users/niamhcollins/clawd/ae_call_analysis/V1_GOOGLE_DRIVE_ENHANCED.py", line 868
+    subject = f"Meeting Booked: {event_name.replace("'", "\\'")}"
+                                                                 ^
+SyntaxError: f-string: unmatched '('
+
+[Wed Mar  4 15:30:00 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 15:30:01] 🚀 V1 ENHANCED Call Intelligence - Google Drive Integration
+[2026-03-04 15:30:01] 🔍 Searching for calls modified in last 2 hours
+[2026-03-04 15:30:01] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 15:30:02] 📂 Searching 72 folders...
+[2026-03-04 15:30:03]       ⏰ RECENT: Modified 2026-03-04 21:11 (within 2h)
+[2026-03-04 15:30:03]       ✅ RECENT: Copy of Saddleback <> Telnyx Billing & Privacy Complicance -...
+[2026-03-04 15:30:03]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 15:30:03]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 15:30:03]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 15:30:03]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 15:30:04]       ⏰ RECENT: Modified 2026-03-04 21:11 (within 2h)
+[2026-03-04 15:30:04]       ✅ RECENT: Copy of Saddleback <> Telnyx Billing & Privacy Complicance -...
+[2026-03-04 15:30:04]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 15:30:04]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 15:30:04]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 15:30:04]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 15:30:05]       ⏰ RECENT: Modified 2026-03-04 20:56 (within 2h)
+[2026-03-04 15:30:05]       ✅ RECENT: Copy of Telnyx <> Aloha - Hosted Messaging Sync  - 2026/03/0...
+[2026-03-04 15:30:05]       ⏰ RECENT: Modified 2026-03-04 20:26 (within 2h)
+[2026-03-04 15:30:05]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 15:30:05]       ⏰ RECENT: Modified 2026-03-04 20:56 (within 2h)
+[2026-03-04 15:30:05]       ✅ RECENT: Copy of Telnyx <> Aloha - Hosted Messaging Sync  - 2026/03/0...
+[2026-03-04 15:30:06]       ⏰ RECENT: Modified 2026-03-04 20:41 (within 2h)
+[2026-03-04 15:30:06]       ✅ RECENT: Copy of CPC <> Telnyx, Tickets  - 2026/03/04 13:59 CST - Not...
+[2026-03-04 15:30:07]       ⏰ RECENT: Modified 2026-03-04 20:41 (within 2h)
+[2026-03-04 15:30:07]       ✅ RECENT: Copy of University of Iowa Health Care <> Telnyx  - 2026/03/...
+[2026-03-04 15:30:07]       ⏰ RECENT: Modified 2026-03-04 18:56 (within 2h)
+[2026-03-04 15:30:07]       ✅ RECENT: Copy of Ringba <> Telnyx - 2026/03/04 11:58 CST - Notes by G...
+[2026-03-04 15:30:07]       ⏰ RECENT: Modified 2026-03-04 16:12 (within 2h)
+[2026-03-04 15:30:07]       ✅ RECENT: Copy of AudioCodes <> Telnyx - 2026/03/04 09:00 CST - Notes ...
+[2026-03-04 15:30:08]       ⏰ RECENT: Modified 2026-03-04 20:41 (within 2h)
+[2026-03-04 15:30:08]       ✅ RECENT: Copy of University of Iowa Health Care <> Telnyx  - 2026/03/...
+[2026-03-04 15:30:08]       ⏰ RECENT: Modified 2026-03-04 20:11 (within 2h)
+[2026-03-04 15:30:08]       ✅ RECENT: Copy of D1AL | Telnyx | AI Agent / FDE Program - 2026/03/04 ...
+[2026-03-04 15:30:09]       ⏰ RECENT: Modified 2026-03-04 20:27 (within 2h)
+[2026-03-04 15:30:09]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 15:30:09]       ⏰ RECENT: Modified 2026-03-04 19:12 (within 2h)
+[2026-03-04 15:30:09]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 15:30:09]       ⏰ RECENT: Modified 2026-03-04 18:12 (within 2h)
+[2026-03-04 15:30:09]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 15:30:10]       ⏰ RECENT: Modified 2026-03-04 20:26 (within 2h)
+[2026-03-04 15:30:10]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 15:30:10]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 15:30:10]       ✅ RECENT: Copy of Telnyx // Voxtelesys - 2026/03/04 10:29 PST - Notes ...
+[2026-03-04 15:30:10]       ⏰ RECENT: Modified 2026-03-04 20:11 (within 2h)
+[2026-03-04 15:30:10]       ✅ RECENT: Copy of Telnyx Intro Call (Rob Daline) - 2026/03/04 13:30 CS...
+[2026-03-04 15:30:10]       ⏰ RECENT: Modified 2026-03-04 18:26 (within 2h)
+[2026-03-04 15:30:10]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 15:30:11]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 15:30:11]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 15:30:11]       ⏰ RECENT: Modified 2026-03-04 18:42 (within 2h)
+[2026-03-04 15:30:11]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 15:30:12]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 15:30:12]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 15:30:12]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 15:30:12]       ✅ RECENT: Copy of Suraz / Jonathan - 2026/03/04 10:00 EST - Notes by G...
+[2026-03-04 15:30:13]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 15:30:13]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 15:30:13]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 15:30:13]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 15:30:14]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 15:30:14]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 15:30:14]       ⏰ RECENT: Modified 2026-03-04 18:41 (within 2h)
+[2026-03-04 15:30:14]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 15:30:15]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 15:30:15]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 15:30:15]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 15:30:15]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 15:30:15]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 15:30:15]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 15:30:15]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 15:30:15]       ✅ RECENT: Copy of Verasight - Telnyx - Monthly Sync - 2026/03/04 13:59...
+[2026-03-04 15:30:15]       ⏰ RECENT: Modified 2026-03-04 17:11 (within 2h)
+[2026-03-04 15:30:15]       ✅ RECENT: Copy of Erik | Scott Sync - 2026/03/04 10:30 CST - Notes by ...
+[2026-03-04 15:30:16]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 15:30:16]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 15:30:17]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 15:30:17]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 15:30:18]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 15:30:18]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 15:30:18]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 15:30:18]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 15:30:18]       ⏰ RECENT: Modified 2026-03-04 15:27 (within 2h)
+[2026-03-04 15:30:18]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 15:30:19]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 15:30:19]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 15:30:20]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 15:30:20]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 15:30:21]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 15:30:21]       ✅ RECENT: Copy of Telnyx <> Blink AI -- 10DLC - 2026/03/04 09:54 CST -...
+[2026-03-04 15:30:22]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 15:30:22]       ✅ RECENT: Copy of Telnyx + CARECO weekly sync - 2026/03/04 08:27 MST -...
+[2026-03-04 15:30:22]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 15:30:22]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 15:30:23]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 15:30:23]       ✅ RECENT: Copy of Pieter & Aliyana <> Telnyx - 2026/03/04 15:59 CET - ...
+[2026-03-04 15:30:24]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 15:30:24]       ✅ RECENT: Copy of Alliance Global <> Telnyx Porting  - 2026/03/04 09:5...
+[2026-03-04 15:30:25]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 15:30:25]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 15:31:05] 📊 SUMMARY: Found 632 total Gemini calls, 48 are recent (last 2h)
+[2026-03-04 15:31:05] 📁 Google Drive: Found 48 recent calls (last 2h) out of 632 total
+[2026-03-04 15:31:06] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 15:31:06] 🆕 Processing CORRECT: Copy of Saddleback <> Telnyx Billing & Privacy Complicance -...
+[2026-03-04 15:31:06]    🎯 Event name: 'Saddleback <> Telnyx Billing & Privacy Complicance'
+[2026-03-04 15:31:06]       🔍 Getting content for doc ID: 1ZJ1YbR_lYxqJCUuTc8WkUGXHPc9mULzgUpGuYu7g3Ek
+[2026-03-04 15:31:07]       📝 Content length: 6199 characters
+[2026-03-04 15:31:07]       ✅ Content retrieved successfully
+[2026-03-04 15:31:08]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:08] 🆕 Processing CORRECT: Copy of Saddleback <> Telnyx Billing & Privacy Complicance -...
+[2026-03-04 15:31:08]    🎯 Event name: 'Saddleback <> Telnyx Billing & Privacy Complicance'
+[2026-03-04 15:31:08]       🔍 Getting content for doc ID: 1_hnYUDY8aPghzliVasq85aVcZOO9Tf0jkEu0O24N9LA
+[2026-03-04 15:31:09]       📝 Content length: 6199 characters
+[2026-03-04 15:31:09]       ✅ Content retrieved successfully
+[2026-03-04 15:31:09]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:09] 🆕 Processing CORRECT: Copy of Telnyx <> Aloha - Hosted Messaging Sync  - 2026/03/0...
+[2026-03-04 15:31:09]    🎯 Event name: 'Telnyx <> Aloha - Hosted Messaging Sync'
+[2026-03-04 15:31:09]       🔍 Getting content for doc ID: 1DlQFIYYW00d8GlT9HPSelm4GVTN4Reh4lFYurUCrFJU
+[2026-03-04 15:31:11]       📝 Content length: 6021 characters
+[2026-03-04 15:31:11]       ✅ Content retrieved successfully
+[2026-03-04 15:31:11]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:11] 🆕 Processing CORRECT: Copy of Telnyx <> Aloha - Hosted Messaging Sync  - 2026/03/0...
+[2026-03-04 15:31:11]    🎯 Event name: 'Telnyx <> Aloha - Hosted Messaging Sync'
+[2026-03-04 15:31:11]       🔍 Getting content for doc ID: 1UWh_6F2cJe8HnAYdXD4nrVNT3aT083zquGjY7Mfs_44
+[2026-03-04 15:31:12]       📝 Content length: 6021 characters
+[2026-03-04 15:31:12]       ✅ Content retrieved successfully
+[2026-03-04 15:31:12]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:12] 🆕 Processing CORRECT: Copy of CPC <> Telnyx, Tickets  - 2026/03/04 13:59 CST - Not...
+[2026-03-04 15:31:12]    🎯 Event name: 'CPC <> Telnyx, Tickets'
+[2026-03-04 15:31:12]       🔍 Getting content for doc ID: 1AWyi9-cTkwWfaQLLmAvQko4TbLo39CKVHEWGD8fiy4g
+[2026-03-04 15:31:14]       📝 Content length: 4014 characters
+[2026-03-04 15:31:14]       ✅ Content retrieved successfully
+[2026-03-04 15:31:14]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:14] 🆕 Processing CORRECT: Copy of University of Iowa Health Care <> Telnyx  - 2026/03/...
+[2026-03-04 15:31:14]    🎯 Event name: 'University of Iowa Health Care <> Telnyx'
+[2026-03-04 15:31:14]       🔍 Getting content for doc ID: 1i4sEG8gxXcvwaHvbG8bmaMnMTtQH2W78pp1JpzcwtoA
+[2026-03-04 15:31:15]       📝 Content length: 9507 characters
+[2026-03-04 15:31:15]       ✅ Content retrieved successfully
+[2026-03-04 15:31:16]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:16] 🆕 Processing CORRECT: Copy of University of Iowa Health Care <> Telnyx  - 2026/03/...
+[2026-03-04 15:31:16]    🎯 Event name: 'University of Iowa Health Care <> Telnyx'
+[2026-03-04 15:31:16]       🔍 Getting content for doc ID: 1jxwCmz07sx4kGU6LVP5W2Gbnw7JV2_qYBYHJQY-AUZE
+[2026-03-04 15:31:17]       📝 Content length: 9507 characters
+[2026-03-04 15:31:17]       ✅ Content retrieved successfully
+[2026-03-04 15:31:17]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:17] 🆕 Processing CORRECT: Copy of D1AL | Telnyx | AI Agent / FDE Program - 2026/03/04 ...
+[2026-03-04 15:31:17]    🎯 Event name: 'D1AL | Telnyx | AI Agent / FDE Program'
+[2026-03-04 15:31:17]       🔍 Getting content for doc ID: 1PFFqN9Ky2eygAcxgFZsDp4OsnMcuxZopjYynu8xWZO0
+[2026-03-04 15:31:18]       📝 Content length: 6680 characters
+[2026-03-04 15:31:18]       ✅ Content retrieved successfully
+[2026-03-04 15:31:18]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:18] 🆕 Processing CORRECT: Copy of Telnyx Intro Call (Rob Daline) - 2026/03/04 13:30 CS...
+[2026-03-04 15:31:18]    🎯 Event name: 'Telnyx Intro Call (Rob Daline)'
+[2026-03-04 15:31:18]       🔍 Getting content for doc ID: 1BXkKrndtOB5gxOBRaUwggEmsw_9vvMP3wCJtflKD8Hg
+[2026-03-04 15:31:21]       📝 Content length: 4327 characters
+[2026-03-04 15:31:21]       ✅ Content retrieved successfully
+[2026-03-04 15:31:21]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:21] 🆕 Processing CORRECT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 15:31:21]    🎯 Event name: 'Dirad Technologies // Telnyx - AI Conversation'
+[2026-03-04 15:31:21]       🔍 Getting content for doc ID: 1Q2jc8VHISc8L08zHyA-K3tIfE6Pu6pFcx-tdtawnzkA
+[2026-03-04 15:31:23]       📝 Content length: 7230 characters
+[2026-03-04 15:31:23]       ✅ Content retrieved successfully
+[2026-03-04 15:31:23]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:23] 🆕 Processing CORRECT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 15:31:23]    🎯 Event name: 'Telnyx Meet'
+[2026-03-04 15:31:23]       🔍 Getting content for doc ID: 1ZkRz39yh-Cf6W2opCO-kz4fyn80kD_3Xv5lM3xhS98Y
+[2026-03-04 15:31:24]       📝 Content length: 5145 characters
+[2026-03-04 15:31:24]       ✅ Content retrieved successfully
+[2026-03-04 15:31:24]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:24] 🆕 Processing CORRECT: Copy of Verasight - Telnyx - Monthly Sync - 2026/03/04 13:59...
+[2026-03-04 15:31:24]    🎯 Event name: 'Verasight - Telnyx - Monthly Sync'
+[2026-03-04 15:31:24]       🔍 Getting content for doc ID: 1BEkaP0mF55ZKWwKTk-54UEq4-VtZTwqPzDhQpngU0ZU
+[2026-03-04 15:31:26]       📝 Content length: 6291 characters
+[2026-03-04 15:31:26]       ✅ Content retrieved successfully
+[2026-03-04 15:31:26]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:26] 🆕 Processing CORRECT: Copy of Ringba <> Telnyx - 2026/03/04 11:58 CST - Notes by G...
+[2026-03-04 15:31:26]    🎯 Event name: 'Ringba <> Telnyx'
+[2026-03-04 15:31:26]       🔍 Getting content for doc ID: 14qa_NbuUnB4o71lDE2R6ObuAjczlTRWm1sOtXubHApo
+[2026-03-04 15:31:27]       📝 Content length: 7340 characters
+[2026-03-04 15:31:27]       ✅ Content retrieved successfully
+[2026-03-04 15:31:27]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:27] 🆕 Processing CORRECT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 15:31:27]    🎯 Event name: 'SIPREC - Kastle AI'
+[2026-03-04 15:31:27]       🔍 Getting content for doc ID: 1Yba4hO5Vv_xw9Rzx_qtVFDDpd2Z2pZf3DRNJ90oq3pk
+[2026-03-04 15:31:28]       📝 Content length: 4197 characters
+[2026-03-04 15:31:28]       ✅ Content retrieved successfully
+[2026-03-04 15:31:29]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:29] 🆕 Processing CORRECT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 15:31:29]    🎯 Event name: 'SIPREC - Kastle AI'
+[2026-03-04 15:31:29]       🔍 Getting content for doc ID: 1zTCd1uW_5wqzTrBNv2n8858BsRanpnqfJw3lk-EWRbU
+[2026-03-04 15:31:30]       📝 Content length: 4197 characters
+[2026-03-04 15:31:30]       ✅ Content retrieved successfully
+[2026-03-04 15:31:30]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:30] 🆕 Processing CORRECT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 15:31:30]    🎯 Event name: 'Hippocratic <> Telnyx Weekly Sync'
+[2026-03-04 15:31:30]       🔍 Getting content for doc ID: 1fFbaB8EW6pCS3FEUsCq_n5uHgl5QJQrjNjqOtrpVFpE
+[2026-03-04 15:31:31]       📝 Content length: 2431 characters
+[2026-03-04 15:31:31]       ✅ Content retrieved successfully
+[2026-03-04 15:31:32]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:32] 🆕 Processing CORRECT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 15:31:32]    🎯 Event name: 'Hippocratic <> Telnyx Weekly Sync'
+[2026-03-04 15:31:32]       🔍 Getting content for doc ID: 1b64C0RoejUJaPyYgiWrQe24puhKKSxrav1Tecm4nOks
+[2026-03-04 15:31:33]       📝 Content length: 2431 characters
+[2026-03-04 15:31:33]       ✅ Content retrieved successfully
+[2026-03-04 15:31:33]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:33] 🆕 Processing CORRECT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 15:31:33]    🎯 Event name: 'Dayforce <> Telnyx'
+[2026-03-04 15:31:33]       🔍 Getting content for doc ID: 1arIg2YCdjMSeRd3TDQ3MbfsU0RoAxaISe0UTvRHHMck
+[2026-03-04 15:31:34]       📝 Content length: 7566 characters
+[2026-03-04 15:31:34]       ✅ Content retrieved successfully
+[2026-03-04 15:31:34]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:34] 🆕 Processing CORRECT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 15:31:34]    🎯 Event name: 'Dayforce <> Telnyx'
+[2026-03-04 15:31:34]       🔍 Getting content for doc ID: 1XIj5iErVVbrTHDUAiAc85etcVu2-3ACYqrzv2Bp3uIg
+[2026-03-04 15:31:35]       📝 Content length: 7566 characters
+[2026-03-04 15:31:35]       ✅ Content retrieved successfully
+[2026-03-04 15:31:36]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:36] 🆕 Processing CORRECT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 15:31:36]    🎯 Event name: 'Dayforce <> Telnyx'
+[2026-03-04 15:31:36]       🔍 Getting content for doc ID: 118iiS0Hzylc_-DQLPvdT-3O4pC-YJIyimp3VEkYKVWI
+[2026-03-04 15:31:37]       📝 Content length: 7566 characters
+[2026-03-04 15:31:37]       ✅ Content retrieved successfully
+[2026-03-04 15:31:37]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:37] 🆕 Processing CORRECT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 15:31:37]    🎯 Event name: 'AiPRL <> Telnyx Contract/Commericals'
+[2026-03-04 15:31:37]       🔍 Getting content for doc ID: 16RwdPWCmj6d-Dca2-shpQWqyRUfBK5iVl4RESS3je98
+[2026-03-04 15:31:38]       📝 Content length: 5200 characters
+[2026-03-04 15:31:38]       ✅ Content retrieved successfully
+[2026-03-04 15:31:39]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:39] 🆕 Processing CORRECT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 15:31:39]    🎯 Event name: 'AiPRL <> Telnyx Contract/Commericals'
+[2026-03-04 15:31:39]       🔍 Getting content for doc ID: 1H6N8eIiI_XgbG2Nv5spSKgslPCfpgCmPQRDzxGpUtaU
+[2026-03-04 15:31:40]       📝 Content length: 5200 characters
+[2026-03-04 15:31:40]       ✅ Content retrieved successfully
+[2026-03-04 15:31:40]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:40] 🆕 Processing CORRECT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 15:31:40]    🎯 Event name: 'Seguimiento Telnyx <> Directa Soluciones'
+[2026-03-04 15:31:40]       🔍 Getting content for doc ID: 1aFV7IzVAHGro7jQtjmRsFw9RyGBMN89dARw5WRlDKvo
+[2026-03-04 15:31:41]       📝 Content length: 4942 characters
+[2026-03-04 15:31:41]       ✅ Content retrieved successfully
+[2026-03-04 15:31:42]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:42] 🆕 Processing CORRECT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 15:31:42]    🎯 Event name: 'Seguimiento Telnyx <> Directa Soluciones'
+[2026-03-04 15:31:42]       🔍 Getting content for doc ID: 19DkVMjDpmfeRMAraF_zMJ0t-7fnhHa5RwpxuPageBbk
+[2026-03-04 15:31:43]       📝 Content length: 4942 characters
+[2026-03-04 15:31:43]       ✅ Content retrieved successfully
+[2026-03-04 15:31:43]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:43] 🆕 Processing CORRECT: Copy of Erik | Scott Sync - 2026/03/04 10:30 CST - Notes by ...
+[2026-03-04 15:31:43]    🎯 Event name: 'Erik | Scott Sync'
+[2026-03-04 15:31:43]       🔍 Getting content for doc ID: 1UQ2cwa0cLuuG9nTPSBwD7e7wdDpd7P6OP5pZZvXf_FY
+[2026-03-04 15:31:44]       📝 Content length: 7728 characters
+[2026-03-04 15:31:44]       ✅ Content retrieved successfully
+[2026-03-04 15:31:44]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:44] 🆕 Processing CORRECT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 15:31:44]    🎯 Event name: 'Pedro and Khalil: 30-minute Meeting'
+[2026-03-04 15:31:44]       🔍 Getting content for doc ID: 1u4y8ax9eV7T7ryvcmW9kZzd6gDjSoyu6eNQYBV3-H34
+[2026-03-04 15:31:46]       📝 Content length: 6985 characters
+[2026-03-04 15:31:46]       ✅ Content retrieved successfully
+[2026-03-04 15:31:46]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:46] 🆕 Processing CORRECT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 15:31:46]    🎯 Event name: 'Pedro and Khalil: 30-minute Meeting'
+[2026-03-04 15:31:46]       🔍 Getting content for doc ID: 12oidDwdi7bQPzwVI8l8lwtoG2OFMV6ketkB3OMkpyVs
+[2026-03-04 15:31:47]       📝 Content length: 6985 characters
+[2026-03-04 15:31:47]       ✅ Content retrieved successfully
+[2026-03-04 15:31:47]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:47] 🆕 Processing CORRECT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 15:31:47]    🎯 Event name: 'CCS/Telnyx'
+[2026-03-04 15:31:47]       🔍 Getting content for doc ID: 1LeByg6qXvEubpicfsDB_dN0saFRSBUbrFwCv_YAwsc0
+[2026-03-04 15:31:49]       📝 Content length: 4279 characters
+[2026-03-04 15:31:49]       ✅ Content retrieved successfully
+[2026-03-04 15:31:49]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:49] 🆕 Processing CORRECT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 15:31:49]    🎯 Event name: 'CCS/Telnyx'
+[2026-03-04 15:31:49]       🔍 Getting content for doc ID: 1cX_Ra_s_LNvJNu64fSpKV7w9ITNnJ48_a9kjTn99yIE
+[2026-03-04 15:31:50]       📝 Content length: 4279 characters
+[2026-03-04 15:31:50]       ✅ Content retrieved successfully
+[2026-03-04 15:31:50]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:50] 🆕 Processing CORRECT: Copy of Telnyx <> Blink AI -- 10DLC - 2026/03/04 09:54 CST -...
+[2026-03-04 15:31:50]    🎯 Event name: 'Telnyx <> Blink AI -- 10DLC'
+[2026-03-04 15:31:50]       🔍 Getting content for doc ID: 1BulIOyDdv8CKb2EJkpuxocYRJ3bEjxMiQ4G5M7swZoc
+[2026-03-04 15:31:51]       📝 Content length: 6480 characters
+[2026-03-04 15:31:51]       ✅ Content retrieved successfully
+[2026-03-04 15:31:52]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:52] 🆕 Processing CORRECT: Copy of AudioCodes <> Telnyx - 2026/03/04 09:00 CST - Notes ...
+[2026-03-04 15:31:52]    🎯 Event name: 'AudioCodes <> Telnyx'
+[2026-03-04 15:31:52]       🔍 Getting content for doc ID: 1UcYsszSUNkp61Gbfj75BuVNFNRHtQfXKCVdcrfotSQI
+[2026-03-04 15:31:53]       📝 Content length: 4416 characters
+[2026-03-04 15:31:53]       ✅ Content retrieved successfully
+[2026-03-04 15:31:53]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:53] 🆕 Processing CORRECT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 15:31:53]    🎯 Event name: 'Arconic | Telnyx - IP SEC Regroup'
+[2026-03-04 15:31:53]       🔍 Getting content for doc ID: 1Qxwi4mUQXJ4gflMmAYFc1c-ZCBwNvAH-EfJmKX7bOG4
+[2026-03-04 15:31:54]       📝 Content length: 5395 characters
+[2026-03-04 15:31:54]       ✅ Content retrieved successfully
+[2026-03-04 15:31:54]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:54] 🆕 Processing CORRECT: Copy of Telnyx + CARECO weekly sync - 2026/03/04 08:27 MST -...
+[2026-03-04 15:31:54]    🎯 Event name: 'Telnyx + CARECO weekly sync'
+[2026-03-04 15:31:54]       🔍 Getting content for doc ID: 1zbMm-WdaT4zDKnkzBbY9jQKUw349i4ZyXOY3z8YboyY
+[2026-03-04 15:31:56]       📝 Content length: 972 characters
+[2026-03-04 15:31:56]       ✅ Content retrieved successfully
+[2026-03-04 15:31:56]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:56] 🆕 Processing CORRECT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 15:31:56]    🎯 Event name: 'Arconic | Telnyx - IP SEC Regroup'
+[2026-03-04 15:31:56]       🔍 Getting content for doc ID: 1FNCObF6qtN9xoub65piSUcxCy72hDrR8ZTU6ifHbRN8
+[2026-03-04 15:31:58]       📝 Content length: 5395 characters
+[2026-03-04 15:31:58]       ✅ Content retrieved successfully
+[2026-03-04 15:31:58]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:58] 🆕 Processing CORRECT: Copy of Pieter & Aliyana <> Telnyx - 2026/03/04 15:59 CET - ...
+[2026-03-04 15:31:58]    🎯 Event name: 'Pieter & Aliyana <> Telnyx'
+[2026-03-04 15:31:58]       🔍 Getting content for doc ID: 1KDhAIhC8qkO9QLlPygwT03vEUgNTo9YVaa4NGUaUXDw
+[2026-03-04 15:31:59]       📝 Content length: 6536 characters
+[2026-03-04 15:31:59]       ✅ Content retrieved successfully
+[2026-03-04 15:31:59]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:31:59] 🆕 Processing CORRECT: Copy of Alliance Global <> Telnyx Porting  - 2026/03/04 09:5...
+[2026-03-04 15:31:59]    🎯 Event name: 'Alliance Global <> Telnyx Porting'
+[2026-03-04 15:31:59]       🔍 Getting content for doc ID: 13qKF_lHT32bvR8L_Y1emZLG84DlcKaJe3hRT_peedms
+[2026-03-04 15:32:00]       📝 Content length: 6327 characters
+[2026-03-04 15:32:00]       ✅ Content retrieved successfully
+[2026-03-04 15:32:01]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:32:01] 🆕 Processing CORRECT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 15:32:01]    🎯 Event name: 'Sully.ai & Telnyx daily sync'
+[2026-03-04 15:32:01]       🔍 Getting content for doc ID: 16hyhb9MmgRa92MhY08CAwptP2pm2deZVHobSDLhDEkw
+[2026-03-04 15:32:02]       📝 Content length: 4020 characters
+[2026-03-04 15:32:02]       ✅ Content retrieved successfully
+[2026-03-04 15:32:02]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:32:02] 🆕 Processing CORRECT: Copy of Suraz / Jonathan - 2026/03/04 10:00 EST - Notes by G...
+[2026-03-04 15:32:02]    🎯 Event name: 'Suraz / Jonathan'
+[2026-03-04 15:32:02]       🔍 Getting content for doc ID: 1X4SuZfX_XUwoLMVw3f7mt-DczJmV5q8vudNVs_Fib9k
+[2026-03-04 15:32:03]       📝 Content length: 3102 characters
+[2026-03-04 15:32:03]       ✅ Content retrieved successfully
+[2026-03-04 15:32:04]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:32:04] 🆕 Processing CORRECT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 15:32:04]    🎯 Event name: 'Sully.ai & Telnyx daily sync'
+[2026-03-04 15:32:04]       🔍 Getting content for doc ID: 1dO2rJFA5lHJDBoxz2w02ZT8F4YicCujWhDu_57oN7Wc
+[2026-03-04 15:32:05]       📝 Content length: 4020 characters
+[2026-03-04 15:32:05]       ✅ Content retrieved successfully
+[2026-03-04 15:32:05]    🔍 Event: ❌ Event search failed: 400
+[2026-03-04 15:32:05] 😴 No new calls to process
+
+[Wed Mar  4 16:00:01 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 16:00:01] 🚀 V1 ENHANCED Call Intelligence - Google Drive Integration
+[2026-03-04 16:00:01] 🔍 Searching for calls modified in last 2 hours
+[2026-03-04 16:00:01] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 16:00:02] 📂 Searching 72 folders...
+[2026-03-04 16:00:05]       ⏰ RECENT: Modified 2026-03-04 21:42 (within 2h)
+[2026-03-04 16:00:05]       ✅ RECENT: Copy of Arya Meet - 2026/03/04 16:00 EST - Notes by Gemini...
+[2026-03-04 16:00:06]       ⏰ RECENT: Modified 2026-03-04 21:42 (within 2h)
+[2026-03-04 16:00:06]       ✅ RECENT: Copy of Arya Meet - 2026/03/04 16:00 EST - Notes by Gemini...
+[2026-03-04 16:00:06]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 16:00:06]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 16:00:06]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 16:00:06]       ✅ RECENT: Copy of Suraz / Jonathan - 2026/03/04 10:00 EST - Notes by G...
+[2026-03-04 16:00:07]       ⏰ RECENT: Modified 2026-03-04 21:42 (within 2h)
+[2026-03-04 16:00:07]       ✅ RECENT: Copy of Doximity <> Telnyx - 2026/03/04 14:55 CST - Notes by...
+[2026-03-04 16:00:07]       ⏰ RECENT: Modified 2026-03-04 20:41 (within 2h)
+[2026-03-04 16:00:07]       ✅ RECENT: Copy of University of Iowa Health Care <> Telnyx  - 2026/03/...
+[2026-03-04 16:00:07]       ⏰ RECENT: Modified 2026-03-04 18:56 (within 2h)
+[2026-03-04 16:00:07]       ✅ RECENT: Copy of Ringba <> Telnyx - 2026/03/04 11:58 CST - Notes by G...
+[2026-03-04 16:00:07]       ⏰ RECENT: Modified 2026-03-04 16:12 (within 2h)
+[2026-03-04 16:00:07]       ✅ RECENT: Copy of AudioCodes <> Telnyx - 2026/03/04 09:00 CST - Notes ...
+[2026-03-04 16:00:08]       ⏰ RECENT: Modified 2026-03-04 21:41 (within 2h)
+[2026-03-04 16:00:08]       ✅ RECENT: Copy of Arya Meet - 2026/03/04 16:00 EST - Notes by Gemini...
+[2026-03-04 16:00:08]       ⏰ RECENT: Modified 2026-03-04 20:11 (within 2h)
+[2026-03-04 16:00:08]       ✅ RECENT: Copy of Telnyx Intro Call (Rob Daline) - 2026/03/04 13:30 CS...
+[2026-03-04 16:00:08]       ⏰ RECENT: Modified 2026-03-04 18:26 (within 2h)
+[2026-03-04 16:00:08]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 16:00:08]       ⏰ RECENT: Modified 2026-03-04 21:11 (within 2h)
+[2026-03-04 16:00:08]       ✅ RECENT: Copy of Saddleback <> Telnyx Billing & Privacy Complicance -...
+[2026-03-04 16:00:08]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 16:00:08]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 16:00:08]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 16:00:08]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 16:00:09]       ⏰ RECENT: Modified 2026-03-04 21:11 (within 2h)
+[2026-03-04 16:00:09]       ✅ RECENT: Copy of Saddleback <> Telnyx Billing & Privacy Complicance -...
+[2026-03-04 16:00:09]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 16:00:09]       ✅ RECENT: Copy of AiPRL <> Telnyx Contract/Commericals - 2026/03/04 09...
+[2026-03-04 16:00:09]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 16:00:09]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 16:00:10]       ⏰ RECENT: Modified 2026-03-04 20:56 (within 2h)
+[2026-03-04 16:00:10]       ✅ RECENT: Copy of Telnyx <> Aloha - Hosted Messaging Sync  - 2026/03/0...
+[2026-03-04 16:00:10]       ⏰ RECENT: Modified 2026-03-04 20:26 (within 2h)
+[2026-03-04 16:00:10]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 16:00:11]       ⏰ RECENT: Modified 2026-03-04 20:56 (within 2h)
+[2026-03-04 16:00:11]       ✅ RECENT: Copy of Telnyx <> Aloha - Hosted Messaging Sync  - 2026/03/0...
+[2026-03-04 16:00:12]       ⏰ RECENT: Modified 2026-03-04 20:41 (within 2h)
+[2026-03-04 16:00:12]       ✅ RECENT: Copy of CPC <> Telnyx, Tickets  - 2026/03/04 13:59 CST - Not...
+[2026-03-04 16:00:12]       ⏰ RECENT: Modified 2026-03-04 20:41 (within 2h)
+[2026-03-04 16:00:12]       ✅ RECENT: Copy of University of Iowa Health Care <> Telnyx  - 2026/03/...
+[2026-03-04 16:00:12]       ⏰ RECENT: Modified 2026-03-04 20:11 (within 2h)
+[2026-03-04 16:00:12]       ✅ RECENT: Copy of D1AL | Telnyx | AI Agent / FDE Program - 2026/03/04 ...
+[2026-03-04 16:00:13]       ⏰ RECENT: Modified 2026-03-04 20:27 (within 2h)
+[2026-03-04 16:00:13]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 16:00:13]       ⏰ RECENT: Modified 2026-03-04 19:12 (within 2h)
+[2026-03-04 16:00:13]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 16:00:13]       ⏰ RECENT: Modified 2026-03-04 18:12 (within 2h)
+[2026-03-04 16:00:13]       ✅ RECENT: Copy of Hippocratic <> Telnyx Weekly Sync - 2026/03/04 11:29...
+[2026-03-04 16:00:14]       ⏰ RECENT: Modified 2026-03-04 20:26 (within 2h)
+[2026-03-04 16:00:14]       ✅ RECENT: Copy of Telnyx <> Arkklabs - Weekly Sync - 2026/03/04 14:59 ...
+[2026-03-04 16:00:14]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 16:00:14]       ✅ RECENT: Copy of Telnyx // Voxtelesys - 2026/03/04 10:29 PST - Notes ...
+[2026-03-04 16:00:15]       ⏰ RECENT: Modified 2026-03-04 19:42 (within 2h)
+[2026-03-04 16:00:15]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 16:00:15]       ⏰ RECENT: Modified 2026-03-04 18:42 (within 2h)
+[2026-03-04 16:00:15]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 16:00:16]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 16:00:16]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 16:00:16]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 16:00:16]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 16:00:16]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 16:00:16]       ✅ RECENT: Copy of Dirad Technologies // Telnyx - AI Conversation - 202...
+[2026-03-04 16:00:16]       ⏰ RECENT: Modified 2026-03-04 18:41 (within 2h)
+[2026-03-04 16:00:16]       ✅ RECENT: Copy of SIPREC - Kastle AI - 2026/03/04 13:13 EST - Notes by...
+[2026-03-04 16:00:17]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 16:00:17]       ✅ RECENT: Copy of Telnyx Meet - 2026/03/04 13:58 EST - Notes by Gemini...
+[2026-03-04 16:00:17]       ⏰ RECENT: Modified 2026-03-04 19:11 (within 2h)
+[2026-03-04 16:00:17]       ✅ RECENT: Copy of Telna Bi-Weekly Sync - 2026/03/04 13:30 EST - Notes ...
+[2026-03-04 16:00:17]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 16:00:17]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 16:00:18]       ⏰ RECENT: Modified 2026-03-04 19:41 (within 2h)
+[2026-03-04 16:00:18]       ✅ RECENT: Copy of Verasight - Telnyx - Monthly Sync - 2026/03/04 13:59...
+[2026-03-04 16:00:18]       ⏰ RECENT: Modified 2026-03-04 17:11 (within 2h)
+[2026-03-04 16:00:18]       ✅ RECENT: Copy of Erik | Scott Sync - 2026/03/04 10:30 CST - Notes by ...
+[2026-03-04 16:00:19]       ⏰ RECENT: Modified 2026-03-04 18:11 (within 2h)
+[2026-03-04 16:00:19]       ✅ RECENT: Copy of Dayforce <> Telnyx - 2026/03/04 12:29 EST - Notes by...
+[2026-03-04 16:00:19]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 16:00:19]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 16:00:20]       ⏰ RECENT: Modified 2026-03-04 17:41 (within 2h)
+[2026-03-04 16:00:20]       ✅ RECENT: Copy of Seguimiento Telnyx <> Directa Soluciones - 2026/03/0...
+[2026-03-04 16:00:21]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 16:00:21]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 16:00:21]       ⏰ RECENT: Modified 2026-03-04 15:27 (within 2h)
+[2026-03-04 16:00:21]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 16:00:22]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 16:00:22]       ✅ RECENT: Copy of Pedro and Khalil: 30-minute Meeting - 2026/03/04 16:...
+[2026-03-04 16:00:22]       ⏰ RECENT: Modified 2026-03-04 16:42 (within 2h)
+[2026-03-04 16:00:22]       ✅ RECENT: Copy of CCS/Telnyx - 2026/03/04 08:57 MST - Notes by Gemini...
+[2026-03-04 16:00:23]       ⏰ RECENT: Modified 2026-03-04 16:41 (within 2h)
+[2026-03-04 16:00:23]       ✅ RECENT: Copy of Telnyx <> Blink AI -- 10DLC - 2026/03/04 09:54 CST -...
+[2026-03-04 16:00:24]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 16:00:24]       ✅ RECENT: Copy of Telnyx + CARECO weekly sync - 2026/03/04 08:27 MST -...
+[2026-03-04 16:00:25]       ⏰ RECENT: Modified 2026-03-04 16:11 (within 2h)
+[2026-03-04 16:00:25]       ✅ RECENT: Copy of Arconic | Telnyx - IP SEC Regroup  - 2026/03/04 08:2...
+[2026-03-04 16:00:25]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 16:00:25]       ✅ RECENT: Copy of Pieter & Aliyana <> Telnyx - 2026/03/04 15:59 CET - ...
+[2026-03-04 16:00:26]       ⏰ RECENT: Modified 2026-03-04 15:41 (within 2h)
+[2026-03-04 16:00:26]       ✅ RECENT: Copy of Alliance Global <> Telnyx Porting  - 2026/03/04 09:5...
+[2026-03-04 16:00:27]       ⏰ RECENT: Modified 2026-03-04 15:26 (within 2h)
+[2026-03-04 16:00:27]       ✅ RECENT: Copy of Sully.ai & Telnyx daily sync - 2026/03/04 07:52 MST ...
+[2026-03-04 16:00:58] 📊 SUMMARY: Found 636 total Gemini calls, 52 are recent (last 2h)
+[2026-03-04 16:00:58] 📁 Google Drive: Found 52 recent calls (last 2h) out of 636 total
+[2026-03-04 16:00:58] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 16:00:58] 🆕 Processing CORRECT: Copy of Arya Meet - 2026/03/04 16:00 EST - Notes by Gemini...
+[2026-03-04 16:00:58]    🎯 Event name: 'Arya Meet'
+[2026-03-04 16:00:58]       🔍 Getting content for doc ID: 1vHIX8lSwx3VcTPuow54pE2REATZyq03v4NBaCq0HVPo
+[2026-03-04 16:00:59]       📝 Content length: 7574 characters
+[2026-03-04 16:00:59]       ✅ Content retrieved successfully
+[2026-03-04 16:01:00]    🔍 Event: ✅ Found event: Meeting Booked: Arya Meet
+[2026-03-04 16:01:00]    👤 Contact: ✅ Found contact: Arun Kalaiselvan
+[2026-03-04 16:01:14]    🤖 AI Analysis: success
+[2026-03-04 16:01:15]    📱 Slack Main: ✅ Posted to Slack (ts: 1772661675.080469)
+[2026-03-04 16:01:15]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 16:01:16]    🏢 SF Update: ✅ Updated event
+[2026-03-04 16:01:16] ✅ CORRECT: Arun Kalaiselvan (Alita Health) (Slack: ✅, SF: ✅)
+[2026-03-04 16:01:16] ✅ ENHANCED: Arun Kalaiselvan (Slack: ✅, SF: ✅, AI: ✅)
+[2026-03-04 16:01:16] 🆕 Processing CORRECT: Copy of Arya Meet - 2026/03/04 16:00 EST - Notes by Gemini...
+[2026-03-04 16:01:16]    🎯 Event name: 'Arya Meet'
+[2026-03-04 16:01:16]       🔍 Getting content for doc ID: 1zNzD5FijQIHH_zGpMA4PusD6H_xcULkhQ2Llkb1OcLU
+[2026-03-04 16:01:17]       📝 Content length: 7574 characters
+[2026-03-04 16:01:17]       ✅ Content retrieved successfully
+[2026-03-04 16:01:18]    🔍 Event: ✅ Found event: Meeting Booked: Arya Meet
+[2026-03-04 16:01:18]    👤 Contact: ✅ Found contact: Arun Kalaiselvan
+[2026-03-04 16:01:33]    🤖 AI Analysis: success
+[2026-03-04 16:01:33]    📱 Slack Main: ✅ Posted to Slack (ts: 1772661693.310509)
+[2026-03-04 16:01:33]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 16:01:34]    🏢 SF Update: ✅ Updated event
+[2026-03-04 16:01:34] ✅ CORRECT: Arun Kalaiselvan (Alita Health) (Slack: ✅, SF: ✅)
+[2026-03-04 16:01:34] ✅ ENHANCED: Arun Kalaiselvan (Slack: ✅, SF: ✅, AI: ✅)
+[2026-03-04 16:01:34] 🆕 Processing CORRECT: Copy of Doximity <> Telnyx - 2026/03/04 14:55 CST - Notes by...
+[2026-03-04 16:01:34]    🎯 Event name: 'Doximity <> Telnyx'
+[2026-03-04 16:01:34]       🔍 Getting content for doc ID: 1ru9-ela4H8COCW1WidVEZ5f1SgsTGJwyq9IO8Cn3Fw4
+[2026-03-04 16:01:35]       📝 Content length: 4963 characters
+[2026-03-04 16:01:35]       ✅ Content retrieved successfully
+[2026-03-04 16:01:45]    🔍 Event: ❌ Event search error: HTTPSConnectionPool(host='telnyx.my.salesforce.com', port=443): Read timed out. (read timeout=10)
+[2026-03-04 16:01:45] 🆕 Processing CORRECT: Copy of Arya Meet - 2026/03/04 16:00 EST - Notes by Gemini...
+[2026-03-04 16:01:45]    🎯 Event name: 'Arya Meet'
+[2026-03-04 16:01:45]       🔍 Getting content for doc ID: 1FZdFKUUIyjdmlqJU4WBxHTKZq8kb866zIwIAVvwou_U
+[2026-03-04 16:01:46]       📝 Content length: 7574 characters
+[2026-03-04 16:01:46]       ✅ Content retrieved successfully
+[2026-03-04 16:01:46]    🔍 Event: ✅ Found event: Meeting Booked: Arya Meet
+[2026-03-04 16:01:47]    👤 Contact: ✅ Found contact: Arun Kalaiselvan
+[2026-03-04 16:02:06]    🤖 AI Analysis: success
+[2026-03-04 16:02:06]    📱 Slack Main: ✅ Posted to Slack (ts: 1772661726.801189)
+[2026-03-04 16:02:07]    📱 Slack Thread: ✅ Posted thread reply
+[2026-03-04 16:02:08]    🏢 SF Update: ✅ Updated event
+[2026-03-04 16:02:08] ✅ CORRECT: Arun Kalaiselvan (Alita Health) (Slack: ✅, SF: ✅)
+[2026-03-04 16:02:08] ✅ ENHANCED: Arun Kalaiselvan (Slack: ✅, SF: ✅, AI: ✅)
+[2026-03-04 16:02:08] 🎉 V1 ENHANCED (Google Drive) processed 3 calls
+
+[Wed Mar  4 16:30:01 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+❌ V1 Enhanced system failed (exit 1)
+Error: /Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+[Wed Mar  4 17:00:00 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+❌ V1 Enhanced system failed (exit 1)
+Error: /Users/niamhcollins/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+[Wed Mar  4 17:30:01 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 17:30:01] 🚨 EMERGENCY V1 ENHANCED - Bypass Mode
+[2026-03-04 17:30:01] 🏢 Salesforce: ✅ Salesforce authenticated
+[2026-03-04 17:30:01] 🚨 EMERGENCY MODE: Using simplified Google Drive access
+[2026-03-04 17:30:01] 📁 Google Drive: Emergency mode: No calls processed (bypassed hanging function)
+[2026-03-04 17:30:01] 😴 No calls found
+[2026-03-04 17:30:01] ✅ EMERGENCY: System ran without hanging
+
+[Wed Mar  4 18:00:00 CST 2026] 🔄 Calling V1_GOOGLE_DRIVE_ENHANCED.py system...
+✅ V1 Enhanced system completed successfully
+[2026-03-04 18:00:00] 🚀 V1 COMPREHENSIVE FAST Call Intelligence
+[2026-03-04 18:00:00] 🔍 COMPREHENSIVE FAST: Global search for Gemini files (last 2h)
+[2026-03-04 18:00:00] 📁 Target folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-04 18:00:00] 🔧 Running global search: gog drive search "Notes by Gemini" --max 200 --json --account niamh@telnyx.com
+[2026-03-04 18:00:01] 🔍 Global search found 200 total Gemini files
+[2026-03-04 18:00:01] 🔍 Getting subfolders to filter results...
+[2026-03-04 18:00:02] 📂 Target folder hierarchy includes 73 folders
+[2026-03-04 18:00:02] 📂 Found 9 Gemini files in target folder hierarchy
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of Telnyx <> Arkklabs - W...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of Dayforce <> Telnyx - 2...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of roly@meetgail.com and ...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of Greg & Bri Weekly 1:1 ...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of Ken <> Ryan - 2026/03/...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of sruthi@eltropy.com and...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of reid.wade@getjerry.com...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of Rikant and Lucy: 30-mi...
+[2026-03-04 18:00:02] ⏭️ OLD: Copy of info@scalepods.co and ...
+[2026-03-04 18:00:02] 📊 COMPREHENSIVE FAST SUMMARY: Found 0 recent calls
+[2026-03-04 18:00:02] ⏱️ Total search time: 2.0s (vs folder iteration)
+[2026-03-04 18:00:02] 📁 Google Drive: Found 0 recent calls (comprehensive search, 2.0s)
+[2026-03-04 18:00:02] 😴 No calls found
+

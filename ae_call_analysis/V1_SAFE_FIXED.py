@@ -10,16 +10,21 @@ sys.path.append('.')
 from V1_GOOGLE_DRIVE_ENHANCED import *
 
 def get_recent_gemini_calls_safe(folder_id, hours_back=24):  # Extended to 24h to find actual calls
-    """SAFE version - searches subfolders but with strict limits"""
+    """COMPREHENSIVE SAFE version - searches ALL subfolders with timeouts"""
+    import time
+    start_time = time.time()
+    MAX_TOTAL_TIME = 120  # 2 minutes max total search time
+    
     try:
         all_calls = []
         
-        log_message(f"🔍 SAFE: Searching for calls modified in last {hours_back} hours")
+        log_message(f"🔍 COMPREHENSIVE: Searching ALL folders for calls modified in last {hours_back} hours")
         log_message(f"📁 Target folder: {folder_id}")
+        log_message(f"⏱️ Max search time: {MAX_TOTAL_TIME}s")
         
-        # Step 1: Get first 5 subfolders only (safety limit)
-        log_message(f"📂 Getting subfolders (max 5)...")
-        subfolders_output, error = run_gog_command(f'gog drive ls --parent {folder_id} --max 5 --plain --account niamh@telnyx.com')
+        # Step 1: Get ALL subfolders 
+        log_message(f"📂 Getting ALL subfolders...")
+        subfolders_output, error = run_gog_command(f'gog drive ls --parent {folder_id} --max 100 --plain --account niamh@telnyx.com')
         
         if error:
             log_message(f"⚠️ Error getting subfolders: {error}")
@@ -37,21 +42,39 @@ def get_recent_gemini_calls_safe(folder_id, hours_back=24):  # Extended to 24h t
                 if len(parts) >= 3 and 'folder' in parts[2]:
                     subfolder_ids.append(parts[0])
         
-        # Limit to first 3 subfolders to prevent hanging
-        subfolder_ids = subfolder_ids[:3]
-        log_message(f"📂 Searching {len(subfolder_ids)} folders...")
+        # Search ALL subfolders but safely
+        log_message(f"📂 Searching ALL {len(subfolder_ids)} folders...")
         
-        # Step 2: Search each subfolder safely
+        # Step 2: Search each subfolder safely with timeout protection
+        failed_folders = 0
+        skipped_timeout = 0
+        
         for i, current_folder_id in enumerate(subfolder_ids):
-            try:
-                log_message(f"   📂 Folder {i+1}/{len(subfolder_ids)}: {current_folder_id[:20]}...")
+            # Check total time limit
+            elapsed = time.time() - start_time
+            if elapsed > MAX_TOTAL_TIME:
+                log_message(f"⏱️ TIMEOUT: Reached {MAX_TOTAL_TIME}s limit, processed {i}/{len(subfolder_ids)} folders")
+                break
                 
-                # Search for files in this folder (max 20 to be safe)
-                search_cmd = f'gog drive ls --parent {current_folder_id} --max 20 --plain --account niamh@telnyx.com'
+            try:
+                log_message(f"   📂 Folder {i+1}/{len(subfolder_ids)}: {current_folder_id[:20]}... (elapsed: {elapsed:.1f}s)")
+                
+                folder_start = time.time()
+                # Search for files in this folder (max 50 to catch recent calls)
+                search_cmd = f'gog drive ls --parent {current_folder_id} --max 50 --plain --account niamh@telnyx.com'
                 output, error = run_gog_command(search_cmd)
+                folder_time = time.time() - folder_start
+                
+                log_message(f"      ⏱️ Folder processed in {folder_time:.1f}s")
+                
+                # Reset failed count on success
+                if not error:
+                    failed_folders = 0
                 
                 if error:
                     log_message(f"      ⚠️ Error: {error}")
+                    failed_folders += 1
+                    # Continue searching other folders even if one fails
                     continue
                 
                 if not output or 'ID' not in output:
@@ -92,7 +115,8 @@ def get_recent_gemini_calls_safe(folder_id, hours_back=24):  # Extended to 24h t
                 log_message(f"      📊 Found {gemini_count} Gemini files in folder")
                         
             except Exception as e:
-                log_message(f"⚠️ Error in folder {current_folder_id}: {str(e)}")
+                log_message(f"⚠️ Exception in folder {current_folder_id}: {str(e)}")
+                failed_folders += 1
                 continue
         
         # Remove duplicates by ID
@@ -102,9 +126,12 @@ def get_recent_gemini_calls_safe(folder_id, hours_back=24):  # Extended to 24h t
         # Sort by modified date (newest first)
         unique_calls.sort(key=lambda x: x.get('modified_date', ''), reverse=True)
         
-        log_message(f"📊 SAFE SUMMARY: Found {len(unique_calls)} recent calls")
+        total_time = time.time() - start_time
+        log_message(f"📊 COMPREHENSIVE SUMMARY: Found {len(unique_calls)} recent calls")
+        log_message(f"📊 Searched {len(subfolder_ids)} folders, {failed_folders} failed, {skipped_timeout} skipped (timeout)")
+        log_message(f"⏱️ Total search time: {total_time:.1f}s")
         
-        return unique_calls, f"Found {len(unique_calls)} recent calls (safe mode, {hours_back}h window)"
+        return unique_calls, f"Found {len(unique_calls)} recent calls ({len(subfolder_ids)} folders, {total_time:.1f}s)"
         
     except Exception as e:
         log_message(f"💥 Error in safe search: {str(e)}")
