@@ -873,12 +873,21 @@ def mark_call_processed(call_id, prospect_name, slack_success, sf_success, ai_su
     conn.close()
 
 def extract_event_name_from_google_title(title):
-    """Extract event name from: Copy of {event name} - {time} - Notes by Gemini"""
+    """Extract event name from: Copy of {event name} OR Copy of Copy of {event name} - {time} - Notes by Gemini"""
     import re
-    pattern = r'^Copy of (.+?) - \d{4}/\d{2}/\d{2} .+ - Notes by Gemini'
-    match = re.search(pattern, title)
+    
+    # Handle "Copy of Copy of {event name} - {time} - Notes by Gemini" (new pattern)
+    pattern_double = r'^Copy of Copy of (.+?) - \d{4}/\d{2}/\d{2} .+ - Notes by Gemini'
+    match = re.search(pattern_double, title)
     if match:
         return match.group(1).strip()
+    
+    # Handle original "Copy of {event name} - {time} - Notes by Gemini" pattern
+    pattern_single = r'^Copy of (.+?) - \d{4}/\d{2}/\d{2} .+ - Notes by Gemini'
+    match = re.search(pattern_single, title)
+    if match:
+        return match.group(1).strip()
+    
     return None
 
 def find_salesforce_event_by_exact_subject(event_name, access_token):
