@@ -1,0 +1,33 @@
+{
+  "date": "2026-03-05",
+  "timestamp": "2026-03-05T09:03:53.791380",
+  "metrics": {
+    "sales_handoffs": 3,
+    "unique_accounts": 8,
+    "qualification_rate": {
+      "rate": 42.5,
+      "sql_count": 17,
+      "total_count": 40
+    },
+    "sql_rate": {
+      "rate": 65.2,
+      "matched": 15,
+      "total": 23
+    },
+    "sqo_rate_corrected": {
+      "rate": 70.6,
+      "sqos": 12,
+      "sqls": 17
+    },
+    "mtd_tracking": {
+      "mtd_sqos": 11,
+      "last_month_sqos": 42,
+      "daily_pace": 1.83,
+      "monthly_projection": 51,
+      "vs_last_month_pct": -73.8,
+      "current_day": 6
+    }
+  },
+  "note": "DEMO - CORRECTED SQO definition using Velocity_D_T_Stage1__c",
+  "demo": true
+}

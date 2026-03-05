@@ -171,7 +171,7 @@ def find_salesforce_event_with_resilience(event_name, access_token, instance_url
     
     return sf_circuit_breaker.call(_find_event)
 
-def process_meetings_with_batching(meetings, batch_size=3):
+def process_meetings_with_batching(meetings, batch_size=1):
     """Process meetings in small batches to prevent resource exhaustion"""
     results = {
         'processed': 0,
@@ -210,10 +210,10 @@ def process_meetings_with_batching(meetings, batch_size=3):
         conn.close()
         return results
     
-    # Process in batches
+    # Process one meeting at a time to prevent overload
     for batch_start in range(0, len(meetings), batch_size):
         batch = meetings[batch_start:batch_start + batch_size]
-        print(f"\n📦 Processing batch {batch_start//batch_size + 1}: {len(batch)} meetings")
+        print(f"\n📦 Processing meeting {batch_start + 1} of {len(meetings)}")
         
         for meeting in batch:
             try:
@@ -337,7 +337,7 @@ def main():
         meetings_output = run_gog_command([
             'gog', 'drive', 'ls',
             '--parent', today_folder,
-            '--max', '15',  # Limit to prevent overload
+            '--max', '5',   # Small batches every 30min = better than large batches
             '--plain',
             '--account', 'niamh@telnyx.com'
         ], timeout=45)

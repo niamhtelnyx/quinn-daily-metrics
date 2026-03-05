@@ -3110,3 +3110,345 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='telnyx.my.salesforce.
 [2026-03-05 11:31:30]    📱 Slack posts: 0
 [2026-03-05 11:31:30]    🎯 Database: v1_date_full.db
 
+[Thu Mar  5 12:00:00 CST 2026] 🚀 Calling V1_PRODUCTION_DATE.py system (Date Hierarchy)...
+✅ V1 Date Hierarchy system completed successfully
+[2026-03-05 12:00:01] 🚀 V1 DATE FULL - Complete Pipeline with Date Hierarchy
+[2026-03-05 12:00:01] 📁 Main Meeting Notes folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-05 12:00:01] 📅 Processing last 1 days, max 15 meetings per day
+[2026-03-05 12:00:01] 🏢 Salesforce: ✅ Authenticated
+[2026-03-05 12:00:01] 📅 Getting date folders for last 1 days
+    🔧 Running: gog drive ls --parent 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY --max 50 --plain --account niamh@telnyx.com
+    🎯 Looking for dates: 2026-03-05
+    📁 Found date folder: 2026-03-05 (1ZM-jMW-E4su9gVbSAHcjjZHPhiR3A_9M)
+[2026-03-05 12:00:02] ✅ Found 1 recent date folders
+[2026-03-05 12:00:02] 
+📅 Processing date: 2026-03-05
+    🔧 Running: gog drive ls --parent 1ZM-jMW-E4su9gVbSAHcjjZHPhiR3A_9M --max 15 --plain --account niamh@telnyx.com
+       📁 Found 15 meeting folders (max 15)
+       🎯 Meeting: Ideacom - Rizex AI Assistant Discussion
+    🔧 Running: gog drive ls --parent 1m85rG7y43UCaJ1FAgdjadxr0YevFdOp5 --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Ideacom - Rizex AI Assistant Discussion'
+          📄 File: Copy of Ideacom / Rizex AI Assistant Discussion - ...
+    🆕 Processing: 'Ideacom - Rizex AI Assistant Discussion'
+    🔧 Normalized search: 'Ideacom - Rizex AI Assistant Discussion' → 'IDEACOMRIZEXAIASSISTANTDISCUSSION'
+    ❌ No normalized matches found for: Ideacom - Rizex AI Assistant Discussion
+          🔍 Event: ❌ No event found: Meeting Booked: Ideacom - Rizex AI Assistant Discussion
+       🎯 Meeting: Novoflow -- Telnyx
+    🔧 Running: gog drive ls --parent 1NXYkdvi86HLBVzpldg0U8iVhxtLuoO2o --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Novoflow -- Telnyx'
+          📄 File: Copy of Novoflow // Telnyx - 2026/03/05 11:59 EST ...
+    🆕 Processing: 'Novoflow -- Telnyx'
+    🔧 Normalized search: 'Novoflow -- Telnyx' → 'NOVOFLOWTELNYX'
+    ✅ NORMALIZED match found: Meeting Booked: Novoflow // Telnyx
+          🔍 Event: ✅ Found Salesforce event
+          👤 Contact: Georges C. @ Novoflow
+          🔍 Getting content for doc ID: 1nVmLuJE0QPqM81UQZLdY0e7L5PldIW4eiNz1vGviE-o
+    🔧 Running: gog drive download 1nVmLuJE0QPqM81UQZLdY0e7L5PldIW4eiNz1vGviE-o --format txt --account niamh@telnyx.com
+          📝 Content length: 36703 characters
+          ✅ Content retrieved successfully
+          🤖 Running AI analysis...
+          🤖 AI Analysis: failed
+          📱 Slack: ⏭️ Skipped (no main_post)
+          ✅ Processing complete
+       🎯 Meeting: Telnyx -- Ethos
+    🔧 Running: gog drive ls --parent 1gWGYPppLCSWLlaHUeRmfGfIHObpH7eQO --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx -- Ethos'
+          📄 File: Copy of Telnyx <> Ethos - 2026/03/05 11:00 CST - N...
+    🆕 Processing: 'Telnyx -- Ethos'
+    🔧 Normalized search: 'Telnyx -- Ethos' → 'TELNYXETHOS'
+    ❌ No normalized matches found for: Telnyx -- Ethos
+          🔍 Event: ❌ No event found: Meeting Booked: Telnyx -- Ethos
+       🎯 Meeting: Partner.io - Telnyx
+    🔧 Running: gog drive ls --parent 1TIezzYiqRaGcS1mcd6O5xDnXXdN9sGrL --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Partner.io - Telnyx'
+          📄 File: Copy of Partner.io / Telnyx - 2026/03/05 15:56 GMT...
+    🆕 Processing: 'Partner.io - Telnyx'
+    🔧 Normalized search: 'Partner.io - Telnyx' → 'PARTNERIOTELNYX'
+    ❌ No normalized matches found for: Partner.io - Telnyx
+          🔍 Event: ❌ No event found: Meeting Booked: Partner.io - Telnyx
+       🎯 Meeting: Rani and Rob- 30-minute Meeting
+    🔧 Running: gog drive ls --parent 1fv_6pUM556z-Ts8P51FDANmNYL6TuSFW --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Rani and Rob- 30-minute Meeting'
+          📄 File: Copy of Rani and Rob: 30-minute Meeting - 2026/03/...
+    🆕 Processing: 'Rani and Rob- 30-minute Meeting'
+    🔧 Normalized search: 'Rani and Rob- 30-minute Meeting' → 'RANIANDROB30MINUTEMEETING'
+    ❌ No normalized matches found for: Rani and Rob- 30-minute Meeting
+          🔍 Event: ❌ No event found: Meeting Booked: Rani and Rob- 30-minute Meeting
+       🎯 Meeting: Telnyx Intro Call (Terry Swanlund)
+    🔧 Running: gog drive ls --parent 1ygxbSo1LlpgyqwQzQHhIAmFFvQxeL_iK --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx Intro Call (Terry Swanlund)'
+          📄 File: Copy of Telnyx Intro Call (Terry Swanlund) - 2026/...
+          ⏭️ SKIPPING: Already processed (dedup: telnyx intro call (terry swanlund)_2026-03-05...)
+       🎯 Meeting: Palate -- Telnyx
+    🔧 Running: gog drive ls --parent 1Ttg43RrYka3oxaYhHOyGtxfaYkQUBr-w --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Palate -- Telnyx'
+          📄 File: Copy of Palate <> Telnyx - 2026/03/05 08:58 MST - ...
+    🆕 Processing: 'Palate -- Telnyx'
+    🔧 Normalized search: 'Palate -- Telnyx' → 'PALATETELNYX'
+    ❌ No normalized matches found for: Palate -- Telnyx
+          🔍 Event: ❌ No event found: Meeting Booked: Palate -- Telnyx
+       🎯 Meeting: rose@alden.health and Rob- 30-minute Meeting
+    🔧 Running: gog drive ls --parent 1UGMax3h9zYb6Q1G0KsbzQTsU47gmryHR --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'rose@alden.health and Rob- 30-minute Meeting'
+          📄 File: Copy of rose@alden.health and Rob: 30-minute Meeti...
+    🆕 Processing: 'rose@alden.health and Rob- 30-minute Meeting'
+    🔧 Normalized search: 'rose@alden.health and Rob- 30-minute Meeting' → 'ROSE@ALDENHEALTHANDROB30MINUTEMEETING'
+    ✅ NORMALIZED match found: Meeting Booked: rose@alden.health and Rob: 30-minute Meeting
+          🔍 Event: ✅ Found Salesforce event
+          👤 Contact: Rose Huang @ alden.health
+          🔍 Getting content for doc ID: 1eSpIA3GoT3s0JsbzwOrsWJy1y0Y9zjNnlpA82MTJi-U
+    🔧 Running: gog drive download 1eSpIA3GoT3s0JsbzwOrsWJy1y0Y9zjNnlpA82MTJi-U --format txt --account niamh@telnyx.com
+          📝 Content length: 38748 characters
+          ✅ Content retrieved successfully
+          🤖 Running AI analysis...
+          🤖 AI Analysis: failed
+          📱 Slack: ⏭️ Skipped (no main_post)
+          ✅ Processing complete
+       🎯 Meeting: Telnyx + TELUS
+    🔧 Running: gog drive ls --parent 1NlHxCEjPYYNcJfvcO1oL9-l8_Is9eqyQ --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx + TELUS'
+          📄 File: Copy of Telnyx + TELUS - 2026/03/05 09:29 CST - No...
+          ⏭️ SKIPPING: Already processed (dedup: telnyx + telus_2026-03-05...)
+       🎯 Meeting: HomeWav - Telnyx
+    🔧 Running: gog drive ls --parent 1Q3bvbnmwYx-D8q1h6AQjOOs6NJxzCe10 --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'HomeWav - Telnyx'
+          📄 File: Copy of HomeWav | Telnyx - 2026/03/05 10:28 EST - ...
+    🆕 Processing: 'HomeWav - Telnyx'
+    🔧 Normalized search: 'HomeWav - Telnyx' → 'HOMEWAVTELNYX'
+    ✅ NORMALIZED match found: Meeting Booked: HomeWav | Telnyx
+          🔍 Event: ✅ Found Salesforce event
+          👤 Contact: Ali Khamesipour @ HomeWAV
+          🔍 Getting content for doc ID: 1TXDpjHv6MLK2IWxG4MJcHpdfhDmwQplpisBLQMljk9c
+    🔧 Running: gog drive download 1TXDpjHv6MLK2IWxG4MJcHpdfhDmwQplpisBLQMljk9c --format txt --account niamh@telnyx.com
+          📝 Content length: 30081 characters
+          ✅ Content retrieved successfully
+          🤖 Running AI analysis...
+          🤖 AI Analysis: failed
+          📱 Slack: ⏭️ Skipped (no main_post)
+          ✅ Processing complete
+       🎯 Meeting: Telnyx & Glia Sync
+    🔧 Running: gog drive ls --parent 16i3tmGnBQgPVlCla0xPt4ugGiLu5jcfV --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx & Glia Sync'
+          📄 File: Copy of Telnyx & Glia Sync - 2026/03/05 08:59 CST ...
+    🆕 Processing: 'Telnyx & Glia Sync'
+    🔧 Normalized search: 'Telnyx & Glia Sync' → 'TELNYXGLIASYNC'
+    ❌ No normalized matches found for: Telnyx & Glia Sync
+          🔍 Event: ❌ No event found: Meeting Booked: Telnyx & Glia Sync
+       🎯 Meeting: samir@cenango.com and Eric- 30-minute Meeting
+    🔧 Running: gog drive ls --parent 1yd_ly4Gly5dsesUOWRoG7Btz-TievVO0 --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'samir@cenango.com and Eric- 30-minute Meeting'
+          📄 File: Copy of samir@cenango.com and Eric: 30-minute Meet...
+    🆕 Processing: 'samir@cenango.com and Eric- 30-minute Meeting'
+    🔧 Normalized search: 'samir@cenango.com and Eric- 30-minute Meeting' → 'SAMIR@CENANGOCOMANDERIC30MINUTEMEETING'
+    ❌ No normalized matches found for: samir@cenango.com and Eric- 30-minute Meeting
+          🔍 Event: ❌ No event found: Meeting Booked: samir@cenango.com and Eric- 30-minute Meeting
+       🎯 Meeting: Sully.ai & Telnyx daily sync
+    🔧 Running: gog drive ls --parent 1UCPITI-zGjArkRYAsof7wOk5abf_HNFT --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Sully.ai & Telnyx daily sync'
+          📄 File: Copy of Sully.ai & Telnyx daily sync - 2026/03/05 ...
+    🆕 Processing: 'Sully.ai & Telnyx daily sync'
+    🔧 Normalized search: 'Sully.ai & Telnyx daily sync' → 'SULLYAITELNYXDAILYSYNC'
+    ❌ No normalized matches found for: Sully.ai & Telnyx daily sync
+          🔍 Event: ❌ No event found: Meeting Booked: Sully.ai & Telnyx daily sync
+       🎯 Meeting: Allo-Telnyx - Spam
+    🔧 Running: gog drive ls --parent 13sB56rdspdD1PNqxZlpYm58T2GtJiM2J --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Allo-Telnyx - Spam'
+          📄 File: Copy of Allo/Telnyx - Spam - 2026/03/05 15:28 CET ...
+    🆕 Processing: 'Allo-Telnyx - Spam'
+    🔧 Normalized search: 'Allo-Telnyx - Spam' → 'ALLOTELNYXSPAM'
+    ✅ NORMALIZED match found: Meeting Booked: Allo/Telnyx - Spam
+          🔍 Event: ✅ Found Salesforce event
+          👤 Contact: franco pinto @ The Mobile First Company
+          🔍 Getting content for doc ID: 1RTGC8nN1iU0J24pHlAz3c2Q_vT58WT02CebjOirT7f4
+    🔧 Running: gog drive download 1RTGC8nN1iU0J24pHlAz3c2Q_vT58WT02CebjOirT7f4 --format txt --account niamh@telnyx.com
+          📝 Content length: 1528 characters
+          ✅ Content retrieved successfully
+          🤖 Running AI analysis...
+          🤖 AI Analysis: failed
+          📱 Slack: ⏭️ Skipped (no main_post)
+          ✅ Processing complete
+       🎯 Meeting: Telnyx -- Collie
+    🔧 Running: gog drive ls --parent 1hAN4BzuFOnK7ZMAngqyuhSrzgf3v_nEZ --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx -- Collie'
+          📄 File: Copy of Telnyx <> Collie  - 2026/03/05 15:26 CET -...
+    🆕 Processing: 'Telnyx -- Collie'
+    🔧 Normalized search: 'Telnyx -- Collie' → 'TELNYXCOLLIE'
+    ❌ No normalized matches found for: Telnyx -- Collie
+          🔍 Event: ❌ No event found: Meeting Booked: Telnyx -- Collie
+[2026-03-05 12:01:28] 
+📊 DATE FULL PIPELINE SUMMARY:
+[2026-03-05 12:01:28]    📅 Date folders processed: 1
+[2026-03-05 12:01:28]    📁 Meeting folders found: 15
+[2026-03-05 12:01:28]    📝 Gemini files found: 15
+[2026-03-05 12:01:28]    🎉 Calls processed: 4
+[2026-03-05 12:01:28]    📱 Slack posts: 0
+[2026-03-05 12:01:28]    🎯 Database: v1_date_full.db
+
+[Thu Mar  5 12:30:01 CST 2026] 🚀 Calling V1_PRODUCTION_DATE.py system (Date Hierarchy)...
+✅ V1 Date Hierarchy system completed successfully
+[2026-03-05 12:30:01] 🚀 V1 DATE FULL - Complete Pipeline with Date Hierarchy
+[2026-03-05 12:30:01] 📁 Main Meeting Notes folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-05 12:30:01] 📅 Processing last 1 days, max 15 meetings per day
+[2026-03-05 12:30:01] 🏢 Salesforce: ✅ Authenticated
+[2026-03-05 12:30:01] 📅 Getting date folders for last 1 days
+    🔧 Running: gog drive ls --parent 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY --max 50 --plain --account niamh@telnyx.com
+    🎯 Looking for dates: 2026-03-05
+    📁 Found date folder: 2026-03-05 (1ZM-jMW-E4su9gVbSAHcjjZHPhiR3A_9M)
+[2026-03-05 12:30:02] ✅ Found 1 recent date folders
+[2026-03-05 12:30:02] 
+📅 Processing date: 2026-03-05
+    🔧 Running: gog drive ls --parent 1ZM-jMW-E4su9gVbSAHcjjZHPhiR3A_9M --max 15 --plain --account niamh@telnyx.com
+       📁 Found 15 meeting folders (max 15)
+       🎯 Meeting: VOLT -- Telnyx
+    🔧 Running: gog drive ls --parent 1u8eX8qYE5baHJ7FnAp9a5aI7oLfRHxct --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'VOLT -- Telnyx'
+          📄 File: Copy of VOLT <> Telnyx - 2026/03/05 12:28 EST - No...
+    🆕 Processing: 'VOLT -- Telnyx'
+    🔧 Normalized search: 'VOLT -- Telnyx' → 'VOLTTELNYX'
+    ❌ No normalized matches found for: VOLT -- Telnyx
+          🔍 Event: ❌ No event found: Meeting Booked: VOLT -- Telnyx
+       🎯 Meeting: Ideacom - Rizex AI Assistant Discussion
+    🔧 Running: gog drive ls --parent 1m85rG7y43UCaJ1FAgdjadxr0YevFdOp5 --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Ideacom - Rizex AI Assistant Discussion'
+          📄 File: Copy of Ideacom / Rizex AI Assistant Discussion - ...
+    🆕 Processing: 'Ideacom - Rizex AI Assistant Discussion'
+    🔧 Normalized search: 'Ideacom - Rizex AI Assistant Discussion' → 'IDEACOMRIZEXAIASSISTANTDISCUSSION'
+    ❌ No normalized matches found for: Ideacom - Rizex AI Assistant Discussion
+          🔍 Event: ❌ No event found: Meeting Booked: Ideacom - Rizex AI Assistant Discussion
+       🎯 Meeting: Novoflow -- Telnyx
+    🔧 Running: gog drive ls --parent 1NXYkdvi86HLBVzpldg0U8iVhxtLuoO2o --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Novoflow -- Telnyx'
+          📄 File: Copy of Novoflow // Telnyx - 2026/03/05 11:59 EST ...
+          ⏭️ SKIPPING: Already processed (dedup: novoflow -- telnyx_2026-03-05...)
+       🎯 Meeting: Telnyx -- Ethos
+    🔧 Running: gog drive ls --parent 1gWGYPppLCSWLlaHUeRmfGfIHObpH7eQO --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx -- Ethos'
+          📄 File: Copy of Telnyx <> Ethos - 2026/03/05 11:00 CST - N...
+    🆕 Processing: 'Telnyx -- Ethos'
+    🔧 Normalized search: 'Telnyx -- Ethos' → 'TELNYXETHOS'
+    ❌ No normalized matches found for: Telnyx -- Ethos
+          🔍 Event: ❌ No event found: Meeting Booked: Telnyx -- Ethos
+       🎯 Meeting: Partner.io - Telnyx
+    🔧 Running: gog drive ls --parent 1TIezzYiqRaGcS1mcd6O5xDnXXdN9sGrL --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Partner.io - Telnyx'
+          📄 File: Copy of Partner.io / Telnyx - 2026/03/05 15:56 GMT...
+    🆕 Processing: 'Partner.io - Telnyx'
+    🔧 Normalized search: 'Partner.io - Telnyx' → 'PARTNERIOTELNYX'
+    ❌ No normalized matches found for: Partner.io - Telnyx
+          🔍 Event: ❌ No event found: Meeting Booked: Partner.io - Telnyx
+       🎯 Meeting: Rani and Rob- 30-minute Meeting
+    🔧 Running: gog drive ls --parent 1fv_6pUM556z-Ts8P51FDANmNYL6TuSFW --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Rani and Rob- 30-minute Meeting'
+          📄 File: Copy of Rani and Rob: 30-minute Meeting - 2026/03/...
+    🆕 Processing: 'Rani and Rob- 30-minute Meeting'
+    🔧 Normalized search: 'Rani and Rob- 30-minute Meeting' → 'RANIANDROB30MINUTEMEETING'
+    ❌ No normalized matches found for: Rani and Rob- 30-minute Meeting
+          🔍 Event: ❌ No event found: Meeting Booked: Rani and Rob- 30-minute Meeting
+       🎯 Meeting: Telnyx Intro Call (Terry Swanlund)
+    🔧 Running: gog drive ls --parent 1ygxbSo1LlpgyqwQzQHhIAmFFvQxeL_iK --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx Intro Call (Terry Swanlund)'
+          📄 File: Copy of Telnyx Intro Call (Terry Swanlund) - 2026/...
+          ⏭️ SKIPPING: Already processed (dedup: telnyx intro call (terry swanlund)_2026-03-05...)
+       🎯 Meeting: Palate -- Telnyx
+    🔧 Running: gog drive ls --parent 1Ttg43RrYka3oxaYhHOyGtxfaYkQUBr-w --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Palate -- Telnyx'
+          📄 File: Copy of Palate <> Telnyx - 2026/03/05 08:58 MST - ...
+    🆕 Processing: 'Palate -- Telnyx'
+    🔧 Normalized search: 'Palate -- Telnyx' → 'PALATETELNYX'
+    ❌ No normalized matches found for: Palate -- Telnyx
+          🔍 Event: ❌ No event found: Meeting Booked: Palate -- Telnyx
+       🎯 Meeting: rose@alden.health and Rob- 30-minute Meeting
+    🔧 Running: gog drive ls --parent 1UGMax3h9zYb6Q1G0KsbzQTsU47gmryHR --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'rose@alden.health and Rob- 30-minute Meeting'
+          📄 File: Copy of rose@alden.health and Rob: 30-minute Meeti...
+          ⏭️ SKIPPING: Already processed (dedup: rose@alden.health and rob- 30-minute meeting_2026-03-05...)
+       🎯 Meeting: Telnyx + TELUS
+    🔧 Running: gog drive ls --parent 1NlHxCEjPYYNcJfvcO1oL9-l8_Is9eqyQ --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx + TELUS'
+          📄 File: Copy of Telnyx + TELUS - 2026/03/05 09:29 CST - No...
+          ⏭️ SKIPPING: Already processed (dedup: telnyx + telus_2026-03-05...)
+       🎯 Meeting: HomeWav - Telnyx
+    🔧 Running: gog drive ls --parent 1Q3bvbnmwYx-D8q1h6AQjOOs6NJxzCe10 --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'HomeWav - Telnyx'
+          📄 File: Copy of HomeWav | Telnyx - 2026/03/05 10:28 EST - ...
+          ⏭️ SKIPPING: Already processed (dedup: homewav - telnyx_2026-03-05...)
+       🎯 Meeting: Telnyx & Glia Sync
+    🔧 Running: gog drive ls --parent 16i3tmGnBQgPVlCla0xPt4ugGiLu5jcfV --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Telnyx & Glia Sync'
+          📄 File: Copy of Telnyx & Glia Sync - 2026/03/05 08:59 CST ...
+    🆕 Processing: 'Telnyx & Glia Sync'
+    🔧 Normalized search: 'Telnyx & Glia Sync' → 'TELNYXGLIASYNC'
+    ❌ No normalized matches found for: Telnyx & Glia Sync
+          🔍 Event: ❌ No event found: Meeting Booked: Telnyx & Glia Sync
+       🎯 Meeting: samir@cenango.com and Eric- 30-minute Meeting
+    🔧 Running: gog drive ls --parent 1yd_ly4Gly5dsesUOWRoG7Btz-TievVO0 --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'samir@cenango.com and Eric- 30-minute Meeting'
+          📄 File: Copy of samir@cenango.com and Eric: 30-minute Meet...
+    🆕 Processing: 'samir@cenango.com and Eric- 30-minute Meeting'
+    🔧 Normalized search: 'samir@cenango.com and Eric- 30-minute Meeting' → 'SAMIR@CENANGOCOMANDERIC30MINUTEMEETING'
+    ❌ No normalized matches found for: samir@cenango.com and Eric- 30-minute Meeting
+          🔍 Event: ❌ No event found: Meeting Booked: samir@cenango.com and Eric- 30-minute Meeting
+       🎯 Meeting: Sully.ai & Telnyx daily sync
+    🔧 Running: gog drive ls --parent 1UCPITI-zGjArkRYAsof7wOk5abf_HNFT --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Sully.ai & Telnyx daily sync'
+          📄 File: Copy of Sully.ai & Telnyx daily sync - 2026/03/05 ...
+    🆕 Processing: 'Sully.ai & Telnyx daily sync'
+    🔧 Normalized search: 'Sully.ai & Telnyx daily sync' → 'SULLYAITELNYXDAILYSYNC'
+    ❌ No normalized matches found for: Sully.ai & Telnyx daily sync
+          🔍 Event: ❌ No event found: Meeting Booked: Sully.ai & Telnyx daily sync
+       🎯 Meeting: Allo-Telnyx - Spam
+    🔧 Running: gog drive ls --parent 13sB56rdspdD1PNqxZlpYm58T2GtJiM2J --max 10 --plain --account niamh@telnyx.com
+          📝 Found 1 Gemini files
+          🎯 Event: 'Allo-Telnyx - Spam'
+          📄 File: Copy of Allo/Telnyx - Spam - 2026/03/05 15:28 CET ...
+          ⏭️ SKIPPING: Already processed (dedup: allo-telnyx - spam_2026-03-05...)
+[2026-03-05 12:30:18] 
+📊 DATE FULL PIPELINE SUMMARY:
+[2026-03-05 12:30:18]    📅 Date folders processed: 1
+[2026-03-05 12:30:18]    📁 Meeting folders found: 15
+[2026-03-05 12:30:18]    📝 Gemini files found: 15
+[2026-03-05 12:30:18]    🎉 Calls processed: 0
+[2026-03-05 12:30:18]    📱 Slack posts: 0
+[2026-03-05 12:30:18]    🎯 Database: v1_date_full.db
+
+[Thu Mar  5 13:00:01 CST 2026] 🚀 Calling V1_PRODUCTION_DATE.py system (Date Hierarchy)...
+✅ V1 Date Hierarchy system completed successfully
+[2026-03-05 13:00:01] 🚀 V1 DATE FULL - Complete Pipeline with Date Hierarchy
+[2026-03-05 13:00:01] 📁 Main Meeting Notes folder: 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY
+[2026-03-05 13:00:01] 📅 Processing last 1 days, max 15 meetings per day
+[2026-03-05 13:00:01] 🏢 Salesforce: ✅ Authenticated
+[2026-03-05 13:00:01] 📅 Getting date folders for last 1 days
+    🔧 Running: gog drive ls --parent 1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY --max 50 --plain --account niamh@telnyx.com
+[2026-03-05 13:00:02] ❌ Command failed: drive options: token source: get token for niamh@telnyx.com: read token: no TTY available for keyring file backend password prompt; set GOG_KEYRING_PASSWORD
+
+[2026-03-05 13:00:02] ❌ No recent date folders found
+
