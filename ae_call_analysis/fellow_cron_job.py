@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Cron bridge: Calls V1_DATE_FULL_RESILIENT.py with small batches
-DEPLOYED: 2026-03-05 13:16 - Ultra-small batches (1 meeting at a time, max 5 meetings)
+Cron bridge: Calls V1_15MIN_WRAPPER.py for true 15-minute intervals
+DEPLOYED: 2026-03-05 13:55 - Runs call analysis twice per 30-min cron = 15-min intervals
 """
 import subprocess
 import sys
@@ -22,7 +22,7 @@ def main():
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 V1_DATE_FULL_RESILIENT.py
+        python3 V1_15MIN_WRAPPER.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 
