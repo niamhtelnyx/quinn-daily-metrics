@@ -3452,3 +3452,39 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='telnyx.my.salesforce.
 
 [2026-03-05 13:00:02] ❌ No recent date folders found
 
+[Thu Mar  5 13:30:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+✅ Resilient system (small batches) completed successfully
+🛡️ V1 Enhanced Call Intelligence - RESILIENT VERSION
+============================================================
+Start time: 2026-03-05 13:30:00.840026
+📅 Processing date: 2026-03-05
+    🔧 Running (attempt 1): gog drive ls --parent 1LGMJSQaFqS0wFJXJCW5-rHCjlO3lQHLc --max 20 --plain --account niamh@telnyx.com
+    ⚠️ Command failed (attempt 1): drive options: token source: get token for niamh@telnyx.com: read token: no TTY available for keyring file backend password prompt; set GOG_KEYRING_PASSWORD
+
+    🔧 Running (attempt 2): gog drive ls --parent 1LGMJSQaFqS0wFJXJCW5-rHCjlO3lQHLc --max 20 --plain --account niamh@telnyx.com
+    ⚠️ Command failed (attempt 2): drive options: token source: get token for niamh@telnyx.com: read token: no TTY available for keyring file backend password prompt; set GOG_KEYRING_PASSWORD
+
+    🔧 Running (attempt 3): gog drive ls --parent 1LGMJSQaFqS0wFJXJCW5-rHCjlO3lQHLc --max 20 --plain --account niamh@telnyx.com
+    ⚠️ Command failed (attempt 3): drive options: token source: get token for niamh@telnyx.com: read token: no TTY available for keyring file backend password prompt; set GOG_KEYRING_PASSWORD
+
+❌ CRITICAL ERROR: Command failed after 3 attempts
+⚡ Circuit breaker state: CLOSED
+
+[Thu Mar  5 14:00:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 14:30:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 15:00:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 15:30:01 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 16:00:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 16:30:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 17:00:01 CST 2026] 🛡️ Calling resilient system (small batches)...
+⏱️ Resilient system timed out (5 min limit)
+[Thu Mar  5 17:30:00 CST 2026] 🛡️ Calling resilient system (small batches)...
+❌ Resilient system failed (exit 2)
+Error: /Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/V1_15MIN_WRAPPER.py': [Errno 2] No such file or directory
+
