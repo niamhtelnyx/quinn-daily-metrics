@@ -239,15 +239,18 @@ def get_salesforce_token():
         return None
 
 def find_salesforce_event_by_exact_subject(access_token, event_name):
-    """Find Salesforce event by exact subject match"""
+    """Find Salesforce event by exact subject match + known fixes"""
     try:
         domain = os.getenv('SF_DOMAIN', 'telnyx')
         instance_url = f"https://{domain}.my.salesforce.com"
         
-        # Build exact subject search
-        exact_subject = f"Meeting Booked: {event_name}"
+        headers = {
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        }
         
-        # Escape single quotes for SOQL query
+        # Try exact match first
+        exact_subject = f"Meeting Booked: {event_name}"
         escaped_subject = exact_subject.replace("'", "\\'")
         
         query = f"""
@@ -258,17 +261,38 @@ def find_salesforce_event_by_exact_subject(access_token, event_name):
         LIMIT 1
         """
         
-        headers = {
-            'Authorization': f'Bearer {access_token}',
-            'Content-Type': 'application/json'
-        }
-        
         response = requests.get(
             f"{instance_url}/services/data/v57.0/query",
             params={'q': query},
             headers=headers,
             timeout=30
         )
+        
+        if response.status_code == 200:
+            results = response.json()
+            if results['records']:
+                log_message(f"✅ EXACT match found", False)
+                return results['records'][0]
+        
+        # Special case: Try Aliyana search for known mismatch
+        if "aliyana" in event_name.lower() or "morgan" in event_name.lower():
+            query_aliyana = f"""
+            SELECT Id, Subject, WhoId, StartDateTime, EndDateTime 
+            FROM Event 
+            WHERE Subject LIKE 'Meeting Booked:%Aliyana%'
+            AND CreatedDate >= YESTERDAY
+            ORDER BY CreatedDate DESC 
+            LIMIT 1
+            """
+            
+            log_message(f"🔧 Trying Aliyana fallback search...", False)
+            
+            response = requests.get(
+                f"{instance_url}/services/data/v57.0/query",
+                params={'q': query_aliyana},
+                headers=headers,
+                timeout=30
+            )
     except requests.exceptions.Timeout:
         log_message(f"⏰ Salesforce event query timeout for: {event_name}", False)
         return None
@@ -418,7 +442,7 @@ Content:
 def post_to_slack_bot_api(message):
     """Post message to Slack using Bot API"""
     try:
-        slack_token = os.getenv('SLACK_TOKEN')
+        slack_token = os.getenv('SLACK_BOT_TOKEN')  # Fixed: was SLACK_TOKEN
         if not slack_token:
             return False, "❌ No Slack token"
 
@@ -458,7 +482,7 @@ def post_to_slack_bot_api(message):
 def post_slack_thread_reply(parent_ts, message):
     """Post threaded reply to Slack message"""
     try:
-        slack_token = os.getenv('SLACK_TOKEN')
+        slack_token = os.getenv('SLACK_BOT_TOKEN')  # Fixed: was SLACK_TOKEN
         headers = {
             'Authorization': f'Bearer {slack_token}',
             'Content-Type': 'application/json'
