@@ -9,36 +9,38 @@ from dotenv import load_dotenv
 from config import *
 
 def get_salesforce_token():
-    """Get Salesforce authentication token"""
+    """Get Salesforce authentication token - USING WORKING METHOD"""
     load_dotenv()
     
     client_id = os.getenv('SALESFORCE_CLIENT_ID')
     client_secret = os.getenv('SALESFORCE_CLIENT_SECRET') 
-    username = os.getenv('SALESFORCE_USERNAME')
-    password = os.getenv('SALESFORCE_PASSWORD')
     
-    if not all([client_id, client_secret, username, password]):
+    if not all([client_id, client_secret]):
         print("⚠️ Missing Salesforce credentials")
         return None
     
     try:
+        # USE CLIENT_CREDENTIALS GRANT TYPE (working approach)
         data = {
-            'grant_type': 'password',
+            'grant_type': 'client_credentials',
             'client_id': client_id,
-            'client_secret': client_secret,
-            'username': username,
-            'password': password
+            'client_secret': client_secret
         }
         
+        # USE TELNYX INSTANCE URL (working approach)
         response = requests.post(
-            SALESFORCE_LOGIN_URL,
+            "https://telnyx.my.salesforce.com/services/oauth2/token",
             data=data,
             timeout=SALESFORCE_TIMEOUT
         )
         
         if response.status_code == 200:
+            result = response.json()
             print("🔑 Salesforce token obtained")
-            return response.json()
+            return {
+                'access_token': result['access_token'],
+                'instance_url': result.get('instance_url', 'https://telnyx.my.salesforce.com')
+            }
         else:
             print(f"❌ Salesforce auth failed: {response.status_code}")
             return None
