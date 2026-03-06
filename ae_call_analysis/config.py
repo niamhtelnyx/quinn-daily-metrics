@@ -8,7 +8,7 @@ from datetime import datetime
 # Google Drive Configuration
 MAIN_MEETING_NOTES_FOLDER_ID = "1i0Vh_dTjkULE4VwVDSYlFrgnLTxXJoUY"
 GOG_ACCOUNT = "niamh@telnyx.com"
-GOG_TIMEOUT = 30
+GOG_TIMEOUT = 15  # Reduced from 30 to prevent hanging
 MAX_MEETINGS_PER_RUN = 15
 MAX_FILES_PER_MEETING = 10
 

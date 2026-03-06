@@ -10,23 +10,29 @@ import re
 from config import *
 
 def run_gog_command(command, timeout=GOG_TIMEOUT):
-    """Run gog command with timeout"""
+    """Run gog command with robust timeout handling"""
     try:
         result = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
         if result.returncode == 0:
             return result.stdout.strip()
         else:
+            print(f"        ⚠️ gog command failed (code {result.returncode}): {' '.join(command)}")
             return None
-    except:
+    except subprocess.TimeoutExpired:
+        print(f"        ⏰ gog command timed out after {timeout}s: {' '.join(command)}")
+        return None
+    except Exception as e:
+        print(f"        ❌ gog command error: {str(e)[:50]}")
         return None
 
 def get_todays_folder_id():
-    """Find today's date folder automatically"""
+    """Find today's date folder automatically with timeout protection"""
     today_date = get_today_date()
     
     print(f"🔍 Looking for today's folder: {today_date}")
     
-    # List folders in main Meeting Notes folder
+    # List folders in main Meeting Notes folder with timeout protection
+    print(f"        📡 Querying Google Drive (timeout: {GOG_TIMEOUT}s)...")
     output = run_gog_command([
         'gog', 'drive', 'ls',
         '--parent', MAIN_MEETING_NOTES_FOLDER_ID,
@@ -36,7 +42,7 @@ def get_todays_folder_id():
     ])
     
     if not output:
-        print(f"❌ Could not list main Meeting Notes folder")
+        print(f"❌ Could not list main Meeting Notes folder (timeout or API issue)")
         return None
     
     # Look for folder named exactly today's date

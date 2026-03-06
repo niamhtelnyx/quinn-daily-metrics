@@ -99,11 +99,13 @@ def process_todays_meetings():
     # Initialize database
     init_database()
     
-    # Step 1: Get today's folder
+    # Step 1: Get today's folder with timeout protection
+    print(f"🔍 Attempting to discover today's folder...")
     today_folder_id = get_todays_folder_id()
     if not today_folder_id:
-        print(f"❌ Could not find folder for {today} - stopping")
-        return {'processed': 0, 'posted': 0, 'error': 'No folder for today'}
+        print(f"❌ Could not find folder for {today} - Google Drive API may be hanging")
+        print(f"   This is often caused by network issues or Google API rate limits")
+        return {'processed': 0, 'posted': 0, 'error': 'Google Drive timeout - folder discovery failed'}
     
     # Step 2: Get meeting folders
     meeting_folders = get_meeting_folders(today_folder_id)
