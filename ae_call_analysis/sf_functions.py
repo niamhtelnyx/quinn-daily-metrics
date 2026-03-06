@@ -7,6 +7,27 @@ import os
 import requests
 from dotenv import load_dotenv
 from config import *
+import re
+
+def normalize_meeting_name(meeting_name):
+    """Normalize meeting name to match Salesforce Subject_Normalized__c field
+    Based on actual Salesforce examples:
+    - Convert to uppercase
+    - Remove ALL special characters and spaces
+    - Keep only letters and numbers
+    """
+    if not meeting_name:
+        return ""
+    
+    # Convert to uppercase
+    normalized = meeting_name.upper()
+    
+    # Remove ALL characters except letters and numbers (matching Salesforce logic)
+    # This removes spaces, special characters, punctuation, etc.
+    normalized = re.sub(r'[^A-Z0-9]', '', normalized)
+    
+    print(f"        🔄 Normalized: '{meeting_name}' → '{normalized}'")
+    return normalized
 
 def get_salesforce_token():
     """Get Salesforce authentication token - USING WORKING METHOD"""
@@ -50,7 +71,7 @@ def get_salesforce_token():
         return None
 
 def find_salesforce_event(event_name, access_token, instance_url):
-    """Find Salesforce event by name"""
+    """Find Salesforce event by name using normalized field"""
     if not access_token or not instance_url:
         return None
     
@@ -59,9 +80,14 @@ def find_salesforce_event(event_name, access_token, instance_url):
         'Content-Type': 'application/json'
     }
     
-    # Try exact match first
-    exact_query = f"Meeting Booked: {event_name}"
-    soql = f"SELECT Id, Subject, WhoId, WhatId, OwnerId FROM Event WHERE Subject = '{exact_query}' LIMIT 1"
+    # Normalize the meeting name to match Salesforce formula field
+    normalized_name = normalize_meeting_name(event_name)
+    normalized_query = f"MEETINGBOOKED{normalized_name}"
+    
+    # Search using Subject_Normalized__c field for better matching
+    soql = f"SELECT Id, Subject, Subject_Normalized__c, WhoId, WhatId, OwnerId FROM Event WHERE Subject_Normalized__c = '{normalized_query}' LIMIT 1"
+    
+    print(f"        🔍 Searching for: '{normalized_query}'")
     
     try:
         response = requests.get(
@@ -74,8 +100,29 @@ def find_salesforce_event(event_name, access_token, instance_url):
         if response.status_code == 200:
             result = response.json()
             if result['totalSize'] > 0:
-                print(f"        🎯 Salesforce: Found event")
-                return result['records'][0]
+                event = result['records'][0]
+                print(f"        🎯 Salesforce: Found event (Subject: '{event.get('Subject', 'Unknown')}')")
+                return event
+            else:
+                print(f"        ❌ No normalized match found")
+                
+                # Fallback: Try original exact match for backwards compatibility
+                print(f"        🔄 Trying fallback search...")
+                fallback_query = f"Meeting Booked: {event_name}"
+                fallback_soql = f"SELECT Id, Subject, WhoId, WhatId, OwnerId FROM Event WHERE Subject = '{fallback_query}' LIMIT 1"
+                
+                fallback_response = requests.get(
+                    f"{instance_url}/services/data/v59.0/query",
+                    params={'q': fallback_soql},
+                    headers=headers,
+                    timeout=SALESFORCE_TIMEOUT
+                )
+                
+                if fallback_response.status_code == 200:
+                    fallback_result = fallback_response.json()
+                    if fallback_result['totalSize'] > 0:
+                        print(f"        🎯 Salesforce: Found via fallback")
+                        return fallback_result['records'][0]
         
     except Exception as e:
         print(f"        ⚠️ Salesforce lookup failed: {str(e)[:50]}")
