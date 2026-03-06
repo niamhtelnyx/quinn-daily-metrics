@@ -37,10 +37,12 @@ def smart_truncate(text, max_length, min_length=50):
 def create_slack_message(prospect_name, company_name, content_type, insights, salesforce_links="❌ No Salesforce Match"):
     """Create original Slack format message with content type indicator"""
     
-    # Build company description
+    # Build company description using AI-generated description
     company_line = ""
     if company_name and company_name.lower() != 'telnyx':
-        company_line = f"🏢 {company_name} is a technology company exploring communications solutions with Telnyx."
+        # Use AI-generated company description if available
+        company_description = insights.get('company_description', 'technology company')
+        company_line = f"🏢 {company_name} is a {company_description}."
     
     # Content type indicator
     content_indicator = CONTENT_TYPE_INDICATORS.get(content_type, '📄 Content')
