@@ -3488,3 +3488,6 @@ Start time: 2026-03-05 13:30:00.840026
 ❌ Resilient system failed (exit 2)
 Error: /Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/V1_15MIN_WRAPPER.py': [Errno 2] No such file or directory
 
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py': [Errno 2] No such file or directory
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py': [Errno 2] No such file or directory
+/Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/niamhcollins/clawd/ae_call_analysis/fellow_cron_job.py': [Errno 2] No such file or directory

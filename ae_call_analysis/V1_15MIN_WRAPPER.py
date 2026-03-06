@@ -24,7 +24,7 @@ def run_resilient_system():
         source /Users/niamhcollins/clawd/.env.gog 2>/dev/null || true
         source .env 2>/dev/null || true
         set +a
-        python3 V1_DATE_FULL_RESILIENT.py
+        python3 main.py
         """
         
         result = subprocess.run(['bash', '-c', cmd], 
