@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from config import *
 from gog_functions import get_todays_folder_id, get_meeting_folders, extract_meeting_content
 from content_parser import analyze_content_structure, select_best_content, extract_insights_from_content
-from ai_analysis_enhanced import get_ai_insights_and_company_description
+from ai_analysis_full_content import get_full_content_ai_analysis
 from sf_functions import lookup_salesforce_info
 from slack_functions import create_and_post_slack_message
 from database_functions import init_database, is_meeting_processed, save_processed_meeting, get_processing_stats
@@ -58,13 +58,13 @@ def process_single_meeting(meeting_info):
     
     print(f"  📄 Content: {len(selected_content)} chars ({content_type})")
     
-    # Step 3: Extract insights from content using AI analysis
+    # Step 3: Extract insights from content using FULL CONTENT AI analysis
     try:
-        insights, company_description = get_ai_insights_and_company_description(selected_content, meeting_name)
-        print(f"  🤖 AI Analysis: {len(insights['pain_points'])} pain points, {len(insights['products'])} products")
+        insights, company_description = get_full_content_ai_analysis(selected_content, meeting_name)
+        print(f"  🤖 Full AI Analysis: {len(insights['pain_points'])} pain points, {len(insights['products'])} products")
         print(f"  🏢 Company: {company_description[:60]}...")
     except Exception as e:
-        print(f"  ⚠️ AI analysis failed, using fallback: {str(e)[:50]}")
+        print(f"  ⚠️ Full AI analysis failed, using fallback: {str(e)[:50]}")
         insights = extract_insights_from_content(selected_content)
         company_description = "technology company"
     
