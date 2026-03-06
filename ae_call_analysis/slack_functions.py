@@ -10,6 +10,30 @@ from datetime import datetime
 from dotenv import load_dotenv
 from config import *
 
+def smart_truncate(text, max_length, min_length=50):
+    """Truncate text at sentence boundary if possible, otherwise at word boundary"""
+    if len(text) <= max_length:
+        return text
+    
+    # Try to find sentence ending within reasonable range
+    truncated = text[:max_length]
+    
+    # Look for sentence endings (., !, ?) within last 30 characters
+    for i in range(len(truncated) - 1, max(len(truncated) - 30, min_length), -1):
+        if truncated[i] in '.!?':
+            return truncated[:i + 1]
+    
+    # Fall back to word boundary
+    words = truncated.split()
+    if len(words) > 1:
+        words.pop()  # Remove last potentially incomplete word
+        result = ' '.join(words)
+        if len(result) >= min_length:
+            return result + "..."
+    
+    # Last resort: hard truncate
+    return text[:max_length - 3] + "..."
+
 def create_slack_message(prospect_name, company_name, content_type, insights, salesforce_links="❌ No Salesforce Match"):
     """Create original Slack format message with content type indicator"""
     
@@ -33,15 +57,15 @@ def create_slack_message(prospect_name, company_name, content_type, insights, sa
     if not next_steps:
         next_steps = [f"{prospect_name} to review technical documentation and next steps"]
     
-    # Main post format (original format with content type indicator)
+    # Main post format (original format with smart truncation)
     main_post = f"""🔔 Meeting Notes Retrieved
 📆 {prospect_name} | Telnyx AE Team | {datetime.now().strftime('%Y-%m-%d')} | {content_indicator}
 {company_line}
 🏢 Salesforce: {salesforce_links}
 📊 Scores: Interest 8/10 | AE 9/10 | Quinn 7/10
-🔴 Key Pain: {pain_points[0][:80]}
+🔴 Key Pain: {smart_truncate(pain_points[0], 200)}
 💡 Product Focus: {products[0]}
-🚀 Next Step: {next_steps[0][:80]}
+🚀 Next Step: {smart_truncate(next_steps[0], 200)}
 See thread for full analysis and stakeholder actions 👇"""
 
     # Thread reply format (original format)
@@ -50,9 +74,9 @@ See thread for full analysis and stakeholder actions 👇"""
 💡 COMPLETE INSIGHTS ({content_indicator})
 
 🔴 All Pain Points:
-1. {pain_points[0][:100] if len(pain_points) > 0 else 'Integration complexity'}
-2. {pain_points[1][:100] if len(pain_points) > 1 else 'Technical implementation challenges'}
-3. {pain_points[2][:100] if len(pain_points) > 2 else 'Documentation and support needs'}
+1. {smart_truncate(pain_points[0], 150) if len(pain_points) > 0 else 'Integration complexity'}
+2. {smart_truncate(pain_points[1], 150) if len(pain_points) > 1 else 'Technical implementation challenges'}
+3. {smart_truncate(pain_points[2], 150) if len(pain_points) > 2 else 'Documentation and support needs'}
 
 🎯 Use Cases Discussed:
 • Voice and communications API integration
@@ -71,8 +95,8 @@ See thread for full analysis and stakeholder actions 👇"""
 🚀 NEXT STEPS
 Category: Technical Validation
 Actions:
-• {next_steps[0][:100] if next_steps else 'Follow up with technical resources'}
-• {next_steps[1][:100] if len(next_steps) > 1 else 'Provide implementation documentation'}
+• {smart_truncate(next_steps[0], 150) if next_steps else 'Follow up with technical resources'}
+• {smart_truncate(next_steps[1], 150) if len(next_steps) > 1 else 'Provide implementation documentation'}
 
 📋 QUINN REVIEW
 Quality: 8/10
